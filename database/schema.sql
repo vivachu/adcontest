@@ -12,14 +12,24 @@ drop table if exists prizes;
 create table prizes (
   id int unsigned not null auto_increment primary key,
   modified timestamp,
-  place int unsigned not null,
-  contest_id int unsigned not null,
-  num_winners int unsigned not null,
   name varchar(255) not null,
   value decimal(10,2) null,
-  index(contest_id),
+  place int signed not null,
+  num_winners int signed not null,
   index(name)
 ) ENGINE=MyISAM;
+
+drop table if exists prize_schedule;
+create table prize_schedule (
+  id int unsigned not null auto_increment primary key,
+  modified timestamp,
+  prize_id int unsigned not null,
+  contest_id int unsigned not null,
+  win_date datetime not null,
+  index(prize_id),
+  index(contest_id)
+) ENGINE=MyISAM;
+
 
 drop table if exists winners;
 create table winners (

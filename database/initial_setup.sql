@@ -1,6 +1,9 @@
-# switch to bot_not database and load schema
-use bot_not;
+# switch to adcontest database and load schema
+use adcontest;
 
 source schema.sql;
+source procedures.sql;
+
 source contests.sql;
+
 source prizes.sql;
