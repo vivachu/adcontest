@@ -1,5 +1,5 @@
 <?php
-	function connect_database() {
+	function connectDatabase() {
         # DB connection params
         $dbuser = "adcontest";
         $dbpw = "adcontest";
@@ -10,7 +10,7 @@
 	}
 
 	function executeQueryList($sql) {
-		connect_database();
+		connectDatabase();
 		$rows = mysql_query($sql) or die(mysql_error() . printError($sql));
 		$items = array();
 		while ($row = mysql_fetch_array($rows)) {
@@ -20,20 +20,31 @@
 	}
 
 	function executeQueryObject($sql) {
-		connect_database();
+		connectDatabase();
 		$rows = mysql_query($sql) or die(mysql_error() . printError($sql));
 		return mysql_fetch_array($rows);
 	}
 
 	function executeUpdate($sql) {
-		connect_database();
+		connectDatabase();
 		$rows = mysql_query($sql) or die(mysql_error() . printError($sql));
 //		return mysql_fetch_array($rows);
 	}
 
 	function executeInsert($sql) {
-		connect_database();
+		connectDatabase();
 		$rows = mysql_query($sql) or die(mysql_error() . printError($sql));
 		return mysql_insert_id();
 	}
+
+	function getPlayer($id) {
+		return executeQueryObject("select * from players where id=" . $id);
+	}
+
+// TODO replace hardcoded date with now()
+	function getWinningPrize() {
+		$sql = "select p.*, ps.id as prize_schedule_id from prize_schedule ps, prizes p where ps.prize_id=p.id and winner_id is null and win_date <= '2010-10-22 24:33' order by win_date desc limit 1;";
+		$prize = executeQueryObject($sql);
+	}
+
 ?>

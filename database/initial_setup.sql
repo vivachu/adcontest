@@ -7,3 +7,5 @@ source procedures.sql;
 source contests.sql;
 
 source prizes.sql;
+
+source players.sql;

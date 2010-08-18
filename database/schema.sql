@@ -27,31 +27,22 @@ create table prize_schedule (
   prize_id int unsigned not null,
   contest_id int unsigned not null,
   win_date datetime not null,
-  index(prize_id),
-  index(contest_id)
-) ENGINE=MyISAM;
-
-
-drop table if exists winners;
-create table winners (
-  id int unsigned not null auto_increment primary key,
-  modified timestamp,
-  prize_schedule_id int unsigned not null,
-  player_id int unsigned not null,
+  winner_id int unsigned null,
   first_name varchar(255) null,
   last_name varchar(255) null,
   address varchar(255) null,
   city varchar(255) null,
   state varchar(255) null,
-  index(prize_schedule_id),
-  index(player_id)
+  index(prize_id),
+  index(winner_id),
+  index(contest_id)
 ) ENGINE=MyISAM;
 
 drop table if exists referral_winners;
 create table referral_winners (
   id int unsigned not null auto_increment primary key,
   modified timestamp,
-  winner_id int unsigned not null,
+  prize_schedule_id int unsigned not null,
   friend_id int unsigned not null,
   status int signed not null default 0,
   first_name varchar(255) null,
@@ -59,7 +50,7 @@ create table referral_winners (
   address varchar(255) null,
   city varchar(255) null,
   state varchar(255) null,
-  index(winner_id),
+  index(prize_schedule_id),
   index(friend_id)
 ) ENGINE=MyISAM;
 
