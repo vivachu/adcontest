@@ -16,6 +16,7 @@ create table prizes (
   value decimal(10,2) null,
   place int signed not null,
   num_winners int signed not null,
+  link varchar(255) null,
   index(name)
 ) ENGINE=MyISAM;
 
@@ -35,14 +36,14 @@ drop table if exists winners;
 create table winners (
   id int unsigned not null auto_increment primary key,
   modified timestamp,
-  prize_id int unsigned not null,
+  prize_schedule_id int unsigned not null,
   player_id int unsigned not null,
   first_name varchar(255) null,
   last_name varchar(255) null,
   address varchar(255) null,
   city varchar(255) null,
   state varchar(255) null,
-  index(prize_id),
+  index(prize_schedule_id),
   index(player_id)
 ) ENGINE=MyISAM;
 
@@ -71,5 +72,6 @@ create table players (
   email_address varchar(255) null,
   friend_id int unsigned null,
   last_played datetime null,
+  liked int signed default 0 not null,
   index(facebook_id)
 ) ENGINE=MyISAM;
