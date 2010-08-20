@@ -37,14 +37,78 @@
 		return mysql_insert_id();
 	}
 
-	function getPlayer($id) {
-		return executeQueryObject("select * from players where id=" . $id);
+	function printError($sql){
+		global $_debug;
+		$_debug=true;
+		if ($_debug){
+			echo "sql = [".$sql. "]\n" . var_dump(debug_backtrace());
+		} else{
+			return '';
+		}
+	}
+
+
+	function getPlayer($fbid) {
+		$player = executeQueryObject("select id, username, email_address, friend_id, facebook_id, liked, date_format(last_played, '%Y-%m-%d') as last_played, date_format(now(), '%Y-%m-%d') as now_date from players where facebook_id=" . $fbid);
+		if (!isset($player['last_played']) || $player['last_played'] != $player['now_date']) {
+			$player['has_played'] = 0;
+		} else {
+			$player['has_played'] = 1;
+		}
+		return $player;
 	}
 
 // TODO replace hardcoded date with now()
-	function getWinningPrize() {
-		$sql = "select p.*, ps.id as prize_schedule_id from prize_schedule ps, prizes p where ps.prize_id=p.id and winner_id is null and win_date <= '2010-10-22 24:33' order by win_date desc limit 1;";
+
+	function getWinningPrize($test_date) {
+		$sql = "select p.*, ps.id as prize_schedule_id from prize_schedule ps, prizes p where ps.prize_id=p.id and winner_id is null and win_date <= " . $test_date . " order by win_date desc limit 1";
 		$prize = executeQueryObject($sql);
+		return $prize;
 	}
 
+	function getRandomNotPrize() {
+		$sql = "select p.* from prizes p where place=0 order by rand()*id limit 1";
+		$prize = executeQueryObject($sql);
+		return $prize;
+	}
+
+	function getGrandPrize($test_date) {
+		$sql = "select p.* from prize_schedule ps, prizes p, contests c where ps.contest_id=c.id and ps.prize_id=p.id and " . $test_date . " >= c.start_date and " . $test_date . " <= c.end_date and p.place=1 limit 1";
+		$prize = executeQueryObject($sql);
+		return $prize;
+	}
+
+	function like($fbid) {
+		$sql = "update players set liked=1 where facebook_id=" . $fbid;
+		executeUpdate($sql);
+	}
+
+	function playGame($fbid) {
+		$sql = "update players set last_played=now() where facebook_id=" . $fbid;
+		executeUpdate($sql);
+	}
+
+	function insertPlayer($fbid, $friendId, $username) {
+		$sql = "insert into players(facebook_id, friend_id, username) values($fbid, $friendId, $username)";
+		return executeInsert($sql);
+	}
+
+	function winPrize($prizeScheduleId, $playerId) {
+		$sql = "update prize_schedule set winner_id=$playerId where id=$prizeScheduleId";
+		executeUpdate($sql);
+	}
+
+	function redeemPrize($prizeScheduleId, $firstName, $lastName, $address, $city, $state, $zip, $email) {
+		$sql = "update prize_schedule set first_name=$firstName, last_name=$lastName, address=$address, city=$city, state=$state, email_address=$email where id=$prizeScheduleId";
+		executeUpdate($sql);
+	}
+
+	function insertReferralWinner($prizeScheduleId, $friendId) {
+		$sql = "insert into referral_winners(prize_schedule_id, friend_id, status) values($prizeScheduleId, $friendId, 0)";
+	}
+
+	function redeemReferralPrize($referralPrizeId, $firstName, $lastName, $address, $city, $state, $zip, $email) {
+		$sql = "update referral_winners set first_name=$firstName, last_name=$lastName, address=$address, city=$city, state=$state, email_address=$email where id=$referralPrizeId";
+		executeUpdate($sql);
+	}
 ?>

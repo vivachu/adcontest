@@ -13,6 +13,7 @@ create table prizes (
   id int unsigned not null auto_increment primary key,
   modified timestamp,
   name varchar(255) not null,
+  description varchar(255) null,
   value decimal(10,2) null,
   place int signed not null,
   num_winners int signed not null,
@@ -33,6 +34,7 @@ create table prize_schedule (
   address varchar(255) null,
   city varchar(255) null,
   state varchar(255) null,
+  email_address varchar(255) null,
   index(prize_id),
   index(winner_id),
   index(contest_id)
@@ -50,6 +52,7 @@ create table referral_winners (
   address varchar(255) null,
   city varchar(255) null,
   state varchar(255) null,
+  email_address varchar(255) null,
   index(prize_schedule_id),
   index(friend_id)
 ) ENGINE=MyISAM;
@@ -60,7 +63,6 @@ create table players (
   modified timestamp,
   facebook_id int unsigned not null,
   username varchar(255) null,
-  email_address varchar(255) null,
   friend_id int unsigned null,
   last_played datetime null,
   liked int signed default 0 not null,
