@@ -35,6 +35,8 @@ create table prize_schedule (
   city varchar(255) null,
   state varchar(255) null,
   email_address varchar(255) null,
+  status int signed not null default 0,
+  redemption_code varchar(255) null,
   index(prize_id),
   index(winner_id),
   index(contest_id)
@@ -53,6 +55,7 @@ create table referral_winners (
   city varchar(255) null,
   state varchar(255) null,
   email_address varchar(255) null,
+  redemption_code varchar(255) null,
   index(prize_schedule_id),
   index(friend_id)
 ) ENGINE=MyISAM;
@@ -63,6 +66,7 @@ create table players (
   modified timestamp,
   facebook_id int unsigned not null,
   username varchar(255) null,
+  email varchar(255) null,
   friend_id int unsigned null,
   last_played datetime null,
   liked int signed default 0 not null,

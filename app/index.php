@@ -2,7 +2,7 @@
 	require_once 'include/config.php';
 	require_once 'include/sql.php';
 
-	$fbid = 730267352;
+	$fbid = 1644085704;
 	$test_date = "'2010-10-22 24:33'";
 
 
@@ -20,6 +20,7 @@
 <script>
 
 	var liked = <?= $player['liked'] ?>;
+	var hasPlayed = <?= $player['has_played'] ?>;
 
 	function inviteFriends() {
 		alert("Invite friends");
@@ -46,27 +47,26 @@
 			document.getElementById("likePopup").style.display="block";
 			return;
 		}
-
-<?php if ($player['has_played'] == 0) { ?>
-	  jQuery.ajax({
-		  type: "GET",
-		  url: "game.php?fbid=<?= $fbid ?>",
-		  cache: false,
-		  success: function (response) {document.getElementById('playGame').innerHtml = response; },
-		  error: function () {}
-	  });
-
-<?php } else { ?>
-		document.getElementById("alreadyPlayedPopup").style.display="block";
-		return;
-<?php } ?>
+		if (hasPlayed == 0) {
+			  jQuery.ajax({
+				  type: "GET",
+				  url: "game.php?fbid=<?= $fbid ?>",
+				  cache: false,
+				  success: function (response) {hasPlayed=true; document.getElementById('playGame').innerHTML = response; },
+				  error: function () {}
+			  });
+		}
+		else {
+			document.getElementById("alreadyPlayedPopup").style.display="block";
+			return;
+		}
 	}
 
 </script>
 <!-- include jQuery library -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/jquery.min.js"></script>
 <!-- include Cycle plugin -->
-<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.2.74.js"></script>
+<script type="text/javascript" src="javascript/jquery.cycle.all.2.74.js"></script>
 
 <script type="text/javascript" src="javascript/util.js"></script>
 

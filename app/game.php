@@ -16,23 +16,35 @@
 	if (!isset($prize) || $prize['name'] == null) {
 		$prize = getRandomNotPrize();
 	} else {
-		winPrize($prize['prize_schedule_id'], $player['id']);
+		$prizeSchedule = winPrize($prize['prize_schedule_id'], $player['id']);
 	}
 ?>
 
 				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck!</p>
-				<div id="game">
+				<div>
 <?php
 	if ($prize['place'] == 0) {
 ?>
-					<h1>NOT</h1>
+					<p class="title">NOT</p>
 <?php
 	}
 	else {
 ?>
-					<h1>BOT - YOU WIN!</h1>
+					<p class="title">BOT - YOU WIN!</p>
 <?php
 	}
 ?>
-					<h2><?= $prize['name'] ?></h2>
+					<p class="title"><?= $prize['name'] ?></p>
+<?php
+	if (isset($prizeSchedule)) {
+?>
+					<p><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>">Click to Redeem Your <?= $prize['name']?></a></p>
+<?php
+	} else if (isset($prize['link'])) {
+?>
+					<p><a href="<?= $prize['link'] ?>">Click to View Your Prize</a></p>
+					<p><a href="javascript:{}" onclick="inviteFriends();">Invite Your Friends</a></p>
+<?php
+	}
+?>
 				</div>
