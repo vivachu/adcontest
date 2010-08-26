@@ -32,8 +32,12 @@ p{ padding:0px; line-height:22px;}
 			CONTAINER
 ==================================== */
 #container { background:#000 url(images/bg.jpg) repeat-y; margin:0 auto; padding-bottom:45px; position:relative; width:520px; }
+#container2 { background:#000 url(images/bg2.jpg) repeat-y; margin:0 auto; padding-bottom:45px; position:relative; width:760px; }
 h1 { margin:0 auto; padding:15px 0 0 0; width:485px; }
 h1 a { background:url(images/logo.png) no-repeat; display:block; height:35px; margin-left:10px; text-indent:-9999px; width:136px; }
+#container2 h1 { margin:0 30px; padding:15px 0 0 0; width:485px; };
+#container2 h1 a { background:url(images/logo.png) no-repeat; display:block; height:35px; margin-left:10px; text-indent:-9999px; width:136px; }
+#container2 h2.tagInner { background:url("images/facebook-friendship.jpg") no-repeat scroll 0 0 transparent; display:block; height:88px; margin:30px 0 0 5px; width:463px; }
 /* =================================
 				TOP
 ==================================== */
@@ -44,6 +48,7 @@ h1 a { background:url(images/logo.png) no-repeat; display:block; height:35px; ma
 				MAIN CONTENT
 ==================================== */
 #mainContent { background:#000; margin:0 auto; position:relative; width:485px; }
+#container2 #mainContent { background:#000; margin:0 auto; position:relative; width:680px; }
 h2 { background:url(images/bot-or-not.jpg) no-repeat; display:block; height:54px; margin:30px 0 0 5px; text-indent:-9999px; width:370px; }
 h2.tagInner { background:url(images/facebook-friendship.jpg) no-repeat; display:block; height:51px; margin:30px 0 0 5px; width:457px; }
 h2.congrats { background:url(images/congrat.jpg) no-repeat; display:block; height:51px; width:457px; }
@@ -55,17 +60,32 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 #mainContent p.text a { color:#07a6da; display:block; }
 #mainContent p.title { color:#fccd06; font:bold 16px Helvetica; margin-bottom:35px; text-transform:uppercase; }
 #mainContent p.title span { color:#fff; font:bold 16px Helvetica; text-transform:none; }
+#mainContent p.title a { color:#fccd06; font:bold 16px Helvetica; margin-bottom:35px; text-transform:uppercase; text-decoration: none; position: relative; z-index: 20; }
 #mainContent img { display:block; margin:0 auto; }
 #mainContent .left img { margin:60px 20px 0 28px; }
 #mainContent .left img.small { height:137px; margin:5px 20px 0 28px; width:130px; }
 .bot { margin:60px 0 0 0; position:absolute; top:180px; right:0; }
 #mainContent a.playBtn { background:url(images/play-btn.png) no-repeat; bottom:550px; height:100px; position:absolute; right:100px; text-indent:-9999px; width:230px; }
+#mainContent a.youWin { background: url(images/itsbot-youwin.png) no-repeat; position: absolute; width: 401px; height: 74px; text-indent: -7777px; display: block;margin-top: 100px; margin-left: 50px; z-index: 10;}
+#mainContent a.youLose { background: url(images/itsnotbot-youlose.png) no-repeat; position: absolute; width: 401px; height: 74px; text-indent: -7777px; display: block;margin-top: 100px; margin-left: 90px; z-index: 10;}
 #mainContent a.invite { background:url(images/invite-friends.png) no-repeat; display:block; height:28px; margin:60px auto 0 auto; text-indent:-9999px; width:254px; }
+#mainContent a.redeem { background:url(images/redeem.png) no-repeat; display:block; height:28px; margin:165px auto 0 auto; text-indent:-9999px; width:285px; }
+#mainContent a.redeem-insole { background:url(images/redeem-gelinsoles.png) no-repeat; display:block; height:28px; margin:90px auto 0 auto; text-indent:-9999px; width:264px; position: relative; z-index: 20; }
 .titleBar { background:url(images/this-week-bot-prize.png) no-repeat; height:37px; text-indent:-9999px; width:383px; }
 .redeemiPad { background:#e30065; margin:35px 0 130px 35px; padding:8px 0; text-align:center; text-transform:uppercase; width:226px; }
 .redeemiPad a { color:#fff; font:bold 18px Helvetica; text-decoration:none; }
 .desc { margin:135px 0 0 0; }
 #mainContent .desc p { margin:0; padding:0; width:465px; }
+.emailfriend {
+	position: absolute;
+	float: right;
+	margin-left: 435px;
+	margin-top: 0px;
+	z-index: 1;
+}
+#container2 .redeemiPad {margin-bottom: 95px;}
+#container2 p.text {position: relative; z-index: 5; font-size: 16px;}
+#container2 #footer p {position: relative; z-index: 5; padding-left: 10px;}
 /* =================================
 				POPUP
 ==================================== */
