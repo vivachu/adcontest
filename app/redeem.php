@@ -99,6 +99,18 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
 }
 ?>
 	}
+
+	function sendFriendEmail() {
+		var url = "do.php?what=sendFriendEmail&c=<?= $redemptionCode ?>";
+		jQuery.ajax({
+		  type: "POST",
+		  url: url,
+		  cache: false,
+		  success: function (response) {  },
+		  error: function () {}
+		});
+
+	}
 </script>
 </head>
 <body>
@@ -132,7 +144,7 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
                         <h3 class="left">Your Friend <?= $friend['username'] ?> is a Winner Too!</h3>
                     	<p class="left">Since <?= $friend['username'] ?> invited you to play The SVEDKA Vodka “BOT or NOT?” Game, <?= $friend['username'] ?> wins an <?= $prizeSchedule['prize_name'] ?> too! Just hit “Send” and we’ll send <?= $friend['username'] ?> an email.</p>
 					</div>
-                    <a href="#" class="right">close</a>
+                    <a href="javascript:{}" class="right" onclick="sendFriendEmail();">close</a>
                 </div>
 			</div>
   <?

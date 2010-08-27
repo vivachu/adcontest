@@ -22,6 +22,10 @@
 	var liked = <?= $player['liked'] ?>;
 	var hasPlayed = <?= $player['has_played'] ?>;
 
+	function onDoorSelected() {
+		alert("onDoorSelected called");
+	}
+
 	function inviteFriends() {
 		alert("Invite friends");
 	}

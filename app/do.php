@@ -21,15 +21,20 @@
 		redeemPrize($prizeSchedule['id'], $_REQUEST['first'], $_REQUEST['last'], $address, $_REQUEST['city'], $_REQUEST['state'], $_REQUEST['zip'], $_REQUEST['email']);
 	} else if ($what == "redeemFriend") {
 		redeemReferralPrize($_REQUEST['referralPrizeId'], $_REQUEST['first'], $_REQUEST['last'], $_REQUEST['address'], $_REQUEST['city'], $_REQUEST['state'], $_REQUEST['zip'], $_REQUEST['email']);
-	} else if ($what == "testEmail") {
+	} else if ($what == "sendFriendEmail") {
+		$redemptionCode = $_REQUEST['c'];
+		$prizeSchedule = getPrizeScheduleFromCode($redemptionCode);
+		if (!isset($prizeSchedule) || !isset($prizeSchedule['friend_id']) || $prizeSchedule['status'] != 1) {
+			exit();
+		}
+		$friend = getPlayerFromId($prizeSchedule['friend_id']);
 
-		 $from = "Sandra Sender <viva@handipoints.com>";
-		 $to = "Viva Chu <viva@handipoints.com>";
-		 $subject = "Hi!";
+		$from = $prizeSchedule['email'];
+		$to = $friend['email'];
 
-
-		$text = 'Text version of email';
-		$html = '<html><body><b>HTML</b> <a href="http://www.yahoo.com">version</a> of email</body></html>';
+		$subject = "Its Bot Or Not Prize - You Won";
+ 		$text = 'You won';
+		$html = '<html><body><b>You Won!</b> <a href="http://www.yahoo.com">Test Link</a></body></html>';
 		$crlf = "\n";
 
 		$mime = new Mail_mime($crlf);
@@ -61,6 +66,5 @@
 		  } else {
 		   echo("<p>Message successfully sent!</p>");
 		  }
-
 	}
 ?>
