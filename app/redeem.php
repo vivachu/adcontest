@@ -111,13 +111,13 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
 <?php
 	if ($prizeSchedule['place'] == 1) {
 ?>
-            <p class="text" style="margin:5px auto 0 35px;width:440px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands, so fill out the info below and we'll make that happen.</p>
+            <p class="text" style="margin:5px auto 0 35px;width:440px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands.  Fill out the info below and if you are eligible and satisfy the Official Rules, we'll make it happen.</p>
             <p class="text" style="margin:10px auto 0 35px;width:440px;">And, because a friend invited you to play, your friend will win an <?= $prizeSchedule['prize_name'] ?> too, because that's what friends do — they win prizes for each other (in our book anyway).</p>
 <?php
 	}
 	else {
 ?>
-            <p class="text" style="margin:5px auto 0 35px;width:440px;">You won a BOT prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands, so fill out the info below and we'll make that happen.</p>
+            <p class="text" style="margin:5px auto 0 35px;width:440px;">You won a BOT prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands. Fill out the info below and if you are eligible and satisfy the Official Rules, we'll make it happen.</p>
 <?php
 	}
 ?>
@@ -126,11 +126,11 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
 ?>
 			<div id="popInvite" class="popupContainer" style="display:none;">
                 <div class="popupInvite">
-                    <h2 class="popupTitle"><span>Thanks! Your <?= $prizeSchedule['prize_name'] ?> is now on its way.</span></h2>
+                    <h2 class="popupTitle"><span>Thanks! Your information was received.</span></h2>
                     <div class="popupContent">
                     	<img src="images/pic.jpg" alt="" class="left" />
                         <h3 class="left">Your Friend <?= $friend['username'] ?> is a Winner Too!</h3>
-                    	<p class="left">Since <?= $friend['username'] ?> invited you to play The SVEDKA Vodka “BOT or NOT?” Game, <?= $friend['username'] ?> wins an <?= $prizeSchedule['prize_name'] ?> too! Just hit “Send” and we’ll send your friend an email.</p>
+                    	<p class="left">Since <?= $friend['username'] ?> invited you to play The SVEDKA Vodka “BOT or NOT?” Game, <?= $friend['username'] ?> wins an <?= $prizeSchedule['prize_name'] ?> too! Just hit “Send” and we’ll send <?= $friend['username'] ?> an email.</p>
 					</div>
                     <a href="#" class="right">close</a>
                 </div>
@@ -230,9 +230,9 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
                 </div>
             </form>
             <div class="clear"></div>
-            <div id="footer">
-	            <p>PLAY RESPONSIBLY. SVEDKA® Vodka - 40% alc/vol. (80 proof), 100% grain neutral spirits, product of Sweden,<br />sole U.S. Importer: Spirits Marque One LLC, New York, NY.</p>
-			</div>
+
+<?php include "include/footer.php"; ?>
+
             <div id="btm"></div>
         </div>
     </div>

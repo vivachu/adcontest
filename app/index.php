@@ -90,7 +90,7 @@
             <div class="round right">play and win</div>
             <div class="clear"></div>
             <div id="playGame">
-				<p>Everyone is a winner! Sort of. Just pick a door to see if you win this week’s amazing SVEDKA BOT prize … or end up with a fun consolation NOT prize. Increase your chances to win by inviting friends — If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
+				<p><b>Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week’s amazing SVEDKA BOT prize … or end up with a fun consolation NOT prize. <b>Increase your chances to win</b> by inviting friends — If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 				<a href="javascript:{}" class="playBtn" onclick="play();">play</a>
 				<div class="bot" style="top:240px;"><img src="images/bot.png" alt="" /></div>
@@ -115,9 +115,9 @@
 				<div class="clear"></div>
 				<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
 			</div> <!-- end playGame -->
-			<div id="footer">
-	            <p>PLAY RESPONSIBLY. SVEDKA® Vodka - 40% alc/vol. (80 proof), 100% grain neutral spirits, product of Sweden,<br />sole U.S. Importer: Spirits Marque One LLC, New York, NY.</p>
-			</div>
+
+	<?php include "include/footer.php"; ?>
+
             <div id="btm"></div>
         </div>
     </div>
