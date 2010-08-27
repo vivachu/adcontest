@@ -19,17 +19,17 @@
 		$prizeSchedule = winPrize($prize['prize_schedule_id'], $player['id']);
 	}
 
-	if ($prize['place'] == 0) {
-		$win = "false";
-	} else {
+	if ($prize['place'] == 1) {
 		$win = "true";
+	} else {
+		$win = "false";
 	}
 	$thumb = "prizes/Prize_" . $prize['image'] . "_Icon_2.png";
 	$bigImage = "prizes/Prize_" . $prize['image'] . "_Icon_1.png";
 ?>
 
 				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck!</p>
-				<div id="gameSwf" style="margin-top:20px;">
+				<div id="gameSwf" style="margin-top:30px;">
 					<object width="480" height="350" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Game" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
 						<param value="DoorAnim.swf" name="movie">
 						<param value="high" name="quality">
@@ -42,16 +42,17 @@
 						src="DoorAnim.swf">
 					</object>
 				</div>
-				<div id="buttonOverlay">
+				<div id="inviteFriends" style="margin-top:30px;"><a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a></p>
+
+				<div id="redeemContainer" style="display:none;">
 <?php
 	if (isset($prizeSchedule)) {
 ?>
-					<p id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>">Click to Redeem</a></p>
+					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>" class="pinkBlock">CLICK TO REDEEM</a></p>
 <?php
 	} else if (isset($prize['link'])) {
 ?>
-					<p id="clickToRedeem"><a href="<?= $prize['link'] ?>">Click to View</a></p>
-					<p id="inviteFriends"><a href="javascript:{}" onclick="inviteFriends();">Invite Your Friends</a></p>
+					<div id="clickToRedeem"><a href="<?= $prize['link'] ?>" class="pinkBlock">CLICK TO VIEW</a></p>
 <?php
 	}
 ?>

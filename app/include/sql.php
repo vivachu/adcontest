@@ -105,7 +105,7 @@
 	}
 
 	function getPrizeScheduleFromCode($code) {
-		$sql = "select ps.*, p.name as prize_name, p.place as place, pl.username as username, pl.facebook_id as facebook_id, pl.email as email, pl.friend_id from prize_schedule ps, prizes p, players pl where redemption_code='$code' and ps.prize_id=p.id and ps.winner_id=pl.id";
+		$sql = "select ps.*, p.name as prize_name, p.place as place, p.image as prize_image, pl.username as username, pl.facebook_id as facebook_id, pl.email as email, pl.friend_id from prize_schedule ps, prizes p, players pl where redemption_code='$code' and ps.prize_id=p.id and ps.winner_id=pl.id";
 		$ps = executeQueryObject($sql);
 		return $ps;
 	}

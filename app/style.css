@@ -99,5 +99,32 @@ label { font:normal 12px Trebuchet MS; }
 /* =================================
 				FOOTER
 ==================================== */
-#footer p { font:normal 10px Helvetica; margin:50px auto 0 auto; text-align:center; }
+#footer { font:normal 10px Helvetica; margin:50px auto 0 auto; text-align:center; }
 #btm { background:url(images/footer-bg.png) repeat-y; height:12px; margin:10px 0 0 0; }
+
+
+#redeemContainer {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	text-align: center;
+}
+#clickToRedeem {
+	background-color: #ec0878;
+	width: 160px;
+	height: 30px;
+	line-height: 30px;
+	padding: 1px;
+	margin: 0 auto;
+	position: relative;
+	top: 400px;
+}
+
+#clickToRedeem a {
+ font-size: 16px;
+ font-weight: bold;
+ color: #ffffff;
+ text-decoration: none;
+}

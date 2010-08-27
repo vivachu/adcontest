@@ -23,7 +23,7 @@
 	var hasPlayed = <?= $player['has_played'] ?>;
 
 	function onDoorSelected() {
-		alert("onDoorSelected called");
+		document.getElementById("redeemContainer").style.display="block";
 	}
 
 	function inviteFriends() {
@@ -111,7 +111,7 @@
 					<a href="javascript:{};" class="right" onclick="document.getElementById('alreadyPlayedPopup').style.display='none';">close</a>
 				</div>
 
-				<div class="left"><img src="images/iPad.png" alt="" /></div>
+				<div class="left"><img src="prizes/Prize_<?= $grandPrize['image'] ?>_Icon_1.png" alt="<?= $grandPrize['name'] ?>" width="200" height="200" /></div>
 				<div class="desc">
 				<p class="title"><?= $grandPrize['name'] ?></p>
 				<p><?= $grandPrize['description'] ?></p>

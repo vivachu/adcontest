@@ -119,7 +119,7 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
         <div id="mainContent">
         	<h2 class="congrats left">bot or not?</h2>
             <div class="clear"></div>
-            <div class="left img"><img src="images/iPad.png" class="small" alt="" /></div>
+            <div class="left img"><img src="prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_1.png" class="small" alt="" /></div>
 <?php
 	if ($prizeSchedule['place'] == 1) {
 ?>
