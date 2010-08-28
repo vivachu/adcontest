@@ -128,7 +128,7 @@
 	}
 
 	function redeemReferralPrize($referralPrizeId, $firstName, $lastName, $address, $city, $state, $zip, $email) {
-		$sql = "update referral_winners set first_name='$firstName', last_name='$lastName', address='$address', city='$city', state='$state', email_address='$email' where id=$referralPrizeId";
+		$sql = "update referral_winners set status=1, first_name='$firstName', last_name='$lastName', address='$address', city='$city', state='$state', email_address='$email' where id=$referralPrizeId";
 		executeUpdate($sql);
 	}
 ?>
