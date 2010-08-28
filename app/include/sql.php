@@ -105,9 +105,15 @@
 	}
 
 	function getPrizeScheduleFromCode($code) {
-		$sql = "select ps.*, p.name as prize_name, p.place as place, pl.username as username, pl.facebook_id as facebook_id, pl.email as email, pl.friend_id from prize_schedule ps, prizes p, players pl where redemption_code='$code' and ps.prize_id=p.id and ps.winner_id=pl.id";
+		$sql = "select ps.*, p.name as prize_name, p.place as place, p.image as prize_image, pl.username as username, pl.facebook_id as facebook_id, pl.email as email, pl.friend_id from prize_schedule ps, prizes p, players pl where redemption_code='$code' and ps.prize_id=p.id and ps.winner_id=pl.id";
 		$ps = executeQueryObject($sql);
 		return $ps;
+	}
+
+	function getReferralWinnerFromCode($code) {
+		$sql = "select rw.*, p.name as prize_name, p.place as place, p.image as prize_image, pl.username as username, pl.facebook_id as facebook_id, pl.email as email from referral_winners rw, prize_schedule ps, prizes p, players pl where rw.redemption_code='$code' and rw.prize_schedule_id = ps.id and ps.prize_id=p.id and rw.friend_id=pl.id";
+		$rw = executeQueryObject($sql);
+		return $rw;
 	}
 
 	function redeemPrize($prizeScheduleId, $firstName, $lastName, $address, $city, $state, $zip, $email) {
@@ -116,7 +122,9 @@
 	}
 
 	function insertReferralWinner($prizeScheduleId, $friendId) {
-		$sql = "insert into referral_winners(prize_schedule_id, friend_id, status) values($prizeScheduleId, $friendId, 0)";
+		$sql = "insert into referral_winners(prize_schedule_id, friend_id, status, redemption_code) values($prizeScheduleId, $friendId, 0, sha1(now()*rand()))";
+		$id = executeInsert($sql);
+		return executeQueryObject("select * from referral_winners where id=" . $id);
 	}
 
 	function redeemReferralPrize($referralPrizeId, $firstName, $lastName, $address, $city, $state, $zip, $email) {

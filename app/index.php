@@ -22,6 +22,10 @@
 	var liked = <?= $player['liked'] ?>;
 	var hasPlayed = <?= $player['has_played'] ?>;
 
+	function onDoorSelected() {
+		document.getElementById("redeemContainer").style.display="block";
+	}
+
 	function inviteFriends() {
 		alert("Invite friends");
 	}
@@ -103,11 +107,11 @@
 				<div id="alreadyPlayedPopup" class="popup" style="display:none;">
 					<h3>Play Responsibly</h3>
 					<p>Sorry but you've already played today. Come back tomorrow to play again. Or better yet invite your friends to play now.  If one of them wins the BOT prize, you do too!</p>
-					<a href="javascript:{};" class="right" onclick="inviteFriends();">invite friends</a>
 					<a href="javascript:{};" class="right" onclick="document.getElementById('alreadyPlayedPopup').style.display='none';">close</a>
+					<a href="javascript:{};" class="right" onclick="inviteFriends();" style="margin-left:10px;width:111px;height:25px;background:url(images/invite-friends-button.png) no-repeat;">invite friends</a>
 				</div>
 
-				<div class="left"><img src="images/iPad.png" alt="" /></div>
+				<div class="left"><img src="prizes/Prize_<?= $grandPrize['image'] ?>_Icon_1.png" alt="<?= $grandPrize['name'] ?>" width="200" height="200" /></div>
 				<div class="desc">
 				<p class="title"><?= $grandPrize['name'] ?></p>
 				<p><?= $grandPrize['description'] ?></p>
