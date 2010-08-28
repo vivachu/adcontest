@@ -2,7 +2,7 @@
 //$facebook_api_key = '';
 //$facebook_secret_key = '';
 //$facebook_xd_url = '';
-$app_url = "http://dev.adcontest.com";
+$app_url = "http://dev.adcontests.com";
 
 $smtp_host = "smtpout.secureserver.net";
 $smtp_port = "80";
