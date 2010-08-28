@@ -3,12 +3,9 @@
 	require_once 'include/sql.php';
 
 	$redemptionCode = $_REQUEST['c'];
-	$prizeSchedule = getPrizeScheduleFromCode($redemptionCode);
-	if (!isset($prizeSchedule) || $prizeSchedule['status'] != 0) {
+	$referral = getReferralWinnerFromCode($redemptionCode);
+	if (!isset($referral) || $referral['status'] != 0) {
 		exit();
-	}
-	if (isset($prizeSchedule['friend_id'])) {
-		$friend = getPlayerFromId($prizeSchedule['friend_id']);
 	}
 ?>
 
@@ -17,7 +14,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Bot Prize Redemption Confirmation</title>
+<title>Bot Prize Redemption Confirmation - Friend</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
 <link rel="stylesheet" type="text/css" href="style.css" />
 <!--[if lt IE 8]>
@@ -72,7 +69,7 @@
 			document.getElementById('email').focus();
 			return;
 		}
-		var url = "do.php?what=redeem&c=<?= $redemptionCode ?>";
+		var url = "do.php?what=redeemFriend&c=<?= $redemptionCode ?>";
 		url += "&first=" + document.getElementById('fname').value;
 		url += "&last=" + document.getElementById('lname').value;
 		url += "&street=" + document.getElementById('street').value;
@@ -92,28 +89,10 @@
 
 	}
 	function onSubmitForm(response) {
-<?php
-if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
-?>
-		document.getElementById("popInvite").style.display = "block";
-<?php
-}
-?>
-	}
-
-	function sendFriendEmail() {
-		document.getElementById("popInvite").style.display = "none";
-
-		var url = "do.php?what=sendFriendEmail&c=<?= $redemptionCode ?>";
-		jQuery.ajax({
-		  type: "POST",
-		  url: url,
-		  cache: false,
-		  success: function (response) {  },
-		  error: function () {}
-		});
 
 	}
+
+
 </script>
 </head>
 <body>
@@ -122,37 +101,8 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
         <div id="mainContent">
         	<h2 class="congrats left">bot or not?</h2>
             <div class="clear"></div>
-            <div class="left img"><img src="prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_1.png" class="small" alt="" /></div>
-<?php
-	if ($prizeSchedule['place'] == 1) {
-?>
-            <p class="text" style="margin:25px auto 0 35px;width:440px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands.  Fill out the info below and if you are eligible and satisfy the <a href="rules.php" style="color:#ffffff;display:inline;">Official Rules</a>, we'll make it happen.</p>
-            <p class="text" style="margin:10px auto 0 35px;width:440px;">And, because a friend invited you to play, your friend will win an <?= $prizeSchedule['prize_name'] ?> too, because that's what friends do — they win prizes for each other (in our book anyway).</p>
-<?php
-	}
-	else {
-?>
-            <p class="text" style="margin:25px auto 0 35px;width:440px;">You won a BOT prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands. Fill out the info below and if you are eligible and satisfy the <a href="rules.php" style="color:#ffffff;display:inline;">Official Rules</a>, we'll make it happen.</p>
-<?php
-	}
-?>
-<?php
-	if (isset($friend)) {
-?>
-			<div id="popInvite" class="popupContainer" style="display:none;">
-                <div class="popupInvite">
-                    <h2 class="popupTitle"><span>Thanks! Your information was received.</span></h2>
-                    <div class="popupContent">
-                    	<img src="images/pic.jpg" alt="" class="left" />
-                        <h3 class="left">Your Friend <?= $friend['username'] ?> is a Winner Too!</h3>
-                    	<p class="left">Since <?= $friend['username'] ?> invited you to play The SVEDKA Vodka “BOT or NOT?” Game, <?= $friend['username'] ?> wins an <?= $prizeSchedule['prize_name'] ?> too! Just hit “Send” and we’ll send <?= $friend['username'] ?> an email.</p>
-					</div>
-                    <a href="javascript:{}" class="right" onclick="sendFriendEmail();">close</a>
-                </div>
-			</div>
-  <?
-  	}
-  ?>
+            <div class="left img"><img src="prizes/Prize_<?= $referral['prize_image'] ?>_Icon_1.png" class="small" alt="" /></div>
+            <p class="text" style="margin:25px auto 0 35px;width:440px;">Isn't it good to know that Facebook friends aren't just good for poking, watering your crops, or tagging terrible photos of you? Fill out the info below and if you are eligible and satisfy the <a href="rules.php" style="display:inline;color:#ffffff;">Official Rules</a>, we'll send your BOT prize out via snail-mail.</p>
 <?php include "include/redeem-form.php"; ?>
             <div class="clear"></div>
 <?php include "include/footer.php"; ?>

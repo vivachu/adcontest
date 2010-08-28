@@ -19,22 +19,74 @@
 			$address = $address . ", " . $_REQUEST['apt'];
 		}
 		redeemPrize($prizeSchedule['id'], $_REQUEST['first'], $_REQUEST['last'], $address, $_REQUEST['city'], $_REQUEST['state'], $_REQUEST['zip'], $_REQUEST['email']);
+
+
+		$to = $_REQUEST['email'];
+		if ($prizeSchedule['place'] == 1) {
+			$subject = "BOT OR NOT";
+			$text = file_get_contents('./email/EmailFriendWinConfirm.txt');
+			$text = str_replace("PRIZE_NAME", $prizeSchedule['prize_name'], $text);
+		} else {
+			$subject = "IT'S BOTTER THAN NOTHING";
+			$text = file_get_contents('./email/EmailFriendNotConfirm.txt');
+		}
+		$html = $text;
+		sendEmail($to, $subject, $text, $html); // send to player
+
+		$to = $svedka_admin_email;
+		$subject = "New Prize Redemption";
+		$html = "<h4>". $prizeSchedule['prize_name'] . "</h4><p>". $_REQUEST['first'] . " " . $_REQUEST['last']. "</p><p>". $address . "</p><p>" . $_REQUEST['city'] . ", " . $_REQUEST['state'] . " " . $_REQUEST['zip'] . "<p></p><p>" . $_REQUEST['email']. "</p>";
+		$text = "";
+		sendEmail($to, $subject, $text, $html); // send to admin
 	} else if ($what == "redeemFriend") {
-		redeemReferralPrize($_REQUEST['referralPrizeId'], $_REQUEST['first'], $_REQUEST['last'], $_REQUEST['address'], $_REQUEST['city'], $_REQUEST['state'], $_REQUEST['zip'], $_REQUEST['email']);
+		$redemptionCode = $_REQUEST['c'];
+		$referral = getReferralWinnerFromCode($redemptionCode);
+		if (!isset($referral) || $referral['status'] != 0) {
+			exit();
+		}
+		$address = $_REQUEST['street'];
+		if (isset($_REQUEST['apt']) && strlen($_REQUEST['apt']) > 0) {
+			$address = $address . ", " . $_REQUEST['apt'];
+		}
+		redeemReferralPrize($referral['id'], $_REQUEST['first'], $_REQUEST['last'], $address, $_REQUEST['city'], $_REQUEST['state'], $_REQUEST['zip'], $_REQUEST['email']);
+
+		$to = $_REQUEST['email'];
+		$subject = "BOT OR NOT";
+		$text = file_get_contents('./email/EmailFriendWinConfirm.txt');
+		$text = str_replace("PRIZE_NAME", $referral['prize_name'], $text);
+		$html = $text;
+		sendEmail($to, $subject, $text, $html); // send to player
+
+		$to = $svedka_admin_email;
+		$subject = "New Prize Redemption - Friend";
+		$html = "<h4>". $referral['prize_name'] . "</h4><p>". $_REQUEST['first'] . " " . $_REQUEST['last']. "</p><p>". $address . "</p><p>" . $_REQUEST['city'] . ", " . $_REQUEST['state'] . " " . $_REQUEST['zip'] . "<p></p><p>" . $_REQUEST['email']. "</p>";
+		$text = "";
+		sendEmail($to, $subject, $text, $html); // send to admin
+
+
 	} else if ($what == "sendFriendEmail") {
 		$redemptionCode = $_REQUEST['c'];
 		$prizeSchedule = getPrizeScheduleFromCode($redemptionCode);
+
 		if (!isset($prizeSchedule) || !isset($prizeSchedule['friend_id']) || $prizeSchedule['status'] != 1) {
 			exit();
 		}
 		$friend = getPlayerFromId($prizeSchedule['friend_id']);
+		$referral = insertReferralWinner($prizeSchedule['id'], $friend['id']);
 
-		$from = $prizeSchedule['email'];
 		$to = $friend['email'];
+		$subject = "A FACEBOOK FRIENDSHIP ACTUALLY PAID OFF";
+		$text = file_get_contents('./email/EmailFriendWin.txt');
+		$text = str_replace("PRIZE_NAME", $prizeSchedule['prize_name'], $text);
+		$text = str_replace("FRIEND_NAME", $prizeSchedule['username'], $text);
+		$text = str_replace("REDEEM_URL", $app_url . "/redeem-friend.php?c=" . $referral['redemption_code'], $text);
+		$html = $text;
+		sendEmail($to, $subject, $text, $html); // send to friend
+	}
 
-		$subject = "Its Bot Or Not Prize - You Won";
- 		$text = 'You won';
-		$html = '<html><body><b>You Won!</b> <a href="http://www.yahoo.com">Test Link</a></body></html>';
+	function sendEmail($to, $subject, $text, $html) {
+		include 'include/config.php';
+
 		$crlf = "\n";
 
 		$mime = new Mail_mime($crlf);
@@ -46,7 +98,7 @@
 		$body = $mime->get();
 
 
-		 $headers = array ('From' => $from,
+		 $headers = array ('From' => $smtp_from,
 		   'To' => $to,
 		   'Subject' => $subject);
 		 $smtp = Mail::factory('smtp',
