@@ -1,0 +1,43 @@
+Jason
+- Need descriptions for prizes.
+- Need thumbnails: big and small and congrats texts
+
+Pupung
+- Blue Invite Friends button similar to the Send and Close buttons on Page 6 of the spec.
+- HTML emails in separate directories
+
+Viva
+- Change hardcoded test date to now() for getting prize in game.php.
+- HTML emails
+- Age screening before people play.
+- State screening to prohibit CA and TN residents and foreigners from playing.
+
+
+Amazon Server
+-------------
+Amazon IP
+184.72.225.200
+ssh -i ~/.ssh/LAMP.pem root@ec2-184-72-225-200.compute-1.amazonaws.com
+
+
+AMI setup
+http://developer.amazonwebservices.com/connect/message.jspa?messageID=125283
+
+GIT install
+- create ssh key, add to github
+- yum install git-core
+
+
+/usr/sbin/httpd -k restart -f /home/webuser/helloworld/conf/httpd.conf
+
+ln -s /home/webuser/helloworld/ apache2
+
+install pear
+wget http://pear.php.net/go-pear go-pear.php
+php go-pear.php
+
+cd /usr/share/php/bin
+pear install Mail-1.2.0
+pear install Mail_Mime-1.8.0
+pear install Net_SMTP-1.4.2
+
