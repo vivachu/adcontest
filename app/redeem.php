@@ -120,19 +120,22 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
 	<div id="container">
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
-        	<h2 class="congrats left">bot or not?</h2>
-            <div class="clear"></div>
-            <div class="left img"><img src="prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_1.png" class="small" alt="" /></div>
 <?php
 	if ($prizeSchedule['place'] == 1) {
 ?>
+        	<h2 class="congrats left">bot or not?</h2>
+            <div class="clear"></div>
+            <div class="left img"><img src="prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_1.png" class="small" alt="" /></div>
             <p class="text" style="margin:25px auto 0 35px;width:440px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands.  Fill out the info below and if you are eligible and satisfy the <a href="rules.php" style="color:#ffffff;display:inline;">Official Rules</a>, we'll make it happen.</p>
             <p class="text" style="margin:10px auto 0 35px;width:440px;">And, because a friend invited you to play, your friend will win an <?= $prizeSchedule['prize_name'] ?> too, because that's what friends do — they win prizes for each other (in our book anyway).</p>
 <?php
 	}
 	else {
 ?>
-            <p class="text" style="margin:25px auto 0 35px;width:440px;">You won a BOT prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands. Fill out the info below and if you are eligible and satisfy the <a href="rules.php" style="color:#ffffff;display:inline;">Official Rules</a>, we'll make it happen.</p>
+        	<h2 class="congrats_not left">bot or not?</h2>
+            <div class="clear"></div>
+            <div class="left img"><img src="prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_1.png" class="small" alt="" /></div>
+            <p class="text" style="margin:25px auto 0 35px;width:440px;">Sorry you didn't win the BOT prize this time, but you're still a winner to us. Just fill out the form below and if you are eligible and satisfy the <a href="rules.php" style="color:#ffffff;display:inline;">Official Rules</a>, you will receive your NOT prize.  And be sure to come back tomorrow for another chance at the BOT prize.</p>
 <?php
 	}
 ?>

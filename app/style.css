@@ -47,6 +47,7 @@ h1 a { background:url(images/logo.png) no-repeat; display:block; height:35px; ma
 h2 { background:url(images/bot-or-not.jpg) no-repeat; display:block; height:54px; margin:30px 0 0 5px; text-indent:-9999px; width:370px; }
 h2.tagInner { background:url(images/facebook-friendship.jpg) no-repeat; display:block; height:51px; margin:30px 0 0 5px; width:457px; }
 h2.congrats { background:url(images/congrat.jpg) no-repeat; display:block; height:51px; width:457px; }
+h2.congrats_not { background:url(images/title-botterthan.png) no-repeat; display:block; height:51px; width:457px; }
 h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:block; height:40px; width:457px; }
 .badges { background:url(images/badge.jpg) no-repeat; display:block; height:96px; margin:25px 32px 0 0; text-indent:-9999px; width:96px; }
 .round { background:url(images/play-n-win.png) no-repeat; display:block; height:63px; margin:25px 20px 0 0; text-indent:-9999px; width:63px; }

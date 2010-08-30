@@ -88,7 +88,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bot or Not!</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.0" />
 <script>
 
 <? if ($player): ?>
@@ -159,7 +159,7 @@
 	<div id="container">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a href="javascript:{}" onclick="like();">Like</a><a href="javascript:{}" onclick="share();">Share</a></p>
+            <p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
