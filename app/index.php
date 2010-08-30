@@ -4,7 +4,8 @@
 	require_once 'include/facebook.php';
 
 
-	$test_date = "'2010-10-22 24:33'";
+//	$test_date = "'2010-10-22 24:33'";
+	$test_date = "'now()'";
 	$grandPrize = getGrandPrize($test_date);
 
 
@@ -89,6 +90,7 @@
 <title>Bot or Not!</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
 <link rel="stylesheet" type="text/css" href="style.css?v=1.0" />
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 
 <? if ($player): ?>
@@ -109,7 +111,12 @@
 	}
 
 	function share() {
-		alert("Share");
+		 var share = {
+		   method: 'stream.share',
+		   u: '<?= $app_url ?>'
+		 };
+
+		 FB.ui(share, function(response) { console.log(response); });
 	}
 
 	function like() {
@@ -155,7 +162,19 @@
 <![endif]-->
 </head>
 <body>
-
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({appId: '<?= $facebook_app_id ?>', status: true, cookie: true,
+				 xfbml: true});
+	  };
+	  (function() {
+		var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol +
+		  '//connect.facebook.net/en_US/all.js';
+		document.getElementById('fb-root').appendChild(e);
+	  }());
+	</script>
 	<div id="container">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>

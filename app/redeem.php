@@ -31,11 +31,18 @@
 <script type="text/javascript" src="javascript/jquery.min.js"></script>
 <!-- include Cycle plugin -->
 <script type="text/javascript" src="javascript/jquery.cycle.all.2.74.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 
 <script>
 	function share() {
-		alert("share");
+		 var share = {
+		   method: 'stream.share',
+		   u: '<?= $app_url ?>'
+		 };
+
+		 FB.ui(share, function(response) { console.log(response); });
 	}
+
 	function submitForm() {
 		if (document.getElementById('fname').value.length < 1) {
 			alert("Please enter your first name.");
@@ -92,13 +99,11 @@
 
 	}
 	function onSubmitForm(response) {
-<?php
-if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
-?>
+<? if (isset($friend) ):  ?>  //&&  $prizeSchedule['place'] == 1):
 		document.getElementById("popInvite").style.display = "block";
-<?php
-}
-?>
+<? else: ?>
+		publishFeedStory();
+<? endif; ?>
 	}
 
 	function sendFriendEmail() {
@@ -109,15 +114,61 @@ if (isset($friend) ) { //&&  $prizeSchedule['place'] == 1) {
 		  type: "POST",
 		  url: url,
 		  cache: false,
-		  success: function (response) {  },
+		  success: function (response) { publishFeedStory(); },
 		  error: function () {}
 		});
 
 	}
+
+	function publishFeedStory() {
+		var prizeName = "<?= $prizeSchedule['prize_name'] ?>";
+		 FB.ui(
+		   {
+			 method: 'stream.publish',
+			 attachment: {
+			   name: '<?= $prizeSchedule['username'] ?> just "won" a ' + prizeName + ' by playing SVEDKA "BOT or NOT?"',
+			   caption: 'They didn\'t win the BOT prize but you could. Click to play.',
+			   href: '<?= $app_url ?>',
+               media: [
+               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_2.png', href: '<?= $app_url ?>' }
+               ]
+			 },
+			 action_links: [
+			   { text: 'BOT or NOT', href: '<?= $app_url ?>' }
+			 ],
+			 user_message_prompt: 'Thanks! Your information was received.'
+		   },
+		   function(response) {
+			 if (response && response.post_id) {
+			   //alert('Post was published.');
+			 } else {
+			   //alert('Post was not published.');
+			 }
+		   }
+		 );
+	}
+
 </script>
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({appId: '<?= $facebook_app_id ?>', status: true, cookie: true,
+				 xfbml: true});
+	  };
+	  (function() {
+		var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol +
+		  '//connect.facebook.net/en_US/all.js';
+		document.getElementById('fb-root').appendChild(e);
+	  }());
+	</script>
 	<div id="container">
+    	<div id="top">
+        	<p class="left">Like us? Click the button above.</p>
+            <p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
+        </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
 <?php

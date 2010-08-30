@@ -59,7 +59,7 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 #mainContent img { display:block; margin:0 auto; }
 #mainContent .left img { margin:60px 20px 0 28px; }
 #mainContent .left img.small { height:137px; margin:5px 20px 0 28px; width:130px; }
-.bot { margin:60px 0 0 0; position:absolute; top:180px; right:0; }
+.bot { margin:60px 0 0 0; position:absolute; top:180px; right:0; height: 470px;}
 #mainContent a.playBtn { background:url(images/play-btn.png) no-repeat; bottom:550px; height:100px; position:absolute; right:100px; text-indent:-9999px; width:230px; }
 #mainContent a.invite { background:url(images/invite-friends.png) no-repeat; display:block; height:28px; margin:60px auto 0 auto; text-indent:-9999px; width:254px; }
 .titleBar { background:url(images/this-week-bot-prize.png) no-repeat; height:37px; text-indent:-9999px; width:383px; }

@@ -8,11 +8,13 @@ Pupung
 
 Viva
 - Change hardcoded test date to now() for getting prize in game.php.
-- Change hardcoded facebook id
 - Change hardcoded has played
 - HTML emails
 - Age screening before people play.
 - State screening to prohibit CA and TN residents and foreigners from playing.
+- Friend Invite dialog
+- Friend dialog image on redeem.php
+- Friend invite click through link
 
 
 Amazon Server
