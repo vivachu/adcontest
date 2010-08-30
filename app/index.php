@@ -4,10 +4,11 @@
 	require_once 'include/facebook.php';
 
 
-//	$test_date = "'2010-10-22 24:33'";
-	$test_date = "'now()'";
+	$test_date = "'2010-10-22 24:33'";
+//	$test_date = "'now()'";
 	$grandPrize = getGrandPrize($test_date);
-
+//echo $grandPrize['name'];
+//exit;
 
 	// Create our Application instance (replace this with your appId and secret).
 	$facebook = new Facebook(array(
