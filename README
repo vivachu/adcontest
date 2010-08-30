@@ -8,6 +8,8 @@ Pupung
 
 Viva
 - Change hardcoded test date to now() for getting prize in game.php.
+- Change hardcoded facebook id
+- Change hardcoded has played
 - HTML emails
 - Age screening before people play.
 - State screening to prohibit CA and TN residents and foreigners from playing.
@@ -40,4 +42,7 @@ cd /usr/share/php/bin
 pear install Mail-1.2.0
 pear install Mail_Mime-1.8.0
 pear install Net_SMTP-1.4.2
+
+libcurl with ssl
+sudo port -f upgrade --enforce-variants curl +ssl
 

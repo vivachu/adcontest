@@ -3,6 +3,32 @@
 	require_once 'include/sql.php';
 	require_once 'include/facebook.php';
 
+	// Create our Application instance (replace this with your appId and secret).
+	$facebook = new Facebook(array(
+	  'appId'  => $facebook_app_id,
+	  'secret' => $facebook_secret_key,
+	  'cookie' => true,
+	));
+
+	// We may or may not have this data based on a $_GET or $_COOKIE based session.
+	//
+	// If we get a session here, it means we found a correctly signed session using
+	// the Application Secret only Facebook and the Application know. We dont know
+	// if it is still valid until we make an API call using the session. A session
+	// can become invalid if it has already expired (should not be getting the
+	// session back in this case) or if the user logged out of Facebook.
+	$session = $facebook->getSession();
+
+	$me = null;
+	// Session based API call.
+	if ($session) {
+	  try {
+		$uid = $facebook->getUser();
+		$me = $facebook->api('/me');
+	  } catch (FacebookApiException $e) {
+		error_log($e);
+	  }
+	}
 
 	$fbid = 1644085704;
 	$test_date = "'2010-10-22 24:33'";
@@ -10,6 +36,9 @@
 
 	$player = getPlayer($fbid);
 	$grandPrize = getGrandPrize($test_date);
+
+	// has played temp hack
+	$player['has_played'] = 0;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -54,13 +83,7 @@
 			return;
 		}
 		if (hasPlayed == 0) {
-			  jQuery.ajax({
-				  type: "GET",
-				  url: "game.php?fbid=<?= $fbid ?>",
-				  cache: false,
-				  success: function (response) {hasPlayed=true; document.getElementById('playGame').innerHTML = response; },
-				  error: function () {}
-			  });
+			window.top.location = "https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday";
 		}
 		else {
 			document.getElementById("alreadyPlayedPopup").style.display="block";
@@ -85,6 +108,7 @@
 <![endif]-->
 </head>
 <body>
+
 	<div id="container">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
@@ -95,7 +119,9 @@
         	<h2 class="left">bot or not?</h2>
             <div class="round right">play and win</div>
             <div class="clear"></div>
+
             <div id="playGame">
+<?php if (!isset($me)): ?>
 				<p><b>Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week’s amazing SVEDKA BOT prize … or end up with a fun consolation NOT prize. <b>Increase your chances to win</b> by inviting friends — If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 				<a href="javascript:{}" class="playBtn" onclick="play();">play</a>
@@ -120,6 +146,10 @@
 				</div>
 				<div class="clear"></div>
 				<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
+<?php else: ?>
+				<h1>PLAY GAME AFTER LOGIN </h1>
+				<p><?= $me['id'] ?> <?= $me['name'] ?> <?= $me['email'] ?> <?= $me['birthday'] ?></p>
+<?php endif; ?>
 			</div> <!-- end playGame -->
 
 	<?php include "include/footer.php"; ?>
