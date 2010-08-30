@@ -48,8 +48,25 @@
 	}
 
 
+	function insertPlayer($fbid, $name, $email, $friendId) {
+		$sql = "insert into players(facebook_id, username, email, friend_id) values(" . $fbid . ", '" . $name . "', ";
+		if (isset($email)) {
+			$sql .= "'" . $email . "', ";
+		} else {
+			$sql .= "null, ";
+		}
+		if (isset($friendId)) {
+			$sql .=  $friendId . ")";
+		} else {
+			$sql .= "null)";
+		}
+		$id = executeInsert($sql);
+		return getPlayerFromId($id);
+	}
+
 	function getPlayer($fbid) {
 		$player = executeQueryObject("select id, username, friend_id, facebook_id, liked, date_format(last_played, '%Y-%m-%d') as last_played, date_format(now(), '%Y-%m-%d') as now_date from players where facebook_id=" . $fbid);
+		if (!isset($player['id'])) return null;
 		if (!isset($player['last_played']) || $player['last_played'] != $player['now_date']) {
 			$player['has_played'] = 0;
 		} else {
@@ -91,11 +108,6 @@
 	function playGame($fbid) {
 		$sql = "update players set last_played=now() where facebook_id=" . $fbid;
 		executeUpdate($sql);
-	}
-
-	function insertPlayer($fbid, $friendId, $username) {
-		$sql = "insert into players(facebook_id, friend_id, username) values($fbid, $friendId, '$username')";
-		return executeInsert($sql);
 	}
 
 	function winPrize($prizeScheduleId, $playerId) {

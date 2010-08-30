@@ -65,7 +65,7 @@ drop table if exists players;
 create table players (
   id int unsigned not null auto_increment primary key,
   modified timestamp,
-  facebook_id int unsigned not null,
+  facebook_id bigint unsigned not null,
   username varchar(255) null,
   email varchar(255) null,
   friend_id int unsigned null,
