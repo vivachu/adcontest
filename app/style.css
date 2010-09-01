@@ -104,6 +104,63 @@ label { font:normal 12px Trebuchet MS; }
 #btm { background:url(images/footer-bg.png) repeat-y; height:12px; margin:10px 0 0 0; }
 
 
+/* Added by Pupung Budi Purnama to complete itsnotbot.html and itsbot.html */
+#mainContent a.youLose {
+background: url("images/itsnotbot-youlose.png") no-repeat scroll 0 0 transparent;
+display: block;
+height: 74px;
+margin-left: 90px;
+margin-top: 100px;
+position: absolute;
+text-indent: -7777px;
+width: 401px;
+z-index: 10;
+}
+#mainContent a.redeem-insole {
+background: url("images/redeem-gelinsoles.png") no-repeat scroll 0 0 transparent;
+display: block;
+height: 28px;
+margin: 90px auto 0;
+position: relative;
+text-indent: -9999px;
+width: 264px;
+z-index: 20;
+}
+#mainContent p.title a {
+color: #FCCD06;
+font: bold 16px Helvetica;
+margin-bottom: 35px;
+position: relative;
+text-decoration: none;
+text-transform: uppercase;
+z-index: 20;
+}
+#mainContent a.youWin {
+background: url("images/itsbot-youwin.png") no-repeat scroll 0 0 transparent;
+display: block;
+height: 74px;
+margin-left: 50px;
+margin-top: 100px;
+position: absolute;
+text-indent: -7777px;
+width: 401px;
+z-index: 10;
+}
+#mainContent a.redeem {
+background: url("images/redeem.png") no-repeat scroll 0 0 transparent;
+display: block;
+height: 28px;
+margin: 165px auto 0;
+text-indent: -9999px;
+width: 285px;
+}
+#mainContent .content-rule p {
+	font-size: 11px;
+	line-height: 14px;
+}
+
+/* Added by Pupung Budi Purnama to complete itsnotbot.html and itsbot.html */
+
 #redeemContainer {
 	width: 100%;
 	position: absolute;
