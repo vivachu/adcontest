@@ -32,7 +32,7 @@
 	}
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=1.1" />
 
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
@@ -52,7 +52,7 @@
 
             <div id="playGame">
 	<!-- Static HTML landing page -->
-				<p><b>Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week’s amazing SVEDKA BOT prize … or end up with a fun consolation NOT prize. <b>Increase your chances to win</b> by inviting friends — If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
+				<p><b>Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b>Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 				<a href="#" class="playBtn" onclick="play();">play</a>
 				<div class="bot" style="top:240px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
