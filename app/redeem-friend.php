@@ -31,7 +31,12 @@
 
 <script>
 	function share() {
-		alert("share");
+		 var share = {
+		   method: 'stream.share',
+		   u: '<?= $app_url ?>'
+		 };
+
+		 FB.ui(share, function(response) { console.log(response); });
 	}
 	function submitForm() {
 		if (document.getElementById('fname').value.length < 1) {
@@ -96,7 +101,25 @@
 </script>
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({appId: '<?= $facebook_app_id ?>', status: true, cookie: true,
+				 xfbml: true});
+	  };
+	  (function() {
+		var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol +
+		  '//connect.facebook.net/en_US/all.js';
+		document.getElementById('fb-root').appendChild(e);
+	  }());
+	</script>
+
 	<div id="container">
+    	<div id="top">
+        	<p class="left">Like us? Click the button above.</p>
+            <p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
+        </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
         	<h2 class="congrats left">bot or not?</h2>

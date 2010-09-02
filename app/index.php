@@ -3,13 +3,19 @@
 	require_once 'include/sql.php';
 	require_once 'include/facebook.php';
 
-	// Create our Application instance.
-	$facebook = new Facebook(array(
-  	'appId'  => $facebook_app_id,
-  	'secret' => $facebook_secret_key,
-  	'cookie' => true,
-	));
 
+	$test_date = "'2010-10-22 24:33'";
+//	$test_date = "'now()'";
+	$grandPrize = getGrandPrize($test_date);
+//echo $grandPrize['name'];
+//exit;
+
+	// Create our Application instance (replace this with your appId and secret).
+	$facebook = new Facebook(array(
+	  'appId'  => $facebook_app_id,
+	  'secret' => $facebook_secret_key,
+	  'cookie' => true,
+	));
 
 	// We may or may not have this data based on a $_GET or $_COOKIE based session.
 	//
@@ -24,32 +30,58 @@
 	// Session based API call.
 	if ($session) {
 	  try {
-		$uid = $facebook->getUser();
 		$me = $facebook->api('/me');
+		// get the Facebook user
+		$fbid = $me['id'];
+		$bd = explode("/", $me['birthday']);
+		$dob1 = $me['birthday']; //$dob1='mm/dd/yyyy' format
+		list($m, $d, $y) = explode('/', $dob1);
+		$mk = mktime(0, 0, 0, $m, $d, $y);
+		$now = time();
+		$diff = $now - $mk;
+		$age = floor($diff/60/60/24/365);
+
+		$likes = $facebook->api('/me/likes');
+		$likes = $likes['data'];
+
+		$player = getPlayer($fbid);
+		// check to see if player exists
+		if (!isset($player)) {
+			$friendId = $_REQUEST['friendId'];
+			$player = insertPlayer($fbid, $me['name'], $me['email'], $friendId);
+		}
+
+		$player['has_played'] = 0; // temporarily set to false
+		$player['liked'] = 0;
+
+		foreach ($likes as $l) {
+			if ($l['id'] == $like_app_id) {  // like the page
+				$player['liked'] = 1;
+			}
+		}
+
+
+
+		// play the game
+		playGame($fbid);
+		$prize = getWinningPrize($test_date);
+		if (!isset($prize) || $prize['name'] == null) {
+			$prize = getRandomNotPrize();
+		} else {
+			$prizeSchedule = winPrize($prize['prize_schedule_id'], $player['id']);
+		}
+		if ($prize['place'] == 1) {
+			$win = "true";
+		} else {
+			$win = "false";
+		}
+		$thumb = "prizes/Prize_" . $prize['image'] . "_Icon_2.png";
+		$bigImage = "prizes/Prize_" . $prize['image'] . "_Icon_1.png";
 	  } catch (FacebookApiException $e) {
 		error_log($e);
 	  }
 	}
 
-	// login or logout url will be needed depending on current user state.
-	if ($me) {
-	  $logoutUrl = $facebook->getLogoutUrl();
-	} else {
-	  $loginUrl = $facebook->getLoginUrl();
-	}
-
-	// This call will always work since we are fetching public data.
-	$naitik = $facebook->api('/naitik');
-
-
-
-
-	$fbid = 1644085704;
-	$test_date = "'2010-10-22 24:33'";
-
-
-	$player = getPlayer($fbid);
-	$grandPrize = getGrandPrize($test_date);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -58,11 +90,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bot or Not!</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.0" />
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 
+<? if ($player): ?>
 	var liked = <?= $player['liked'] ?>;
 	var hasPlayed = <?= $player['has_played'] ?>;
+<? else: ?>
+	var liked = 1;
+	var hasPlayed = 0;
+<? endif; ?>
+
 
 	function onDoorSelected() {
 		document.getElementById("redeemContainer").style.display="block";
@@ -73,7 +112,12 @@
 	}
 
 	function share() {
-		alert("Share");
+		 var share = {
+		   method: 'stream.share',
+		   u: '<?= $app_url ?>'
+		 };
+
+		 FB.ui(share, function(response) { console.log(response); });
 	}
 
 	function like() {
@@ -94,13 +138,7 @@
 			return;
 		}
 		if (hasPlayed == 0) {
-			  jQuery.ajax({
-				  type: "GET",
-				  url: "game.php?fbid=<?= $fbid ?>",
-				  cache: false,
-				  success: function (response) {hasPlayed=true; document.getElementById('playGame').innerHTML = response; },
-				  error: function () {}
-			  });
+			window.top.location = "https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday,user_likes";
 		}
 		else {
 			document.getElementById("alreadyPlayedPopup").style.display="block";
@@ -125,83 +163,67 @@
 <![endif]-->
 </head>
 <body>
-    <!--
-      We use the JS SDK to provide a richer user experience. For more info,
-      look here: http://github.com/facebook/connect-js
-    -->
-    <div id="fb-root"></div>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId   : '<?php echo $facebook->getAppId(); ?>',
-          session : <?php echo json_encode($session); ?>, // don't refetch the session when PHP already has it
-          status  : true, // check login status
-          cookie  : true, // enable cookies to allow the server to access the session
-          xfbml   : true // parse XFBML
-        });
-
-        // whenever the user logs in, we refresh the page
-        FB.Event.subscribe('auth.login', function() {
-          window.location.reload();
-        });
-      };
-
-      (function() {
-        var e = document.createElement('script');
-        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-        e.async = true;
-        document.getElementById('fb-root').appendChild(e);
-      }());
-    </script>
-<div id="fbExample">
-    <?php if ($me): ?>
-    <a href="<?php echo $logoutUrl; ?>">
-      <img src="http://static.ak.fbcdn.net/rsrc.php/z2Y31/hash/cxrz4k7j.gif">
-    </a>
-    <?php else: ?>
-    <div>
-      Using JavaScript &amp; XFBML: <fb:login-button></fb:login-button>
-    </div>
-    <div>
-      Without using JavaScript &amp; XFBML:
-      <a href="<?php echo $loginUrl; ?>">
-        <img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif">
-      </a>
-    </div>
-    <?php endif ?>
-
-    <h3>Session</h3>
-    <?php if ($me): ?>
-    <pre><?php print_r($session); ?></pre>
-
-    <h3>You</h3>
-    <img src="https://graph.facebook.com/<?php echo $uid; ?>/picture">
-    <?php echo $me['name']; ?>
-
-    <h3>Your User Object</h3>
-    <pre><?php print_r($me); ?></pre>
-    <?php else: ?>
-    <strong><em>You are not Connected.</em></strong>
-    <?php endif ?>
-
-    <h3>Naitik</h3>
-    <img src="https://graph.facebook.com/naitik/picture">
-    <?php echo $naitik['name']; ?>
-</div>
-
-
-
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({appId: '<?= $facebook_app_id ?>', status: true, cookie: true,
+				 xfbml: true});
+	  };
+	  (function() {
+		var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol +
+		  '//connect.facebook.net/en_US/all.js';
+		document.getElementById('fb-root').appendChild(e);
+	  }());
+	</script>
 	<div id="container">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a href="javascript:{}" onclick="like();">Like</a><a href="javascript:{}" onclick="share();">Share</a></p>
+            <p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
         	<h2 class="left">bot or not?</h2>
             <div class="round right">play and win</div>
             <div class="clear"></div>
+
             <div id="playGame">
+<?php if (isset($me) && !isset($_REQUEST['test'])): ?>
+	<!-- load the game if logged in -->
+				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck!</p>
+				<div id="gameSwf" style="margin-top:30px;">
+					<object width="480" height="350" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Game" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+						<param value="DoorAnim.swf" name="movie">
+						<param value="high" name="quality">
+						<param value="transparent" name="wmode">
+						<param value="all" name="allowNetworking">
+						<param value="always" name="allowScriptAccess">
+						<param value="prizeName=<?= $prize['name'] ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" name="flashvars">
+						<embed width="480" align="middle" height="350" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" allowscriptaccess="always" allownetworking="all"
+						flashvars="prizeName=<?= $prize['name'] ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" quality="high" loop="false" play="true" name="Game" id="Game" wmode="transparent"
+						src="DoorAnim.swf">
+					</object>
+				</div>
+				<div id="inviteFriends" style="margin-top:30px;"><a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a></p>
+
+				<div id="redeemContainer" style="display:none;">
+	<?php if (isset($prizeSchedule)): ?>
+					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>" class="pinkBlock">CLICK TO REDEEM</a></p>
+	<?php elseif (isset($prize['link'])): ?>
+					<div id="clickToRedeem"><a href="<?= $prize['link'] ?>" class="pinkBlock">CLICK TO VIEW</a></p>
+	<?php endif; ?>
+				</div>
+<?php elseif (isset($_REQUEST['test'])): ?>
+	<!-- test the output -->
+				<p><?= $me['id'] ?> <?= $me['name'] ?> <?= $me['email'] ?> <?= $me['birthday'] ?> <?= $age ?></p>
+				<p>
+				<?= $player['liked']; ?>
+				</p>
+				<p>
+				<?= print_r($likes); ?>
+				</p>
+<?php else: ?>
+	<!-- Static HTML landing page -->
 				<p><b>Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week’s amazing SVEDKA BOT prize … or end up with a fun consolation NOT prize. <b>Increase your chances to win</b> by inviting friends — If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 				<a href="javascript:{}" class="playBtn" onclick="play();">play</a>
@@ -226,6 +248,7 @@
 				</div>
 				<div class="clear"></div>
 				<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
+<?php endif; ?>
 			</div> <!-- end playGame -->
 
 	<?php include "include/footer.php"; ?>
@@ -233,5 +256,17 @@
             <div id="btm"></div>
         </div>
     </div>
+
+<!-- Facebook Canvas resize script -->
+<div id="FB_HiddenIFrameContainer" style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;"></div>
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+<script type="text/javascript">
+    FB_RequireFeatures(["CanvasUtil"], function()
+    {
+      FB.XdComm.Server.init("/xd_receiver.htm");
+      FB.CanvasClient.setCanvasHeight("1200px");
+    });
+
+</script>
 </body>
 </html>

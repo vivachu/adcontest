@@ -19,8 +19,6 @@ $app_url = "http://dev.adcontests.com";
 // production
 //$app_url = "http://www.adcontests.com/svedka/app";
 
-
-
 $smtp_host = "smtpout.secureserver.net";
 $smtp_port = "80";
 $smtp_username = "sendmail1@handipoints.com";

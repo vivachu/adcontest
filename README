@@ -8,10 +8,25 @@ Pupung
 
 Viva
 - Change hardcoded test date to now() for getting prize in game.php.
+- Change hardcoded has played
 - HTML emails
 - Age screening before people play.
 - State screening to prohibit CA and TN residents and foreigners from playing.
+- Friend Invite dialog
+- Friend dialog image on redeem.php
+- Friend invite click through link
+- Canvas is not resizing height on initial load
+- Checkout random prizes that are not
 
+|  3 | S_G Standees                                        | 2010-08-30 06:02:13 |
+|  4 | SVEDKA Shakers                                      | 2010-08-30 06:02:13 |
+|  5 | SVEDKA Bar Set                                      | 2010-08-30 06:02:13 |
+|  6 | Yanni at the Acropolis DVD                          | 2010-08-30 06:02:13 |
+|  2 | Bot or Not Tees                                     | 2010-08-30 09:02:01 |
+|  7 | Mmmmmm Gyros Greek deli poster                      | 2010-08-30 10:15:00 |
+|  2 | Bot or Not Tees                                     | 2010-08-30 10:15:00 |
+|  8 | Water Walking Ball                                  | 2010-08-30 10:15:00 |
+|  1 | Panasonic Lumix DMC-LX5K                            | 2010-08-30 12:18:04 |
 
 Amazon Server
 -------------
@@ -40,4 +55,7 @@ cd /usr/share/php/bin
 pear install Mail-1.2.0
 pear install Mail_Mime-1.8.0
 pear install Net_SMTP-1.4.2
+
+libcurl with ssl
+sudo port -f upgrade --enforce-variants curl +ssl
 
