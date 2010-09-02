@@ -28,7 +28,7 @@ p{ padding:0px; line-height:22px;}
 /* =================================
 			CONTAINER
 ==================================== */
-#container2 { background:#000 url(<?= $web_url ?>/images/bg.jpg) repeat-y; margin:0 auto; padding-bottom:45px; position:relative; width:520px; }
+#container2 { background:#000 url(<?= $web_url ?>/images/bg.jpg) repeat-y; margin:0 auto; padding-bottom:45px; position:relative; width:520px; color:#fff; font:13px/18px Tahoma;}
 h1 a { background:url(<?= $web_url ?>/images/logo.png) no-repeat; display:block; height:36px; margin-left:10px; text-indent:-9999px; width:211px; } /* Background image changed */
 #container2 .round { background:url(<?= $web_url ?>/images/play-n-win2.png) no-repeat; display:block; height:63px; margin:25px 20px 0 0; text-indent:-9999px; width:63px;} /* Added */
 /* =================================
