@@ -75,8 +75,8 @@
 		} else {
 			$win = "false";
 		}
-		$thumb = "prizes/Prize_" . $prize['image'] . "_Icon_2.png";
-		$bigImage = "prizes/Prize_" . $prize['image'] . "_Icon_1.png";
+		$thumb = "prizes/DoorPrizes/" . $prize['image'] . "_Door.png";
+		$bigImage = "prizes/BigPrizes" . $prize['image'] . "_Big.png";
 	  } catch (FacebookApiException $e) {
 		error_log($e);
 	  }

@@ -52,12 +52,13 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 #container2 #mainContent p {font: 13px/21px tahoma; margin:23px auto 0 20px; width:460px;}
 #mainContent p.text { font:normal 11px/18px Tahoma; margin:23px auto 0 35px; width:403px; }
 #mainContent p.text a { color:#07a6da; display:block; }
+#mainContent p.text a.inline { color:#ffc821; display:inline; } /*added*/
 #mainContent p.title { color:#fccd06; font:bold 16px Helvetica; margin-bottom:35px; text-transform:uppercase; }
 #mainContent p.title span { color:#fff; font:bold 16px Helvetica; text-transform:none; }
 #mainContent img { display:block; margin:0 auto; }
 #mainContent .left img { margin:35px 20px 0 28px; }
-#mainContent .left img.small { height:137px; margin:5px 20px 0 28px; width:130px; }
-.bot { margin:0; position:absolute; top:138px; right:0; } /* Margin and top changed */
+#mainContent .left img.small { margin:5px 20px 0 28px; }
+.bot { margin:0; position:absolute; top:300px; right:0; } /* Margin and top changed */
 #mainContent a.playBtn { background:url(images/play-btn.png) no-repeat; bottom:505px; height:100px; position:absolute; right:206px; text-indent:-9999px; width:230px; } /* bottom and right changed */
 #container2 #mainContent a.playBtn {background:url(images/play-btn2.png) no-repeat; bottom:550px; height:100px; position:absolute; right:100px; text-indent:-9999px; width:230px; top: 340px} /* Added */
 #mainContent a.invite { background:url(images/invite-friends.png) no-repeat; display:block; height:28px; margin:10px auto 0; text-indent:-9999px; width:254px; }
@@ -85,17 +86,17 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 /* =================================
 				FORM
 ==================================== */
-#form { margin:0 0 0 30px; padding:20px 0 0 0; width:470px }
+#form { margin:0 0 0 30px; padding:20px 0 0 0; width:470px; height: 389px } /* Height added */
 label { font:normal 12px Trebuchet MS; }
 #form input, select { background:#000; border:1px solid #fff; color:#fff; display:block; font:normal 12px Tahoma; margin:0 10px 0 0; padding:5px 0 5px 3px; }
-#form .name { width:165px; }
-#form .street { width:250px; }
-#form .apt { width:80px; }
-#form .city { width:200px; }
-#form .zip { width:70px; }
+#form .name { width:220px; }
+#form .street { width:330px; }
+#form .apt { width:110px; }
+#form .city { width:280px; }
+#form .zip { width:104px; }
 #form div { float:left; margin:0 0 15px 0; }
 #submit { clear:both; }
-#submit input { background:#e30065; border:none; font:bold 16px Helvetica; margin:10px 0 0 0; padding:3px 7px; text-transform:uppercase; }
+#submit input { background:#e30065; border:none; font:bold 20px Helvetica; margin:10px 0 0 0; padding:7px 7px 4px 7px; text-transform:uppercase; cursor: pointer; }
 /* =================================
 				FOOTER
 ==================================== */
@@ -167,7 +168,7 @@ z-index: 30;
 /* =================================
 Viva Additions
 ==================================== */
-h2.congrats_not { background:url(images/youstillwon-title.png) no-repeat; display:block; height:61px; width:644px; }
+h2.congrats_not { background:url(images/youstillwon-title.png) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
 
 #redeemContainer {
 	width: 100%;
