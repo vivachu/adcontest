@@ -48,8 +48,25 @@
 	}
 
 
+	function insertPlayer($fbid, $name, $email, $friendId) {
+		$sql = "insert into players(facebook_id, username, email, friend_id) values(" . $fbid . ", '" . $name . "', ";
+		if (isset($email)) {
+			$sql .= "'" . $email . "', ";
+		} else {
+			$sql .= "null, ";
+		}
+		if (isset($friendId)) {
+			$sql .=  $friendId . ")";
+		} else {
+			$sql .= "null)";
+		}
+		$id = executeInsert($sql);
+		return getPlayerFromId($id);
+	}
+
 	function getPlayer($fbid) {
 		$player = executeQueryObject("select id, username, friend_id, facebook_id, liked, date_format(last_played, '%Y-%m-%d') as last_played, date_format(now(), '%Y-%m-%d') as now_date from players where facebook_id=" . $fbid);
+		if (!isset($player['id'])) return null;
 		if (!isset($player['last_played']) || $player['last_played'] != $player['now_date']) {
 			$player['has_played'] = 0;
 		} else {
@@ -93,11 +110,6 @@
 		executeUpdate($sql);
 	}
 
-	function insertPlayer($fbid, $friendId, $username) {
-		$sql = "insert into players(facebook_id, friend_id, username) values($fbid, $friendId, '$username')";
-		return executeInsert($sql);
-	}
-
 	function winPrize($prizeScheduleId, $playerId) {
 		$sql = "update prize_schedule set winner_id=$playerId, redemption_code=sha1(now()*rand()) where id=$prizeScheduleId";
 		executeUpdate($sql);
@@ -105,9 +117,15 @@
 	}
 
 	function getPrizeScheduleFromCode($code) {
-		$sql = "select ps.*, p.name as prize_name, p.place as place, pl.username as username, pl.facebook_id as facebook_id, pl.email as email, pl.friend_id from prize_schedule ps, prizes p, players pl where redemption_code='$code' and ps.prize_id=p.id and ps.winner_id=pl.id";
+		$sql = "select ps.*, p.name as prize_name, p.place as place, p.image as prize_image, pl.username as username, pl.facebook_id as facebook_id, pl.email as email, pl.friend_id from prize_schedule ps, prizes p, players pl where redemption_code='$code' and ps.prize_id=p.id and ps.winner_id=pl.id";
 		$ps = executeQueryObject($sql);
 		return $ps;
+	}
+
+	function getReferralWinnerFromCode($code) {
+		$sql = "select rw.*, p.name as prize_name, p.place as place, p.image as prize_image, pl.username as username, pl.facebook_id as facebook_id, pl.email as email from referral_winners rw, prize_schedule ps, prizes p, players pl where rw.redemption_code='$code' and rw.prize_schedule_id = ps.id and ps.prize_id=p.id and rw.friend_id=pl.id";
+		$rw = executeQueryObject($sql);
+		return $rw;
 	}
 
 	function redeemPrize($prizeScheduleId, $firstName, $lastName, $address, $city, $state, $zip, $email) {
@@ -116,11 +134,13 @@
 	}
 
 	function insertReferralWinner($prizeScheduleId, $friendId) {
-		$sql = "insert into referral_winners(prize_schedule_id, friend_id, status) values($prizeScheduleId, $friendId, 0)";
+		$sql = "insert into referral_winners(prize_schedule_id, friend_id, status, redemption_code) values($prizeScheduleId, $friendId, 0, sha1(now()*rand()))";
+		$id = executeInsert($sql);
+		return executeQueryObject("select * from referral_winners where id=" . $id);
 	}
 
 	function redeemReferralPrize($referralPrizeId, $firstName, $lastName, $address, $city, $state, $zip, $email) {
-		$sql = "update referral_winners set first_name='$firstName', last_name='$lastName', address='$address', city='$city', state='$state', email_address='$email' where id=$referralPrizeId";
+		$sql = "update referral_winners set status=1, first_name='$firstName', last_name='$lastName', address='$address', city='$city', state='$state', email_address='$email' where id=$referralPrizeId";
 		executeUpdate($sql);
 	}
 ?>

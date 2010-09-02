@@ -47,6 +47,7 @@ h1 a { background:url(images/logo.png) no-repeat; display:block; height:35px; ma
 h2 { background:url(images/bot-or-not.jpg) no-repeat; display:block; height:54px; margin:30px 0 0 5px; text-indent:-9999px; width:370px; }
 h2.tagInner { background:url(images/facebook-friendship.jpg) no-repeat; display:block; height:51px; margin:30px 0 0 5px; width:457px; }
 h2.congrats { background:url(images/congrat.jpg) no-repeat; display:block; height:51px; width:457px; }
+h2.congrats_not { background:url(images/title-botterthan.png) no-repeat; display:block; height:51px; width:457px; }
 h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:block; height:40px; width:457px; }
 .badges { background:url(images/badge.jpg) no-repeat; display:block; height:96px; margin:25px 32px 0 0; text-indent:-9999px; width:96px; }
 .round { background:url(images/play-n-win.png) no-repeat; display:block; height:63px; margin:25px 20px 0 0; text-indent:-9999px; width:63px; }
@@ -58,7 +59,7 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 #mainContent img { display:block; margin:0 auto; }
 #mainContent .left img { margin:60px 20px 0 28px; }
 #mainContent .left img.small { height:137px; margin:5px 20px 0 28px; width:130px; }
-.bot { margin:60px 0 0 0; position:absolute; top:180px; right:0; }
+.bot { margin:60px 0 0 0; position:absolute; top:180px; right:0; height: 470px;}
 #mainContent a.playBtn { background:url(images/play-btn.png) no-repeat; bottom:550px; height:100px; position:absolute; right:100px; text-indent:-9999px; width:230px; }
 #mainContent a.invite { background:url(images/invite-friends.png) no-repeat; display:block; height:28px; margin:60px auto 0 auto; text-indent:-9999px; width:254px; }
 .titleBar { background:url(images/this-week-bot-prize.png) no-repeat; height:37px; text-indent:-9999px; width:383px; }
@@ -99,5 +100,89 @@ label { font:normal 12px Trebuchet MS; }
 /* =================================
 				FOOTER
 ==================================== */
-#footer p { font:normal 10px Helvetica; margin:50px auto 0 auto; text-align:center; }
+#footer { font:normal 10px Helvetica; margin:50px auto 0 auto; text-align:center; }
 #btm { background:url(images/footer-bg.png) repeat-y; height:12px; margin:10px 0 0 0; }
+
+
+/* Added by Pupung Budi Purnama to complete itsnotbot.html and itsbot.html */
+#mainContent a.youLose {
+background: url("images/itsnotbot-youlose.png") no-repeat scroll 0 0 transparent;
+display: block;
+height: 74px;
+margin-left: 90px;
+margin-top: 100px;
+position: absolute;
+text-indent: -7777px;
+width: 401px;
+z-index: 10;
+}
+#mainContent a.redeem-insole {
+background: url("images/redeem-gelinsoles.png") no-repeat scroll 0 0 transparent;
+display: block;
+height: 28px;
+margin: 90px auto 0;
+position: relative;
+text-indent: -9999px;
+width: 264px;
+z-index: 20;
+}
+#mainContent p.title a {
+color: #FCCD06;
+font: bold 16px Helvetica;
+margin-bottom: 35px;
+position: relative;
+text-decoration: none;
+text-transform: uppercase;
+z-index: 20;
+}
+#mainContent a.youWin {
+background: url("images/itsbot-youwin.png") no-repeat scroll 0 0 transparent;
+display: block;
+height: 74px;
+margin-left: 50px;
+margin-top: 100px;
+position: absolute;
+text-indent: -7777px;
+width: 401px;
+z-index: 10;
+}
+#mainContent a.redeem {
+background: url("images/redeem.png") no-repeat scroll 0 0 transparent;
+display: block;
+height: 28px;
+margin: 165px auto 0;
+text-indent: -9999px;
+width: 285px;
+}
+#mainContent .content-rule p {
+	font-size: 11px;
+	line-height: 14px;
+}
+
+/* Added by Pupung Budi Purnama to complete itsnotbot.html and itsbot.html */
+
+#redeemContainer {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	text-align: center;
+}
+#clickToRedeem {
+	background-color: #ec0878;
+	width: 160px;
+	height: 30px;
+	line-height: 30px;
+	padding: 1px;
+	margin: 0 auto;
+	position: relative;
+	top: 400px;
+}
+
+#clickToRedeem a {
+ font-size: 16px;
+ font-weight: bold;
+ color: #ffffff;
+ text-decoration: none;
+}

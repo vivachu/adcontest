@@ -2,7 +2,7 @@ DROP PROCEDURE if exists schedule_prize;
 
 DELIMITER |
 
-CREATE PROCEDURE schedule_prize(contestId int unsigned, prizePlace int unsigned, prizeName varchar(255), prizeValue decimal(10,2), numWinners int signed, description varchar(255))
+CREATE PROCEDURE schedule_prize(contestId int unsigned, prizePlace int unsigned, prizeName varchar(255), prizeValue decimal(10,2), numWinners int signed, description varchar(255), prizeImage varchar(255))
     BEGIN
     	DECLARE prizeId int unsigned;
     	DECLARE startDate datetime;
@@ -14,7 +14,7 @@ CREATE PROCEDURE schedule_prize(contestId int unsigned, prizePlace int unsigned,
 		select id into prizeId from prizes where name=prizeName;
 
     	IF isnull(prizeId) THEN
-			insert into prizes(place, name, value, num_winners, description) values(prizePlace, prizeName, prizeValue, numWinners, description);
+			insert into prizes(place, name, value, num_winners, description, image) values(prizePlace, prizeName, prizeValue, numWinners, description, prizeImage);
 			select id into prizeId from prizes where name=prizeName;
     	END IF;
 		insert into prize_schedule(prize_id, contest_id, win_date) values (prizeId, contestId, winDate);
