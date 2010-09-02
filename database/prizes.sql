@@ -53,7 +53,7 @@ call schedule_prize(7, 3, 'S_G Standees', 14, 2, 'Lorem ipsum placeholder descri
 call schedule_prize(7, 4, 'SVEDKA Shakers', 10, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
 call schedule_prize(7, 5, 'SVEDKA Bar Set', 26, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
 call schedule_prize(7, 6, 'Zebra patterned mouse pad', 25, 3, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
-call schedule_prize(7, 7, 'Mmmmmm Gyros Greek deli poster', 4, 25, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
+call schedule_prize(7, 7, 'Mmmmmm Gyros Greek deli poster', 4, 25, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gyro');
 
 call schedule_prize(8, 1, 'OLED TV Samsung 55"', 3300, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
 call schedule_prize(8, 2, 'Bot or Not Tees', 10, 5, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
