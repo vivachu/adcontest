@@ -12,7 +12,7 @@
 
 <script><!--
 	function inviteFriends() {
-		alert("Invite friends");
+		new Dialog().showMessage('Dialog', 'Hello World.');
 	}
 
 	function share() {
@@ -25,11 +25,10 @@
 	}
 
 	function like() {
-		alert("like");
+		new Dialog().showMessage('Dialog', 'Hello World.');
 	}
-	function play() {
-		window.top.location = "https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday,user_likes";
-	}
+	document.getElementById('shareLink').addEventListener('click', share);
+	document.getElementById('inviteFriendsLink').addEventListener('click', inviteFriends);
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=1.1" />
@@ -42,7 +41,7 @@
 	<div id="container2">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a href="#" onclick="share();">Share</a></p>
+            <p class="right"><a id="shareLink" href="#" onclick="new Dialog().showMessage ('Dialog', 'Hello World.'); return false;">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
@@ -52,9 +51,9 @@
 
             <div id="playGame">
 	<!-- Static HTML landing page -->
-				<p><b>Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b>Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
+				<p>Everyone is a winner! Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b>Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
-				<a href="#" class="playBtn" onclick="play();">play</a>
+				<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday,user_likes" class="playBtn">play</a>
 				<div class="bot" style="top:240px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
 				<img src="<?= $web_url ?>/images/door2.png" alt="" />
 				<div id="likePopup" class="popup" style="display:none;">
@@ -75,7 +74,7 @@
 				<p><?= $grandPrize['description'] ?></p>
 				</div>
 				<div class="clear"></div>
-				<a href="#" onclick="inviteFriends();" class="invite" >invite friends to play</a>
+				<a id="inviteFriendsLink" href="#" onclick="return false" class="invite" >invite friends to play</a>
 			</div> <!-- end playGame -->
 
 	<?php include "include/footer.php"; ?>
