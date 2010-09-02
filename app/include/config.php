@@ -1,5 +1,11 @@
 <?php
-$web_url = "http://www.adcontests.com/svedka/app";
+$web_url = "http://dev.adcontests.com";
+
+// dev
+$app_url = "http://apps.facebook.com/bot-or-not-dev";
+// production
+//$app_url = "http://apps.facebook.com/bot-or-not";
+
 
 // dev
 $facebook_app_id = '103646963029008';
@@ -12,12 +18,6 @@ $like_app_id = '153004184716221';  // App Contest Page
 //$facebook_api_key = '89908958ac1940173e8888ebd3dc16f1';
 //$facebook_secret_key = 'c9ba1c23c11f8b28c33bb69d0b3fd641';
 //$like_app_id = "60649471874";  // Svedka Page
-
-// dev
-$app_url = "http://dev.adcontests.com";
-
-// production
-//$app_url = "http://www.adcontests.com/svedka/app";
 
 $smtp_host = "smtpout.secureserver.net";
 $smtp_port = "80";
