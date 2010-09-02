@@ -1,6 +1,8 @@
 <?php
 // $facebook_xd_url = '';
 
+$web_url = "http://www.adcontests.com/svedka/app";
+
 // dev
 //$app_url = "http://apps.facebook.com/bot-or-not-dev";
 // production
