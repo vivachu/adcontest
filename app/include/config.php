@@ -1,6 +1,4 @@
 <?php
-// $facebook_xd_url = '';
-
 $web_url = "http://www.adcontests.com/svedka/app";
 
 // dev
