@@ -1,8 +1,9 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Bot or Not!</title>
+<title>Official "BOT or NOT?" Contest Rules</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
 <link rel="stylesheet" type="text/css" href="style.css" />
 <!--[if lt IE 8]>
@@ -12,27 +13,10 @@
   DD_belatedPNG.fix('h1 a, .left img, .bot img, a.playBtn, .round, a.invite');
 </script>
 <![endif]-->
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-
 </head>
 <body>
-	<div id="fb-root"></div>
-	<script>
-	  window.fbAsyncInit = function() {
-		FB.init({appId: '<?= $facebook_app_id ?>', status: true, cookie: true,
-				 xfbml: true});
-	  };
-	  (function() {
-		var e = document.createElement('script'); e.async = true;
-		e.src = document.location.protocol +
-		  '//connect.facebook.net/en_US/all.js';
-		document.getElementById('fb-root').appendChild(e);
-	  }());
-	</script>
 	<div id="container">
     	<div id="top">
-        	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a href="#">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
@@ -64,11 +48,6 @@
 			</div> <!-- .content-rule -->
         </div>
     </div>
-<script type="text/javascript">
-window.fbAsyncInit = function() {
-  FB.Canvas.setSize({ height: 985 });
-}
-</script>
 
 </body>
 </html>
