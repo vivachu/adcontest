@@ -125,7 +125,7 @@
         	<h2 class="congrats left">bot or not?</h2>
             <div class="clear"></div>
             <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" /></div>
-            <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">Isn't it good to know that Facebook friends aren't just good for poking, watering your crops, or tagging terrible photos of you? Fill out the info below and if you are eligible and satisfy the <a href="rules.php" class="inline">Official Rules</a>, we'll send your BOT prize out via snail-mail.</p>
+            <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">Isn't it good to know that Facebook friends aren't just good for poking, watering your crops, or tagging terrible photos of you? Fill out the info below and if you are eligible and satisfy the <a onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" href="#" class="inline">Official Rules</a>, we'll send your BOT prize out via snail-mail.</p>
 <?php include "include/redeem-form.php"; ?>
             <div class="clear"></div>
 <?php include "include/footer.php"; ?>

@@ -191,7 +191,7 @@
             <div id="playGame">
 <?php if (isset($me) && !isset($_REQUEST['test'])): ?>
 	<!-- load the game if logged in -->
-				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck! <span style="font-size:10px;"><a href="#" onclick="window.open('rules.php', 'toolbar=no');" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
+				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck! <span style="font-size:10px;"><a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
 				<div id="gameSwf" style="margin-top:30px;">
 					<object width="670" height="437" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Game" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
 						<param value="DoorAnim.swf" name="movie">

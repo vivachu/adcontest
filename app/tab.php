@@ -32,16 +32,28 @@
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=1.1" />
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
 <![endif]-->
-
 	<div id="fb-root"></div>
+	<script><!--
+	  window.fbAsyncInit = function() {
+		FB.init({appId: '<?= $facebook_app_id ?>', status: true, cookie: true,
+				 xfbml: true});
+	  };
+	  (function() {
+		var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol +
+		  '//connect.facebook.net/en_US/all.js';
+		document.getElementById('fb-root').appendChild(e);
+	  }());
+//-->	</script>
 	<div id="container2">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a id="shareLink" href="#" onclick="new Dialog().showMessage ('Dialog', 'Hello World.'); return false;">Share</a></p>
+            <p class="right"><a id="shareLink" href="#" onclick="share(); return false;">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
@@ -51,7 +63,7 @@
 
             <div id="playGame">
 	<!-- Static HTML landing page -->
-				<p><b font="Arial">Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b font="Arial">Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.<span style="font-size:10px;"><a href="rules.php" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
+				<p><b font="Arial">Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b font="Arial">Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.  <span style="font-size:10px;"><a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 				<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday,user_likes" class="playBtn">play</a>
 				<div class="bot" style="top:240px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
