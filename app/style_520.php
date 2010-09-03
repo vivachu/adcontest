@@ -42,9 +42,9 @@ h1 a { background:url(<?= $web_url ?>/images/logo.png) no-repeat; display:block;
 #mainContent a.invite { background:url(<?= $web_url ?>/images/invite-friends.png) no-repeat; display:block; height:28px; margin:10px auto 0; text-indent:-9999px; width:254px; }
 #mainContent .desc p { margin:0; padding:0; width:600px; }
 .desc { margin:90px 0 0; }
-#mainContent p.title span { color:#fff; font:bold 16px Helvetica; text-transform:none; }
+#mainContent p.title span { color:#fff; font:bold 16px Arial; text-transform:none; }
 #container2 #mainContent p {font: 13px/21px tahoma; margin:23px auto 0 20px; width:460px;}
-#container2 #mainContent p.title { color:#fccd06; font:bold 16px Helvetica; margin-bottom:35px; text-transform:uppercase; }
+#container2 #mainContent p.title { color:#fccd06; font:bold 16px Arial; margin-bottom:35px; text-transform:uppercase; }
 #mainContent .left img { margin:70px 20px 0 28px; }
 
 /* =================================
