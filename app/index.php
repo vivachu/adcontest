@@ -77,6 +77,7 @@
 		}
 		$thumb = "prizes/DoorPrizes/" . $prize['image'] . "_Door.png";
 		$bigImage = "prizes/BigPrizes/" . $prize['image'] . "_Big.png";
+		$prizeNameUrl = "prizes/TypeBoxes/" . $prize['image'] . "_TypeBox.png";
 	  } catch (FacebookApiException $e) {
 		error_log($e);
 	  }
@@ -190,7 +191,7 @@
             <div id="playGame">
 <?php if (isset($me) && !isset($_REQUEST['test'])): ?>
 	<!-- load the game if logged in -->
-				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck!</p>
+				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck! <span style="font-size:10px;"><a href="rules.php" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
 				<div id="gameSwf" style="margin-top:30px;">
 					<object width="670" height="437" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Game" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
 						<param value="DoorAnim.swf" name="movie">
@@ -198,9 +199,9 @@
 						<param value="transparent" name="wmode">
 						<param value="all" name="allowNetworking">
 						<param value="always" name="allowScriptAccess">
-						<param value="prizeName=<?= $prize['name'] ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" name="flashvars">
+						<param value="prizeName=<?= $prizeNameUrl ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" name="flashvars">
 						<embed width="670" height="437" align="middle" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" allowscriptaccess="always" allownetworking="all"
-						flashvars="prizeName=<?= $prize['name'] ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" quality="high" loop="false" play="true" name="Game" id="Game" wmode="transparent"
+						flashvars="prizeName=<?= $prizeNameUrl ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" quality="high" loop="false" play="true" name="Game" id="Game" wmode="transparent"
 						src="DoorAnim.swf">
 					</object>
 				</div>
@@ -208,9 +209,9 @@
 
 				<div id="redeemContainer" style="display:none;">
 	<?php if (isset($prizeSchedule)): ?>
-					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>" class="pinkBlock">CLICK TO REDEEM</a></p>
+					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>"><img src="prizes/Buttons/Redeem_Btn.png"/></a></p>
 	<?php elseif (isset($prize['link'])): ?>
-					<div id="clickToRedeem"><a href="<?= $prize['link'] ?>" class="pinkBlock">CLICK TO VIEW</a></p>
+					<div id="clickToRedeem"><a href="<?= $prize['link'] ?>"><img src="prizes/Buttons/View_Btn.png"/></a></p>
 	<?php endif; ?>
 				</div>
 <?php elseif (isset($_REQUEST['test'])): ?>
@@ -257,16 +258,10 @@
         </div>
     </div>
 
-<!-- Facebook Canvas resize script -->
-<div id="FB_HiddenIFrameContainer" style="display:none; position:absolute; left:-100px; top:-100px; width:0px; height: 0px;"></div>
-<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
 <script type="text/javascript">
-    FB_RequireFeatures(["CanvasUtil"], function()
-    {
-      FB.XdComm.Server.init("/xd_receiver.htm");
-      FB.CanvasClient.setCanvasHeight("1200px");
-    });
-
+window.fbAsyncInit = function() {
+  FB.Canvas.setSize({ height: 950 });
+}
 </script>
 </body>
 </html>

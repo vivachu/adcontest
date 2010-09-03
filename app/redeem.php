@@ -213,5 +213,11 @@
             <div id="btm"></div>
         </div>
     </div>
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+  FB.Canvas.setSize({ height: 985 });
+}
+</script>
+
 </body>
 </html>
