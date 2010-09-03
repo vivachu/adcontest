@@ -75,8 +75,8 @@
 		} else {
 			$win = "false";
 		}
-		$thumb = "prizes/Prize_" . $prize['image'] . "_Icon_2.png";
-		$bigImage = "prizes/Prize_" . $prize['image'] . "_Icon_1.png";
+		$thumb = "prizes/DoorPrizes/" . $prize['image'] . "_Door.png";
+		$bigImage = "prizes/BigPrizes/" . $prize['image'] . "_Big.png";
 	  } catch (FacebookApiException $e) {
 		error_log($e);
 	  }
@@ -90,7 +90,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bot or Not!</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css?v=1.0" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.1" />
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 
@@ -192,14 +192,14 @@
 	<!-- load the game if logged in -->
 				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck!</p>
 				<div id="gameSwf" style="margin-top:30px;">
-					<object width="480" height="350" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Game" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+					<object width="670" height="437" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Game" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
 						<param value="DoorAnim.swf" name="movie">
 						<param value="high" name="quality">
 						<param value="transparent" name="wmode">
 						<param value="all" name="allowNetworking">
 						<param value="always" name="allowScriptAccess">
 						<param value="prizeName=<?= $prize['name'] ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" name="flashvars">
-						<embed width="480" align="middle" height="350" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" allowscriptaccess="always" allownetworking="all"
+						<embed width="670" height="437" align="middle" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" allowscriptaccess="always" allownetworking="all"
 						flashvars="prizeName=<?= $prize['name'] ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" quality="high" loop="false" play="true" name="Game" id="Game" wmode="transparent"
 						src="DoorAnim.swf">
 					</object>
@@ -238,7 +238,7 @@
 					<h3>Play Responsibly</h3>
 					<p>Sorry but you've already played today. Come back tomorrow to play again. Or better yet invite your friends to play now.  If one of them wins the BOT prize, you do too!</p>
 					<a href="javascript:{};" class="right" onclick="document.getElementById('alreadyPlayedPopup').style.display='none';">close</a>
-					<a href="javascript:{};" class="right" onclick="inviteFriends();" style="margin-left:10px;width:111px;height:25px;background:url(images/invite-friends-button.png) no-repeat;">invite friends</a>
+					<a href="javascript:{};" class="right" onclick="inviteFriends();" style="margin-left:10px;width:108px;height:26px;background:url(images/invite-friends-button.png) no-repeat;">invite friends</a>
 				</div>
 
 				<div class="left"><img src="prizes/Prize_<?= $grandPrize['image'] ?>_Icon_1.png" alt="<?= $grandPrize['name'] ?>" width="200" height="200" /></div>
