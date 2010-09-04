@@ -16,7 +16,7 @@
 	}
 
 	function share() {
-	new Dialog().showMessage('Dialog', 'Hello World.');
+	//new Dialog().showMessage('Dialog', 'Hello World.');
 	}
 
 	function like() {
@@ -27,7 +27,7 @@
 			document.getElementById("likePopup").setStyle("display","block");
 	}
 	//document.getElementById('playLink').addEventListener('click', play);
-	document.getElementById('shareLink').addEventListener('click', share);
+	//document.getElementById('shareLink').addEventListener('click', share);
 	document.getElementById('inviteFriendsLink').addEventListener('click', inviteFriends);
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
@@ -40,7 +40,7 @@
 	<div id="container2">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a id="shareLink" href="#" onclick="share(); return false;">Share</a></p>
+            <p class="right"><a id="shareLink" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.facebook.com%2Fsvedka&t=Svedka%20BOT%20or%20NOT">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
