@@ -23,20 +23,15 @@
 		new Dialog().showMessage('Dialog', 'Hello World.');
 	}
 
-	function play() {
- 		var isFan = false;
-		if (isFan) {
-			document.location = "https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday,user_likes";
-		} else {
+	function showLike() {
 			document.getElementById("likePopup").setStyle("display","block");
-		}		
 	}
-	document.getElementById('playLink').addEventListener('click', play);
+	//document.getElementById('playLink').addEventListener('click', play);
 	document.getElementById('shareLink').addEventListener('click', share);
 	document.getElementById('inviteFriendsLink').addEventListener('click', inviteFriends);
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=1.2" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=1.4" />
 
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
@@ -57,10 +52,15 @@
 	<!-- Static HTML landing page -->
 				<p><b font="Arial">Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b font="Arial">Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.  <span style="font-size:10px;"><a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
-				<a id="playLink" href="#" onclick="return false" class="playBtn">play</a>
+<fb:visible-to-connection>
+	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday,user_likes" class="playBtn">play</a>
+<fb:else>
+	<a id="playLink" href="#" onclick="showLike(); return false" class="playBtn">play</a>
+</fb:else>
+</fb:visible-to-connection>
 				<div class="bot" style="top:240px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
 				<img src="<?= $web_url ?>/images/door2.png" alt="" />
-				<div id="likePopup" class="popup" style="display:block;">
+				<div id="likePopup" class="popup" style="display:none;">
 					<h3>I "Like" SVEDKA Vodka</h3>
 					<p>To win a "BOT or NOT?" prize, you need to click the "Like" button at the top of the page. Swedish imported, five times distilled and a chance to win amazing BOT prizes ... what's not to like?</p>
 					<a href="#" class="right" onclick="document.getElementById('likePopup').setStyle('display', 'none'); return false;">close</a>

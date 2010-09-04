@@ -69,10 +69,10 @@ h1 a { background:url(<?= $web_url ?>/images/logo.png) no-repeat; display:block;
 .popupInvite h2 { background:#d4d4d4; height:39px; margin:0; text-indent:inherit; width:390px; }
 .popupInvite h2 span { color:#3f5a8f; display:block; font:bold 13px Arial; padding:13px 30px; }
 .popupContent { margin:15px 30px; padding:0; }
-#mainContent .popupContent img { margin:0 10px 0 0; }
+#container2 #mainContent .popupContent img { margin:0 10px 0 0; }
 .popupInvite h3 { color:#3f5a8f; font:bold 14px Arial; }
 .popup h3 { color:#3f5a8f; font:bold 15px Arial; margin:30px 0 0 40px; }
-#mainContent .popup p { color:#5f5f5f; font:bold 12px/18px Arial; margin:0 0 0 40px; width:290px; }
-#mainContent .popupInvite p { color:#5f5f5f; display:block; font:normal 10px/18px Helvetica; margin:0; width:256px; }
-.popup a { background:url(images/close.png) no-repeat; display:block; height:26px; margin:17px 0 0 0; text-indent:-9999px; width:49px; }
-.popupInvite a { background:url(images/send.jpg) no-repeat; clear:both; display:block; height:21px; margin:0 7px 0 0; text-indent:-9999px; width:45px; }
+#container2 #mainContent .popup p { color:#5f5f5f; font:bold 12px/18px Arial; margin:0 0 0 40px; width:290px; }
+#container2 #mainContent .popupInvite p { color:#5f5f5f; display:block; font:normal 10px/18px Helvetica; margin:0; width:256px; }
+.popup a { background:url(<?= $web_url ?>/images/close.png) no-repeat; display:block; height:26px; margin:17px 0 0 0; text-indent:-9999px; width:49px; }
+.popupInvite a { background:url(<?= $web_url ?>/images/send.jpg) no-repeat; clear:both; display:block; height:21px; margin:0 7px 0 0; text-indent:-9999px; width:45px; }
