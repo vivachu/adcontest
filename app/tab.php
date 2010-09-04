@@ -86,7 +86,7 @@
 				<div id="likePopup" class="popup" style="display:none;">
 					<h3>I "Like" SVEDKA Vodka</h3>
 					<p>To win a "BOT or NOT?" prize, you need to click the "Like" button at the top of the page. Swedish imported, five times distilled and a chance to win amazing BOT prizes ... what's not to like?</p>
-					<a href="#" class="right" onclick="document.getElementById('likePopup').style.display='none';">close</a>
+					<a href="#" class="right" onclick="document.getElementById('likePopup').setStyle('display', 'none'); return false;">close</a>
 				</div>
 				<div id="alreadyPlayedPopup" class="popup" style="display:none;">
 					<h3>Play Responsibly</h3>
