@@ -1,4 +1,7 @@
 <?php
+//$fan_page_url = "http%3A%2F%2Fwww.facebook.com%2Fsvedka&t=Svedka%20BOT%20or%20NOT";
+$fan_page_url = "http%3A%2F%2Fwww.facebook.com%2Fpages%2FAd-Contest%2F153004184716221%3Fv%3Dapp_103646963029008";
+
 //$web_url = "http://dev.adcontests.com";
 $web_url = "http://www.adcontests.com/svedka/app";
 

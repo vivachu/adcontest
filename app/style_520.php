@@ -20,8 +20,6 @@ h6{ font-size:12px;}
 h1,h2,h3,h4,h5,h6{ color:#563D64;}
 small{ font-size:10px;}
 b, strong{ font-weight:bold;}
-a{ color:#D81F80;}
-a:hover{ color:#563D64; }
 p{ padding:0px; line-height:22px;}
 .left { float:left; }
 .right { float:right; }

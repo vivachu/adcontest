@@ -12,26 +12,15 @@
 
 <script><!--
 	function inviteFriends() {
-		new Dialog().showMessage('Dialog', 'Hello World.');
-	}
-
-	function share() {
-	//new Dialog().showMessage('Dialog', 'Hello World.');
-	}
-
-	function like() {
-		new Dialog().showMessage('Dialog', 'Hello World.');
+		document.getElementById("inviteFriendsPopup").setStyle("display","block");
 	}
 
 	function showLike() {
-			document.getElementById("likePopup").setStyle("display","block");
+		document.getElementById("likePopup").setStyle("display","block");
 	}
-	//document.getElementById('playLink').addEventListener('click', play);
-	//document.getElementById('shareLink').addEventListener('click', share);
-	document.getElementById('inviteFriendsLink').addEventListener('click', inviteFriends);
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=1.4" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=1.5" />
 
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
@@ -78,12 +67,17 @@
 				<p><?= $grandPrize['description'] ?></p>
 				</div>
 				<div class="clear"></div>
-				<a id="inviteFriendsLink" href="#" onclick="return false" class="invite" >invite friends to play</a>
+				<a id="inviteFriendsLink" href="#" onclick="inviteFriends(); return false;" class="invite" >invite friends to play</a>
 			</div> <!-- end playGame -->
-
 	<?php include "include/footer.php"; ?>
 
             <div id="btm"></div>
         </div>
+    </div>
+    <div id="inviteFriendsPopup" style="position:absolute;top:400px;left:15px;display:none;">
+   	<fb:request-form  method="post" type="Svedka - BOT or NOT Contest" invite="true"  content="Check out Svedka Bot or Not on Facebook!
+        	<fb:req-choice url='<?= $fan_page_url ?>' label='GO' /> ">
+        	<fb:multi-friend-selector cols="3" actiontext="Tell your friends about us" rows="4" showborder="true" bypass="cancel" />
+   	</fb:request-form>
     </div>
 
