@@ -75,8 +75,7 @@
         </div>
     </div>
     <div id="inviteFriendsPopup" style="position:absolute;top:400px;left:15px;display:none;">
-   	<fb:request-form  method="post" type="Svedka - BOT or NOT Contest" invite="true"  content="Check out Svedka Bot or Not on Facebook!
-        	<fb:req-choice url='<?= $fan_page_url ?>' label='GO' /> ">
+   	<fb:request-form  method="get" type="Svedka - BOT or NOT Contest" invite="true"  content="You've been invited to play and win Svedka BOT or NOT? It's free. Win an amazing BOT prize or a bunch of fun NOT prizes each week. Invite your Facebook friends to play, because if they win the BOT prize, so do you! This week's BOT prize: <?= $grandPrize['name'] ?><fb:req-choice url='http%3A%2F%2Fwww.facebook.com%2Fsvedka&t=Svedka%20BOT%20or%20NOT' label='Play Now' /> ">
         	<fb:multi-friend-selector cols="3" actiontext="Tell your friends about us" rows="4" showborder="true" bypass="cancel" />
    	</fb:request-form>
     </div>
