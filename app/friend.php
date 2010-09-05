@@ -15,6 +15,11 @@
 <html>
 	<head>
 		<title><?= $title ?></title>
+		<meta name="title" content="<?= $title ?>" />
+		<meta name="description" content="Give it a shot and you could win an amazing BOT prize or a fun NOT prize. Just go to the SVEDKA Vodka Facebook page to play! This week's BOT prize: <?= $grandPrize['name']?>" />
+		<link rel="image_src" href="images/svedka_icon.png" / >
+
+
 <script type="text/javascript">
 <!--
 //window.location = "<?= $fan_page_url ?>&fid=<?= $_REQUEST['fid']?>";
