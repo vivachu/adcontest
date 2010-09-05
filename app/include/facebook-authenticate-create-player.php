@@ -44,4 +44,7 @@
 		error_log($e);
 	  }
 	}
+	if (!isset($me)) {
+		header( 'Location: <?= $fan_page_url ?>&fid=$friendFacebookId') ;
+	}
 ?>
