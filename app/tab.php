@@ -3,11 +3,7 @@
 	require_once 'include/sql.php';
 	require_once 'include/facebook.php';
 
-
-	$test_date = "'2010-10-22 24:33'";
-//	$test_date = "'now()'";
 	$grandPrize = getGrandPrize($test_date);
-
 ?>
 
 <script><!--
@@ -29,7 +25,7 @@
 	<div id="container2">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a id="shareLink" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.facebook.com%2Fsvedka&t=Svedka%20BOT%20or%20NOT">Share</a></p>
+            <p class="right"><a id="shareLink" href="http://www.facebook.com/sharer.php?u=<?= $share_url ?>">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
@@ -75,7 +71,7 @@
         </div>
     </div>
     <div id="inviteFriendsPopup" style="position:absolute;top:400px;left:15px;display:none;">
-   	<fb:request-form  method="get" type="Svedka - BOT or NOT Contest" invite="true"  content="You've been invited to play and win Svedka BOT or NOT? It's free. Win an amazing BOT prize or a bunch of fun NOT prizes each week. Invite your Facebook friends to play, because if they win the BOT prize, so do you! This week's BOT prize: <?= $grandPrize['name'] ?><fb:req-choice url='http%3A%2F%2Fwww.facebook.com%2Fsvedka&t=Svedka%20BOT%20or%20NOT' label='Play Now' /> ">
+   	<fb:request-form  method="get" type="Svedka - BOT or NOT Contest" invite="true"  content="You've been invited to play and win Svedka BOT or NOT? It's free. Win an amazing BOT prize or a bunch of fun NOT prizes each week. Invite your Facebook friends to play, because if they win the BOT prize, so do you! This week's BOT prize: <?= $grandPrize['name'] ?><fb:req-choice url=friend.php' label='Play Now' /> ">
         	<fb:multi-friend-selector cols="3" actiontext="Tell your friends about us" rows="4" showborder="true" bypass="cancel" />
    	</fb:request-form>
     </div>

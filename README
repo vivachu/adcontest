@@ -3,30 +3,17 @@ Jason
 - Need thumbnails: big and small and congrats texts
 
 Pupung
-- Blue Invite Friends button similar to the Send and Close buttons on Page 6 of the spec.
-- HTML emails in separate directories
+- formatting sizes
 
 Viva
-- Change hardcoded test date to now() for getting prize in game.php.
+- Change hardcoded test date to now() for getting prize in index.php, redeem, redeem-friend, friend.
 - Change hardcoded has played
 - HTML emails
-- Age screening before people play.
 - State screening to prohibit CA and TN residents and foreigners from playing.
 - Friend Invite dialog
-- Friend dialog image on redeem.php
 - Friend invite click through link
-- Canvas is not resizing height on initial load
 - Checkout random prizes that are not
 
-|  3 | S_G Standees                                        | 2010-08-30 06:02:13 |
-|  4 | SVEDKA Shakers                                      | 2010-08-30 06:02:13 |
-|  5 | SVEDKA Bar Set                                      | 2010-08-30 06:02:13 |
-|  6 | Yanni at the Acropolis DVD                          | 2010-08-30 06:02:13 |
-|  2 | Bot or Not Tees                                     | 2010-08-30 09:02:01 |
-|  7 | Mmmmmm Gyros Greek deli poster                      | 2010-08-30 10:15:00 |
-|  2 | Bot or Not Tees                                     | 2010-08-30 10:15:00 |
-|  8 | Water Walking Ball                                  | 2010-08-30 10:15:00 |
-|  1 | Panasonic Lumix DMC-LX5K                            | 2010-08-30 12:18:04 |
 
 Amazon Server
 -------------

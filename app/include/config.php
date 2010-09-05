@@ -1,6 +1,8 @@
 <?php
 //$fan_page_url = "http%3A%2F%2Fwww.facebook.com%2Fsvedka&t=Svedka%20BOT%20or%20NOT";
-$fan_page_url = "http%3A%2F%2Fwww.facebook.com%2Fpages%2FAd-Contest%2F153004184716221%3Fv%3Dapp_103646963029008";
+//$fan_page_url = "http%3A%2F%2Fwww.facebook.com%2Fpages%2FAd-Contest%2F153004184716221%3Fv%3Dapp_103646963029008";
+$fan_page_url = "http://www.facebook.com/pages/Ad-Contest/153004184716221?v=app_103646963029008";
+$share_url = "http://www.adcontests.com/svedka/app/friend.php";
 
 //$web_url = "http://dev.adcontests.com";
 $web_url = "http://www.adcontests.com/svedka/app";
@@ -29,5 +31,9 @@ $smtp_username = "sendmail1@handipoints.com";
 $smtp_password = "handipointsY0";
 $smtp_from = "do-not-reply@svedka.com";
 $svedka_admin_email = "vivaqu@gmail.com";
+
+
+$test_date = "'2010-10-22 24:33'";
+//	$test_date = "'now()'";
 
 ?>
