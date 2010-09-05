@@ -66,7 +66,7 @@
 	function share() {
 		 var share = {
 		   method: 'stream.share',
-		   u: '<?= $share_url ?>?fid=<?= $player[facebook_id] ?>';
+		   u: '<?= $share_url ?>?fid=<?= $player[facebook_id] ?>'
 		 };
 
 		 FB.ui(share, function(response) { console.log(response); });
