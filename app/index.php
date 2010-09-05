@@ -6,7 +6,7 @@
 
 	$grandPrize = getGrandPrize($test_date);
 
-	include 'facebook-authenticate-create-player.php';
+	include 'include/facebook-authenticate-create-player.php';
 	if ($player) {
 		$player['has_played'] = 0; // temporarily set to false
 		$player['liked'] = 1;
