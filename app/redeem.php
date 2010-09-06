@@ -215,7 +215,7 @@
     </div>
 <script type="text/javascript">
 window.fbAsyncInit = function() {
-  FB.Canvas.setSize({ height: 985 });
+  FB.Canvas.setSize({ height: 1000 });
 }
 </script>
 

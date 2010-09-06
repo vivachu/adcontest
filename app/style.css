@@ -61,7 +61,7 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 .bot { margin:0; position:absolute; top:302px; right:0; } /* Margin and top changed */
 #mainContent a.playBtn { background:url(images/play-btn.png) no-repeat; bottom:505px; height:100px; position:absolute; right:206px; text-indent:-9999px; width:230px; } /* bottom and right changed */
 #container2 #mainContent a.playBtn {background:url(images/play-btn2.png) no-repeat; bottom:550px; height:100px; position:absolute; right:100px; text-indent:-9999px; width:230px; top: 340px} /* Added */
-#mainContent a.invite { background:url(images/invite-friends.png) no-repeat; display:block; height:28px; margin:10px auto 0; text-indent:-9999px; width:254px; }
+#mainContent a.invite { background:url(images/invite-friends.png) no-repeat; display:block; height:28px; margin:35px auto 0; text-indent:-9999px; width:254px; }
 .titleBar { background:url(images/this-week-bot-prize.png) no-repeat; height:37px; text-indent:-9999px; width:383px; }
 .redeemiPad { background:#e30065; margin:35px 0 130px 35px; padding:8px 0; text-align:center; text-transform:uppercase; width:226px; }
 .redeemiPad a { color:#fff; font:bold 18px Arial; text-decoration:none; }

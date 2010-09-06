@@ -42,7 +42,7 @@
 
 <title>SVEDKA "BOT or NOT?"</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css?v=1.1" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.3" />
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 
@@ -156,8 +156,6 @@
 						src="DoorAnim.swf">
 					</object>
 				</div>
-				<div id="inviteFriends" style="margin-top:30px;"><a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a></p>
-
 				<div id="redeemContainer" style="display:none;">
 	<?php if (isset($prizeSchedule)): ?>
 					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>"><img src="prizes/Buttons/Redeem_Btn.png"/></a></p>
@@ -202,7 +200,8 @@
 				<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
 <?php endif; ?>
 			</div> <!-- end playGame -->
-
+<div class="clear"></div>
+<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
 	<?php include "include/footer.php"; ?>
 
             <div id="btm"></div>
@@ -211,7 +210,7 @@
 
 <script type="text/javascript">
 window.fbAsyncInit = function() {
-  FB.Canvas.setSize({ height: 950 });
+  FB.Canvas.setSize({ height: 970 });
 }
 </script>
 </body>
