@@ -2,6 +2,8 @@
 	require_once 'include/config.php';
 	require_once 'include/sql.php';
 
+	$grandPrize = getGrandPrize($test_date);
+
 	$redemptionCode = $_REQUEST['c'];
 	$prizeSchedule = getPrizeScheduleFromCode($redemptionCode);
 	if (!isset($prizeSchedule) || $prizeSchedule['status'] != 0) {
@@ -34,14 +36,7 @@
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 
 <script>
-	function share() {
-		 var share = {
-		   method: 'stream.share',
-		   u: '<?= $app_url ?>'
-		 };
-
-		 FB.ui(share, function(response) { console.log(response); });
-	}
+<? include 'include/shared_js.php'; ?>
 
 	function submitForm() {
 		if (document.getElementById('fname').value.length < 1) {

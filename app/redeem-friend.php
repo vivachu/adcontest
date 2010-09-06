@@ -2,6 +2,8 @@
 	require_once 'include/config.php';
 	require_once 'include/sql.php';
 
+	$grandPrize = getGrandPrize($test_date);
+
 	$redemptionCode = $_REQUEST['c'];
 	$referral = getReferralWinnerFromCode($redemptionCode);
 	if (!isset($referral) || $referral['status'] != 0) {
@@ -30,14 +32,8 @@
 <script type="text/javascript" src="javascript/jquery.cycle.all.2.74.js"></script>
 
 <script>
-	function share() {
-		 var share = {
-		   method: 'stream.share',
-		   u: '<?= $app_url ?>'
-		 };
+<? include 'include/shared_js.php'; ?>
 
-		 FB.ui(share, function(response) { console.log(response); });
-	}
 	function submitForm() {
 		if (document.getElementById('fname').value.length < 1) {
 			alert("Please enter your first name.");
