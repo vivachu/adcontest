@@ -45,6 +45,6 @@
 	  }
 	}
 	if (!isset($me)) {
-		header( 'Location: <?= $fan_page_url ?>&fid=$friendFacebookId') ;
+		header( 'Location: ' . $fan_page_url . '&fid=' . $friendFacebookId) ;
 	}
 ?>

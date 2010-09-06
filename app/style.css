@@ -32,7 +32,7 @@ h1 a { background:url(images/logo2.png) no-repeat; display:block; height:54px; m
 /* =================================
 				TOP
 ==================================== */
-#top { background:#1a1861; height:38px; margin:0 0 8px 0; font-family: "Helvetica Condensed",Arial,Helvetica,Sans-Serif; }
+#top { background:#1a1861; height:35px; margin: 0 auto; font-family: "Helvetica Condensed",Arial,Helvetica,Sans-Serif; width: 760px;}
 #top p { font-size:12px; padding:6px 0 6px 15px; }
 #top a { color:#fff; margin:0 10px 0 0; text-decoration:none; text-transform:uppercase; }
 /* =================================

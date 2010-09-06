@@ -114,12 +114,11 @@
 		document.getElementById('fb-root').appendChild(e);
 	  }());
 	</script>
-
+    <div id="top">
+		<p class="left"></p>
+		<p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
+    </div>
 	<div id="container">
-    	<div id="top">
-        	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
-        </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
         	<h2 class="congrats left">bot or not?</h2>
@@ -134,7 +133,7 @@
     </div>
 <script type="text/javascript">
 window.fbAsyncInit = function() {
-  FB.Canvas.setSize({ height: 985 });
+  FB.Canvas.setSize({ height: 980 });
 }
 </script>
 
