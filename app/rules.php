@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Official "BOT or NOT?" Contest Rules</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.5" />
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="ie.css" />
 <script src="DD_belatedPNG_0.0.8a.js"></script>
