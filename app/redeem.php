@@ -128,13 +128,13 @@
 			 attachment: {
 			   name: '<?= $prizeSchedule['username'] ?> just "won" a ' + prizeName + ' by playing SVEDKA "BOT or NOT?"',
 			   caption: 'They didn\'t win the BOT prize but you could. Click to play.',
-			   href: '<?= $app_url ?>',
+			   href: '<?= $share_url ?>?fid=<?= $_REQUEST["fid"]?>',
                media: [
-               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_2.png', href: '<?= $app_url ?>' }
+               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_2.png', href: '<?= $share_url ?>?fid=<?= $_REQUEST["fid"]?>' }
                ]
 			 },
 			 action_links: [
-			   { text: 'BOT or NOT', href: '<?= $share_url ?>' }
+			   { text: 'BOT or NOT', href: '<?= $share_url ?>?fid=<?= $_REQUEST["fid"]?>' }
 			 ],
 			 user_message_prompt: 'Thanks! Your information was received.'
 		   },
