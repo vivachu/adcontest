@@ -38,7 +38,7 @@
 				<p><b font="Arial">Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b font="Arial">Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.  <span style="font-size:10px;"><a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 <fb:visible-to-connection>
-	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday,user_likes" class="playBtn">play</a>
+	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/?fid=<?= $_REQUEST['fid'] ?>&scope=email,publish_stream,user_birthday,user_likes" class="playBtn">play</a>
 <fb:else>
 	<a id="playLink" href="#" onclick="showLike(); return false" class="playBtn">play</a>
 </fb:else>

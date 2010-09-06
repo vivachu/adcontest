@@ -55,8 +55,14 @@
 		document.getElementById("redeemContainer").style.display="block";
 	}
 
-	function inviteFriends() {
-		alert("Invite friends");
+	function inviteFriends(){
+		document.getElementById('inviteContainer').style.display = 'block';
+		document.getElementById('inviteFrame').src = "invite.php?fbid=<?= $player['facebook_id'] ?>";
+	}
+
+	function hideInvite(){
+		document.getElementById('inviteContainer').style.display = 'none';
+		document.getElementById('inviteFrame').src = "about:blank";
 	}
 
 <? include 'include/shared_js.php'; ?>
@@ -145,6 +151,9 @@
 						src="DoorAnim.swf">
 					</object>
 				</div>
+				<div id="inviteContainer" style="display:none;">
+					<iframe id="inviteFrame"></iframe>
+				</div>
 				<div id="redeemContainer" style="display:none;">
 	<?php if (isset($prizeSchedule)): ?>
 					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>"><img src="prizes/Buttons/Redeem_Btn.png"/></a></p>
@@ -189,9 +198,9 @@
 				<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
 <?php endif; ?>
 			</div> <!-- end playGame -->
-<div class="clear"></div>
-<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
-	<?php include "include/footer.php"; ?>
+			<div class="clear"></div>
+			<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
+			<?php include "include/footer.php"; ?>
 
             <div id="btm"></div>
         </div>
@@ -201,6 +210,7 @@
 window.fbAsyncInit = function() {
   FB.Canvas.setSize({ height: 950 });
 }
+
 </script>
 </body>
 </html>

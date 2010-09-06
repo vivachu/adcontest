@@ -13,13 +13,13 @@
 			 attachment: {
 			   name: '<?= $title ?>',
 			   caption: 'Give it a shot and you could win an amazing BOT prize or a fun NOT prize. Just go to the SVEDKA Vodka Facebook page to play! This week\'s BOT prize: <?= $grandPrize['name']?>',
-			   href: '<?= $share_url ?>?fid=<?= $player["facebook_id"]?>',
+			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>',
                media: [
-               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/images/svedka_icon.png', href: '<?= $share_url ?>?fid=<?= $player["facebook_id"]?>' }
+               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/images/svedka_icon.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
                ]
 			 },
 			 action_links: [
-			   { text: 'BOT or NOT', href: '<?= $share_url ?>?fid=<?= $player["facebook_id"]?>' }
+			   { text: 'BOT or NOT', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
 			 ]
 		   },
 		   function(response) {

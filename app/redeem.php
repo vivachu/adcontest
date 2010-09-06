@@ -77,6 +77,7 @@
 			document.getElementById('email').focus();
 			return;
 		}
+		document.body.style.cursor = 'wait';
 		var url = "do.php?what=redeem&c=<?= $redemptionCode ?>";
 		url += "&first=" + document.getElementById('fname').value;
 		url += "&last=" + document.getElementById('lname').value;
@@ -92,11 +93,12 @@
 		  url: url,
 		  cache: false,
 		  success: function (response) { onSubmitForm(response); },
-		  error: function () {}
+		  error: function () {document.body.style.cursor = 'default';}
 		});
 
 	}
 	function onSubmitForm(response) {
+		document.body.style.cursor = 'default';
 <? if (isset($friend) ):  ?>  //&&  $prizeSchedule['place'] == 1):
 		document.getElementById("popInvite").style.display = "block";
 <? else: ?>
@@ -126,13 +128,13 @@
 			 attachment: {
 			   name: '<?= $prizeSchedule['username'] ?> just "won" a ' + prizeName + ' by playing SVEDKA "BOT or NOT?"',
 			   caption: 'They didn\'t win the BOT prize but you could. Click to play.',
-			   href: '<?= $share_url ?>?fid=<?= $player["facebook_id"] ?>',
+			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>',
                media: [
-               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_2.png', href: '<?= $share_url ?>?fid=<?= $player["facebook_id"] ?>' }
+               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_2.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>' }
                ]
 			 },
 			 action_links: [
-			   { text: 'BOT or NOT', href: '<?= $share_url ?>?fid=<?= $player["facebook_id"]?>' }
+			   { text: 'BOT or NOT', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
 			 ],
 			 user_message_prompt: 'Thanks! Your information was received.'
 		   },
@@ -175,8 +177,8 @@
         	<h2 class="congrats left">bot or not?</h2>
             <div class="clear"></div>
             <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" /></div>
-            <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands.  Fill out the info below and if you are eligible and satisfy the <a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');">Official Rules</a>, we'll make it happen.</p>
-            <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">And, because a friend invited you to play, your friend will win an <?= $prizeSchedule['prize_name'] ?> too, because that's what friends do — they win prizes for each other (in our book anyway).</p>
+            <p class="text" style="font-size: 12px; margin:5px auto 0 35px;width:615px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands.  Fill out the info below and if you are eligible and satisfy the <a class="inline" href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');">Official Rules</a>, we'll make it happen.</p>
+            <p class="text" style="font-size: 12px; margin:5px auto 0 35px;width:615px;">And, because a friend invited you to play, your friend will win an <?= $prizeSchedule['prize_name'] ?> too, because that's what friends do — they win prizes for each other (in our book anyway).</p>
 <?php
 	}
 	else {
