@@ -75,4 +75,7 @@
         	<fb:multi-friend-selector cols="3" actiontext="Tell your friends about us" rows="4" showborder="true" bypass="cancel" />
    	</fb:request-form>
     </div>
-
+<form fbtype="feedStory" action= "http://fbmlessentials.staynalive.com/index.php">
+<input type="text" name="status" value="" /> <input type="hidden" name="submit" value="1" /> <input type="hidden" name="action" value="feedforms" /> <input type="hidden" name="notabs" value="true" /> <input type="submit" value="Submit" name="submit"
+</form>
+label="Publish This Story" />

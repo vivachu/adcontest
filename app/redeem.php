@@ -134,7 +134,7 @@
                ]
 			 },
 			 action_links: [
-			   { text: 'BOT or NOT', href: '<?= $app_url ?>' }
+			   { text: 'BOT or NOT', href: '<?= $share_url ?>' }
 			 ],
 			 user_message_prompt: 'Thanks! Your information was received.'
 		   },

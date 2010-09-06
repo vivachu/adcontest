@@ -6,7 +6,7 @@
 
 	$grandPrize = getGrandPrize($test_date);
 
-	include 'facebook-authenticate-create-player.php';
+	include 'include/facebook-authenticate-create-player.php';
 	if ($player) {
 		$player['has_played'] = 0; // temporarily set to false
 		$player['liked'] = 1;
@@ -29,13 +29,18 @@
 
 	}
 
+	$title = "Play SVEDKA \"BOT or NOT?\"";
+	if ($friend) {
+		$title = $friend['username'] . " is playing SVEDKA \"BOT or NOT?\"";
+	}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Bot or Not!</title>
+
+<title>SVEDKA "BOT or NOT?"</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
 <link rel="stylesheet" type="text/css" href="style.css?v=1.1" />
 <script src="http://connect.facebook.net/en_US/all.js"></script>
@@ -61,7 +66,7 @@
 	function share() {
 		 var share = {
 		   method: 'stream.share',
-		   u: '<?= $app_url ?>/friend.php?fid=<?= $player[facebook_id] ?>';
+		   u: '<?= $share_url ?>?fid=<?= $player[facebook_id] ?>'
 		 };
 
 		 FB.ui(share, function(response) { console.log(response); });
