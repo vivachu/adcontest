@@ -1,8 +1,11 @@
 <?php
 	require_once 'include/config.php';
 	require_once 'include/sql.php';
+	require_once 'include/facebook.php';
 
 	$grandPrize = getGrandPrize($test_date);
+
+	include 'include/facebook-authenticate-create-player.php';
 
 	$redemptionCode = $_REQUEST['c'];
 	$prizeSchedule = getPrizeScheduleFromCode($redemptionCode);
@@ -123,13 +126,13 @@
 			 attachment: {
 			   name: '<?= $prizeSchedule['username'] ?> just "won" a ' + prizeName + ' by playing SVEDKA "BOT or NOT?"',
 			   caption: 'They didn\'t win the BOT prize but you could. Click to play.',
-			   href: '<?= $share_url ?>?fid=<?= $_REQUEST["fid"]?>',
+			   href: '<?= $share_url ?>?fid=<?= $player["facebook_id"] ?>',
                media: [
-               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_2.png', href: '<?= $share_url ?>?fid=<?= $_REQUEST["fid"]?>' }
+               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_2.png', href: '<?= $share_url ?>?fid=<?= $player["facebook_id"] ?>' }
                ]
 			 },
 			 action_links: [
-			   { text: 'BOT or NOT', href: '<?= $share_url ?>?fid=<?= $_REQUEST["fid"]?>' }
+			   { text: 'BOT or NOT', href: '<?= $share_url ?>?fid=<?= $player["facebook_id"]?>' }
 			 ],
 			 user_message_prompt: 'Thanks! Your information was received.'
 		   },
