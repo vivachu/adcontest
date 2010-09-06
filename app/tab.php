@@ -16,7 +16,7 @@
 	}
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=1.6" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.0" />
 
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
@@ -25,7 +25,7 @@
 	<div id="container2">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a id="shareLink" href="http://www.facebook.com/sharer.php?u=<?= $share_url ?>">Share</a></p>
+            <p class="right"><a href="http://www.facebook.com/sharer.php?u=<?= $share_url ?>">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
@@ -43,7 +43,7 @@
 	<a id="playLink" href="#" onclick="showLike(); return false" class="playBtn">play</a>
 </fb:else>
 </fb:visible-to-connection>
-				<div class="bot" style="top:240px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
+				<div class="bot" style="top:285px;margin-right:36px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
 				<img src="<?= $web_url ?>/images/door2.png" alt="" />
 				<div id="likePopup" class="popup" style="display:none;">
 					<h3>I "Like" SVEDKA Vodka</h3>
@@ -75,7 +75,3 @@
         	<fb:multi-friend-selector cols="3" actiontext="Tell your friends about us" rows="4" showborder="true" bypass="cancel" />
    	</fb:request-form>
     </div>
-<form fbtype="feedStory" action= "http://fbmlessentials.staynalive.com/index.php">
-<input type="text" name="status" value="" /> <input type="hidden" name="submit" value="1" /> <input type="hidden" name="action" value="feedforms" /> <input type="hidden" name="notabs" value="true" /> <input type="submit" value="Submit" name="submit"
-</form>
-label="Publish This Story" />
