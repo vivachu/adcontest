@@ -34,6 +34,7 @@ GIT install
 
 ln -s /home/webuser/helloworld/ apache2
 
+
 install pear
 wget http://pear.php.net/go-pear go-pear.php
 php go-pear.php
@@ -46,3 +47,7 @@ pear install Net_SMTP-1.4.2
 libcurl with ssl
 sudo port -f upgrade --enforce-variants curl +ssl
 
+vi /etc/php.ini
+include_path = .:/usr/share/php/PEAR:/root/config
+
+cp svedka-config.php /root/config
