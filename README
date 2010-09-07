@@ -9,10 +9,10 @@ Viva
 - Change hardcoded test date to now() for getting prize in index.php, redeem, redeem-friend, friend.
 - Change hardcoded has played
 - HTML emails
-- State screening to prohibit CA and TN residents and foreigners from playing.
-- Friend Invite dialog
+- Change admin emails: gailu@sweepstakesconsulting.com, svedka@walrusnyc.com
 - Friend invite click through link
 - Checkout random prizes that are not
+- TEST on different browsers
 
 
 Amazon Server
