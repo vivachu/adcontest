@@ -23,13 +23,28 @@
 		error_log($e);
 	  }
 	}
-
+	$title = "Play SVEDKA \"BOT or NOT?\"";
 ?>
 
 <script><!--
 	function inviteFriends() {
 		document.getElementById("inviteFriendsPopup").setStyle("display","block");
 	}
+
+        function share() {
+		var attachment = {
+			   name: '<?= $title ?>',
+			   caption: 'Give it a shot and you could win an amazing BOT prize or a fun NOT prize. Just go to the SVEDKA Vodka Facebook page to play! This week\'s BOT prize: <?= $grandPrize['name']?>',
+			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>',
+               		   media: [
+               			    { type: 'image', src: 'http://www.adcontests.com/svedka/app/images/svedka_icon.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' 
+				    }
+				  ]
+		};
+		var actionLinks = [ { text: 'BOT or NOT', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' } ];
+		Facebook.streamPublish('', attachment, actionLinks);
+        }
+
 
 	function showLike() {
 		document.getElementById("likePopup").setStyle("display","block");
@@ -45,7 +60,7 @@
 	<div id="container2">
     	<div id="top">
         	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a href="http://www.facebook.com/sharer.php?u=<?= $share_url ?>">Share</a></p>
+            <p class="right"><a href="#" onclick="share(); return false;">Share</a></p>
         </div>
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
