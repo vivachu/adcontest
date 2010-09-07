@@ -6,13 +6,13 @@ $fan_page_url = "http://www.facebook.com/pages/Ad-Contest/153004184716221?v=app_
 $web_url = "http://dev.adcontests.com";
 //$web_url = "http://www.adcontests.com/svedka/app";
 
-$share_url = $fan_page_url;
 
 // dev
 $app_url = "http://apps.facebook.com/bot-or-not-dev";
 // production
 //$app_url = "http://apps.facebook.com/bot-or-not";
 
+$share_url = $app_url . "/friend.php?";
 
 // dev
 $facebook_app_id = '103646963029008';
