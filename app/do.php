@@ -1,5 +1,5 @@
 <?php
-	require_once 'include/config.php';
+	require_once 'svedka-config.php';
 	require_once 'include/sql.php';
 	require_once "Mail.php";
 	require_once 'Mail/mime.php';

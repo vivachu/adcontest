@@ -1,5 +1,5 @@
 <?php
-	require_once 'include/config.php';
+	require_once 'svedka-config.php';
 	require_once 'include/sql.php';
 
 	$grandPrize = getGrandPrize($test_date);

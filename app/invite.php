@@ -1,5 +1,5 @@
 <?php
-	require_once 'include/config.php';
+	require_once 'svedka-config.php';
 
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
