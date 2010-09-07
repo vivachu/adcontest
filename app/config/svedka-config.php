@@ -12,8 +12,6 @@ $app_url = "http://apps.facebook.com/bot-or-not-dev";
 // production
 //$app_url = "http://apps.facebook.com/bot-or-not";
 
-$share_url = $app_url . "/friend.php?";
-
 // dev
 $facebook_app_id = '103646963029008';
 $facebook_api_key = '3e0979345f249c435372efa9d8f514ca';
@@ -36,5 +34,7 @@ $svedka_admin_email = "vivaqu@gmail.com";
 
 $test_date = "'2010-10-22 24:33'";
 //	$test_date = "'now()'";
+
+$share_url = "https://graph.facebook.com/oauth/authorize?client_id=" . $facebook_app_id . "&redirect_uri=" . $app_url . "&scope=email,publish_stream,user_birthday,user_likes";
 
 ?>
