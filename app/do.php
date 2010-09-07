@@ -85,7 +85,7 @@
 	}
 
 	function sendEmail($to, $subject, $text, $html) {
-		include 'include/config.php';
+		include 'svedka-config.php';
 
 		$crlf = "\n";
 
