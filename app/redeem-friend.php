@@ -70,6 +70,19 @@
 			document.getElementById('email').focus();
 			return;
 		}
+		if (document.getElementById('state').value == "CA") {
+			document.getElementById('popupCA').style.display='block';
+			var url = "do.php?what=unredeem&c=<?= $redemptionCode ?>";
+			jQuery.ajax({
+			  type: "POST",
+			  url: url,
+			  cache: false,
+			  success: function (response) { },
+			  error: function () {}
+			});
+
+			return;
+		}
 		var url = "do.php?what=redeemFriend&c=<?= $redemptionCode ?>";
 		url += "&first=" + document.getElementById('fname').value;
 		url += "&last=" + document.getElementById('lname').value;
@@ -92,7 +105,10 @@
 	function onSubmitForm(response) {
 
 	}
-
+	function closeCA() {
+		document.getElementById('popupCA').style.display='none';
+		window.top.location = "<?= $fan_page_url ?>";
+	}
 
 </script>
 </head>
@@ -121,6 +137,11 @@
             <div class="clear"></div>
             <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" /></div>
             <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">Isn't it good to know that Facebook friends aren't just good for poking, watering your crops, or tagging terrible photos of you? Fill out the info below and if you are eligible and satisfy the <a onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" href="#" class="inline">Official Rules</a>, we'll send your BOT prize out via snail-mail.</p>
+			<div id="popupCA" class="popup" style="display:none;margin:0;right:0px;left:150px;">
+				<h3>California Residents Ineligible</h3>
+				<p style="height:60px;">Sorry, California residents are ineligible to play.  Please see the <a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');">Official Rules</a> for details.</p>
+				<a id="closeButton" href="javascript:{};" class="right" onclick="closeCA();">close</a>
+			</div>
 <?php include "include/redeem-form.php"; ?>
             <div class="clear"></div>
 <?php include "include/footer.php"; ?>

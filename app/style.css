@@ -81,7 +81,7 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 .popup h3 { color:#3f5a8f; font:bold 15px Arial; margin:30px 0 0 40px; }
 #mainContent .popup p { color:#5f5f5f; font:bold 12px/18px Arial; margin:0 0 0 40px; width:290px; }
 #mainContent .popupInvite p { color:#5f5f5f; display:block; font:normal 10px/18px Helvetica; margin:0; width:256px; }
-.popup a { background:url(images/close.png) no-repeat; display:block; height:26px; margin:17px 0 0 0; text-indent:-9999px; width:49px; }
+#closeButton { background:url(images/close.png) no-repeat; display:block; height:26px; margin:17px 0 0 0; text-indent:-9999px; width:49px; }
 .popupInvite a { background:url(images/send.jpg) no-repeat; clear:both; display:block; height:21px; margin:0 7px 0 0; text-indent:-9999px; width:45px; }
 /* =================================
 				FORM

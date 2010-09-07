@@ -8,7 +8,11 @@
 	if ($what == "like") {
 		$fbid = $_REQUEST['fbid'];
 		like($fbid);
-	} else if ($what == "redeem") {
+	} else if ($what == "unredeem") {
+		$redemptionCode = $_REQUEST['c'];
+		unredeemPrize($redemptionCode);
+	}
+	else if ($what == "redeem") {
 		$redemptionCode = $_REQUEST['c'];
 		$prizeSchedule = getPrizeScheduleFromCode($redemptionCode);
 		if (!isset($prizeSchedule) || $prizeSchedule['status'] != 0) {
