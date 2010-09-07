@@ -40,11 +40,27 @@
 		if (!isset($player)) {
 			$player = insertPlayer($fbid, $me['name'], $me['email'], $friendId);
 		}
+
+
+		$likes = $facebook->api('/me/likes');
+		$likes = $likes['data'];
+
+		$player['liked'] = 0;
+
+		foreach ($likes as $l) {
+			if ($l['id'] == $like_app_id) {  // like the page
+				$player['liked'] = 1;
+			}
+		}
 	  } catch (FacebookApiException $e) {
 		error_log($e);
 	  }
 	}
-	if (!isset($me)) {
-		header( 'Location: ' . $fan_page_url . '&fid=' . $friendFacebookId) ;
+	if (!isset($me) || $player['liked'] != 1) {
+		echo ('<html><body><script>');
+		echo ( "window.top.location='" . $fan_page_url . '&fid=' . $friendFacebookId . "';") ;
+//		echo ( "alert('" . $fan_page_url . '&fid=' . $friendFacebookId . "');") ;
+		echo ('</script></body></html>');
+		exit;
 	}
 ?>
