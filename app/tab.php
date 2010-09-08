@@ -79,7 +79,7 @@
 </fb:else>
 </fb:visible-to-connection>
 				<div class="bot" style="top:285px;margin-right:36px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
-				<img src="<?= $web_url ?>/images/door2.png" alt="" />
+				<img src="<?= $web_url ?>/images/door2.png?v=1.0" alt="" />
 				<div id="likePopup" class="popup" style="display:none;">
 					<h3>I "Like" SVEDKA Vodka</h3>
 					<p>To win a "BOT or NOT?" prize, you need to click the "Like" button at the top of the page. Swedish imported, five times distilled and a chance to win amazing BOT prizes ... what's not to like?</p>
