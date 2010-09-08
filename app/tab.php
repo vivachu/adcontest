@@ -51,7 +51,7 @@
 	}
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.0" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.2" />
 
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
@@ -96,7 +96,7 @@
 					</div>
 				</div>
 
-				<div class="left"><img src="<?= $web_url ?>/prizes/Prize_<?= $grandPrize['image'] ?>_Icon_1.png" alt="<?= $grandPrize['name'] ?>" width="200" height="200" /></div>
+				<div class="left"><img width="200" height="200" src="<?= $web_url ?>/prizes/FormPrizes/<?= $grandPrize['image'] ?>_Form.png" alt="<?= $grandPrize['name'] ?>" /></div>
 				<div class="desc">
 				<p class="title"><?= $grandPrize['name'] ?></p>
 				<p><?= $grandPrize['description'] ?></p>

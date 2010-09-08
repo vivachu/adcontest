@@ -187,7 +187,7 @@
 		<p class="left"></p>
 		<p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
     </div>
-	<div id="container" style="height:826px;">
+	<div id="container" style="">
         <h1><a href="#">svedka</a></h1>
         <div id="mainContent">
 <?php
