@@ -96,7 +96,7 @@ label { font:normal 12px Tahoma; }
 #form .zip { width:104px; }
 #form div { float:left; margin:0 0 15px 0; }
 #submit { clear:both; }
-#submit input { background: url("images/SubmitBtn.png") no-repeat scroll 0 0 transparent; border:none; font:bold 16px Futura; margin:10px 0 0 0; padding:0; text-transform:uppercase; cursor: pointer; }
+#submit input { background: url("images/SubmitBtn.png") no-repeat scroll 0 0 transparent; border:none; font:bold 16px Futura; margin:10px 0 0 0; padding:0; text-transform:uppercase; cursor: pointer; text-indent:-9999px;width:119px;height:37px;}
 /* =================================
 				FOOTER
 ==================================== */
