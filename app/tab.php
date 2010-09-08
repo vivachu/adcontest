@@ -57,13 +57,13 @@
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
 <![endif]-->
 	<div id="fb-root"></div>
+	<div id="top">
+		<p class="left">Like us? Click the button above.</p>
+		<p class="right"><a href="#" onclick="share(); return false;">Share</a></p>
+	</div>
 	<div id="container2">
-    	<div id="top">
-        	<p class="left">Like us? Click the button above.</p>
-            <p class="right"><a href="#" onclick="share(); return false;">Share</a></p>
-        </div>
         <h1><a href="#">svedka</a></h1>
-        <div id="mainContent">
+        <div id="mainContent" style="height: 900px;">
         	<h2 class="left">bot or not?</h2>
             <div class="round right">play and win</div>
             <div class="clear"></div>
@@ -81,15 +81,19 @@
 				<div class="bot" style="top:285px;margin-right:36px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
 				<img src="<?= $web_url ?>/images/door2.png?v=1.0" alt="" />
 				<div id="likePopup" class="popup" style="display:none;">
+					<div id="popupWrap">
 					<h3>I "Like" SVEDKA Vodka</h3>
 					<p>To win a "BOT or NOT?" prize, you need to click the "Like" button at the top of the page. Swedish imported, five times distilled and a chance to win amazing BOT prizes ... what's not to like?</p>
 					<a href="#" class="right" onclick="document.getElementById('likePopup').setStyle('display', 'none'); return false;">close</a>
+					</div>
 				</div>
 				<div id="alreadyPlayedPopup" class="popup" style="display:none;">
+					<div id="popupWrap">
 					<h3>Play Responsibly</h3>
 					<p>Sorry but you've already played today. Come back tomorrow to play again. Or better yet invite your friends to play now.  If one of them wins the BOT prize, you do too!</p>
 					<a href="#" class="right" onclick="document.getElementById('alreadyPlayedPopup').style.display='none';">close</a>
 					<a href="#" class="right" onclick="inviteFriends();" style="margin-left:10px;width:111px;height:25px;background:url(images/invite-friends-button.png) no-repeat;">invite friends</a>
+					</div>
 				</div>
 
 				<div class="left"><img src="<?= $web_url ?>/prizes/Prize_<?= $grandPrize['image'] ?>_Icon_1.png" alt="<?= $grandPrize['name'] ?>" width="200" height="200" /></div>

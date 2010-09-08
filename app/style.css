@@ -25,10 +25,10 @@ p{ padding:0px; line-height:22px;}
 /* =================================
 			CONTAINER
 ==================================== */
-#container { background:#000 url(images/bg2.jpg) repeat-y; margin:0 auto; padding-bottom:45px; position:relative; width:760px; } /* width and background changed */
+#container { background:#000 url(images/bg2.png) repeat-y bottom center; margin:0 auto; padding-bottom:45px; position:relative; width:760px; } /* width and background changed */
 #container2 { background:#000 url(images/bg.jpg) repeat-y; margin:0 auto; padding-bottom:45px; position:relative; width:520px; } /* Added */
-h1 { margin:0 auto; padding:14px 0 0 0; width:668px; } /* Padding Changed */
-h1 a { background:url(images/logo2.png) no-repeat; display:block; height:54px; margin-left:0px; text-indent:-9999px; width:211px; } /* Background image changed */
+h1 { margin:0 auto; padding:14px 0 0 0; width:668px; height: 54px; } /* Padding Changed */
+h1 a { background:url(images/logo2.png) no-repeat; display:block; height:54px; margin-left:0px; text-indent:-9999px; width:211px; position: absolute; margin-top: 3px; z-index: 10 } /* Background image changed */
 /* =================================
 				TOP
 ==================================== */
@@ -96,12 +96,12 @@ label { font:normal 12px Tahoma; }
 #form .zip { width:104px; }
 #form div { float:left; margin:0 0 15px 0; }
 #submit { clear:both; }
-#submit input { background:#e30065; border:none; font:bold 16px Futura; margin:10px 0 0 0; padding:7px 7px 4px 7px; text-transform:uppercase; cursor: pointer; }
+#submit input { /* background:#e30065; */ border:none; font:bold 16px Futura; margin:10px 0 0 0; padding:0; text-transform:uppercase; cursor: pointer; }
 /* =================================
 				FOOTER
 ==================================== */
 #footer p { font:normal 10px Helvetica; margin:53px auto 0 auto; text-align:center; }
-#btm { background:url(images/footer-bg.png) repeat-y; height:12px; margin:13px 0 0 0; }
+#btm { background:url(images/footer-bg.png) repeat-y; height:12px; margin:13px 0 0 0; display: none; }
 
 /* Added by Pupung Budi Purnama to complete itsnotbot.html and itsbot.html */
 #mainContent a.youLose {
@@ -163,7 +163,9 @@ z-index: 30;
 	top: 195px;
 	margin-right: 223px;
 }
-
+.content-rule {
+	margin-top: 5px;
+}
 
 /* =================================
 Viva Additions
