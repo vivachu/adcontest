@@ -149,7 +149,7 @@
 			   caption: 'They didn\'t win the BOT prize but you could. Click to play.',
 			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>',
                media: [
-               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/Prize_<?= $prizeSchedule['prize_image'] ?>_Icon_2.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>' }
+               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/FacebookPrizes/<?= $prizeSchedule['prize_image'] ?>_90x90.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>' }
                ]
 			 },
 			 action_links: [

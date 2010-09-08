@@ -37,7 +37,7 @@
 			   caption: 'Give it a shot and you could win an amazing BOT prize or a fun NOT prize. Just go to the SVEDKA Vodka Facebook page to play! This week\'s BOT prize: <?= $grandPrize['name']?>',
 			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>',
                		   media: [
-               			    { type: 'image', src: 'http://www.adcontests.com/svedka/app/images/svedka_icon.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' 
+               			    { type: 'image', src: 'http://www.adcontests.com/svedka/app/images/svedka_icon.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>'
 				    }
 				  ]
 		};
@@ -70,7 +70,7 @@
 
             <div id="playGame">
 	<!-- Static HTML landing page -->
-				<p><b font="Arial">Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b font="Arial">Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.  <span style="font-size:10px;"><a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
+				<p><b font="Arial">Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b font="Arial">Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.  <span style="font-size:10px;"><a href="#" onclick="window.open('<?=$web_url?>/rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 <fb:visible-to-connection>
 	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=<?= $app_url ?>/" class="playBtn">play</a>
