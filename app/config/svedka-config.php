@@ -32,7 +32,7 @@ $smtp_from = "do-not-reply@svedka.com";
 $svedka_admin_email = "vivaqu@gmail.com";
 
 
-$test_date = "'2010-10-22 24:33'";
+$test_date = "'2010-09-14 24:33'";
 //	$test_date = "'now()'";
 
 $share_url = "https://graph.facebook.com/oauth/authorize?client_id=" . $facebook_app_id . "&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=" . $app_url . "/?";
