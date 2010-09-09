@@ -81,14 +81,14 @@
 				<div class="bot" style="top:285px;margin-right:36px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
 				<img src="<?= $web_url ?>/images/door2.png?v=1.0" alt="" />
 				<div id="likePopup" class="popup" style="display:none;">
-					<div id="popupWrap">
+					<div class="popupWrap">
 					<h3>I "Like" SVEDKA Vodka</h3>
 					<p>To win a "BOT or NOT?" prize, you need to click the "Like" button at the top of the page. Swedish imported, five times distilled and a chance to win amazing BOT prizes ... what's not to like?</p>
 					<a href="#" class="right" onclick="document.getElementById('likePopup').setStyle('display', 'none'); return false;">close</a>
 					</div>
 				</div>
 				<div id="alreadyPlayedPopup" class="popup" style="display:none;">
-					<div id="popupWrap">
+					<div class="popupWrap">
 					<h3>Play Responsibly</h3>
 					<p>Sorry but you've already played today. Come back tomorrow to play again. Or better yet invite your friends to play now.  If one of them wins the BOT prize, you do too!</p>
 					<a href="#" class="right" onclick="document.getElementById('alreadyPlayedPopup').style.display='none';">close</a>
