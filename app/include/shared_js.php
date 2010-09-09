@@ -1,7 +1,7 @@
 <?php
-	$title = "Play SVEDKA \"BOT or NOT?\"";
+	$title = "Play SVEDKA Vodka \"BOT or NOT?\"";
 	if ($player) {
-		$title = $player['username'] . " is playing SVEDKA \"BOT or NOT?\"";
+		$title = $player['username'] . " is playing SVEDKA Vodka \"BOT or NOT?\"";
 	}
 ?>
 

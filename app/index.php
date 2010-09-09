@@ -41,7 +41,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>SVEDKA "BOT or NOT?"</title>
+<title>SVEDKA Vodka "BOT or NOT?"</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
 <link rel="stylesheet" type="text/css" href="style.css?v=1.3" />
 <script src="http://connect.facebook.net/en_US/all.js"></script>
