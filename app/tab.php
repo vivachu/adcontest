@@ -104,8 +104,10 @@
 				<div class="clear"></div>
 				<a id="inviteFriendsLink" href="#" onclick="inviteFriends(); return false;" class="invite" >invite friends to play</a>
 			</div> <!-- end playGame -->
-	<?php include "include/footer.php"; ?>
-
+            <div id="footer">
+	            <p>PLAY RESPONSIBLY. SVEDKA® Vodka - 40% alc/vol. (80 proof), 100% grain neutral <br/>spirits product of Sweden,
+	            sole U.S. Importer: Spirits Marque One LLC, New York, NY.</p>
+			</div>
             <div id="btm"></div>
         </div>
     </div>

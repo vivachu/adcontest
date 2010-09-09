@@ -15,6 +15,7 @@
 		$prize = getWinningPrize($test_date);
 		if (!isset($prize) || $prize['name'] == null) {
 			$prize = getRandomNotPrize();
+			$prizeSchedule['prize_name'] = $prize['name']; // for feed story
 		} else {
 			$prizeSchedule = winPrize($prize['prize_schedule_id'], $player['id']);
 		}
@@ -79,20 +80,6 @@
 	  }
 	}
 
-	function play() {
-		if (liked == 0) {
-			document.getElementById("likePopup").style.display="block";
-			return;
-		}
-		if (hasPlayed == 0) {
-			window.top.location = "https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&redirect_uri=<?= $app_url ?>/&scope=email,publish_stream,user_birthday,user_likes";
-		}
-		else {
-			document.getElementById("alreadyPlayedPopup").style.display="block";
-			return;
-		}
-	}
-
 </script>
 <!-- include jQuery library -->
 <script type="text/javascript" src="javascript/jquery.min.js"></script>
@@ -135,8 +122,6 @@
             <div class="clear"></div>
 
             <div id="playGame">
-<?php if (isset($me) && !isset($_REQUEST['test'])): ?>
-	<!-- load the game if logged in -->
 				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck! <span style="font-size:10px;"><a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
 				<div id="gameSwf" style="margin-top:30px;">
 					<object width="670" height="437" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Game" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
@@ -155,48 +140,12 @@
 					<iframe id="inviteFrame"></iframe>
 				</div>
 				<div id="redeemContainer" style="display:none;">
-	<?php if (isset($prizeSchedule)): ?>
+	<?php if (isset($prizeSchedule['id'])): ?>
 					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>"><img src="prizes/Buttons/Redeem_Btn.png"/></a></p>
 	<?php elseif (isset($prize['link'])): ?>
-					<div id="clickToRedeem"><a href="<?= $prize['link'] ?>"><img src="prizes/Buttons/View_Btn.png"/></a></p>
+					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory();"><img src="prizes/Buttons/View_Btn.png"/></a></p>
 	<?php endif; ?>
 				</div>
-<?php elseif (isset($_REQUEST['test'])): ?>
-	<!-- test the output -->
-				<p><?= $me['id'] ?> <?= $me['name'] ?> <?= $me['email'] ?> <?= $me['birthday'] ?> <?= $age ?></p>
-				<p>
-				<?= $player['liked']; ?>
-				</p>
-				<p>
-				<?= print_r($likes); ?>
-				</p>
-<?php else: ?>
-	<!-- Static HTML landing page -->
-				<p><b>Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week’s amazing SVEDKA BOT prize … or end up with a fun consolation NOT prize. <b>Increase your chances to win</b> by inviting friends — If one of them wins a Bot Grand Prize, you do too! Click below to play.</p>
-				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
-				<a href="javascript:{}" class="playBtn" onclick="play();">play</a>
-				<div class="bot" style="top:240px;"><img src="images/bot.png" alt="" /></div>
-				<img src="images/door.png" alt="" />
-				<div id="likePopup" class="popup" style="display:none;">
-					<h3>I "Like" SVEDKA Vodka</h3>
-					<p>To win a "BOT or NOT?" prize, you need to click the "Like" button at the top of the page. Swedish imported, five times distilled and a chance to win amazing BOT prizes ... what's not to like?</p>
-					<a href="javascript:{};" class="right" onclick="document.getElementById('likePopup').style.display='none';">close</a>
-				</div>
-				<div id="alreadyPlayedPopup" class="popup" style="display:none;">
-					<h3>Play Responsibly</h3>
-					<p>Sorry but you've already played today. Come back tomorrow to play again. Or better yet invite your friends to play now.  If one of them wins the BOT prize, you do too!</p>
-					<a href="javascript:{};" class="right" onclick="document.getElementById('alreadyPlayedPopup').style.display='none';">close</a>
-					<a href="javascript:{};" class="right" onclick="inviteFriends();" style="margin-left:10px;width:108px;height:26px;background:url(images/invite-friends-button.png) no-repeat;">invite friends</a>
-				</div>
-
-				<div class="left"><img src="prizes/Prize_<?= $grandPrize['image'] ?>_Icon_1.png" alt="<?= $grandPrize['name'] ?>" width="200" height="200" /></div>
-				<div class="desc">
-				<p class="title"><?= $grandPrize['name'] ?></p>
-				<p><?= $grandPrize['description'] ?></p>
-				</div>
-				<div class="clear"></div>
-				<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>
-<?php endif; ?>
 			</div> <!-- end playGame -->
 			<div class="clear"></div>
 			<a href="javascript:{}" onclick="inviteFriends();" class="invite" >invite friends to play</a>

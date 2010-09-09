@@ -106,7 +106,7 @@ label { font:normal 12px Tahoma; }
 /* =================================
 				FOOTER
 ==================================== */
-#footer p { font:normal 10px Helvetica; margin:53px auto 0 auto; text-align:center; }
+#footer p { font:normal 10px Helvetica; margin:53px auto 0px auto; text-align:center; }
 #btm { background:url(images/footer-bg.png) repeat-y; height:12px; margin:13px 0 0 0; display: none; }
 
 /* Added by Pupung Budi Purnama to complete itsnotbot.html and itsbot.html */

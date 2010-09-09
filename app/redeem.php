@@ -120,7 +120,7 @@
 		document.body.style.cursor = 'default';
 <? if (isset($friend) ):  ?>  //&&  $prizeSchedule['place'] == 1):
 		document.getElementById("popInvite").style.display = "block";
-<? else: ?>
+<? elseif ($prizeSchedule['place'] != 1): ?>
 		publishFeedStory();
 <? endif; ?>
 	}
@@ -138,35 +138,6 @@
 		});
 
 	}
-
-	function publishFeedStory() {
-		var prizeName = "<?= $prizeSchedule['prize_name'] ?>";
-		 FB.ui(
-		   {
-			 method: 'stream.publish',
-			 attachment: {
-			   name: '<?= $prizeSchedule['username'] ?> just "won" a ' + prizeName + ' by playing SVEDKA "BOT or NOT?"',
-			   caption: 'They didn\'t win the BOT prize but you could. Click to play.',
-			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>',
-               media: [
-               	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/FacebookPrizes/<?= $prizeSchedule['prize_image'] ?>_90x90.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>' }
-               ]
-			 },
-			 action_links: [
-			   { text: 'BOT or NOT', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
-			 ],
-			 user_message_prompt: 'Thanks! Your information was received.'
-		   },
-		   function(response) {
-			 if (response && response.post_id) {
-			   //alert('Post was published.');
-			 } else {
-			   //alert('Post was not published.');
-			 }
-		   }
-		 );
-	}
-
 </script>
 </head>
 <body>
