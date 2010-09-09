@@ -49,7 +49,7 @@
 
 		<p><strong>WINNERS LIST:</strong>	 For a list of winners, send a self-addressed stamped envelope by December 31, 2010 to: SVEDKA Bot or Not Winners List, PO Box 25309, Rochester, NY 14625-0309.</p>
 
-		<p><strong>SPONSOR:</strong> Spirits Marque One LLC, 598 Madison Avenue, New York, NY 10022. iPad and iPhone 4 are copyrights of Apple, Inc. All trademarks are the property of their respective owners.  No one but SVEDKA Vodka is a participant in or sponsor of this Game.</p>
+		<p><strong>SPONSOR:</strong> Spirits Marque One LLC, 598 Madison Avenue, New York, NY 10022. iPad and iPhone 4 are copyrights of Apple, Inc. All trademarks are the property of their respective owners.  No one but SVEDKA Vodka is a  sponsor of this Game.</p>
 			<p>&nbsp;</p>
 			</div> <!-- .content-rule -->
         </div>

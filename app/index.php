@@ -61,6 +61,7 @@
 	}
 
 	function inviteFriends(){
+		document.getElementById("redeemContainer").style.display="none";
 		document.getElementById('inviteContainer').style.display = 'block';
 		document.getElementById('inviteFrame').src = "invite.php?fbid=<?= $player['facebook_id'] ?>";
 	}
