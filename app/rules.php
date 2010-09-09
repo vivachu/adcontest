@@ -13,6 +13,12 @@
   DD_belatedPNG.fix('h1 a, .left img, .bot img, a.playBtn, .round, a.invite');
 </script>
 <![endif]-->
+<style>
+ html, body {
+ 	overflow-x:auto;
+ 	overflow-y:auto;
+ }
+</style>
 </head>
 <body>
 	<div id="container">

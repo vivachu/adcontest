@@ -41,7 +41,7 @@
 				    }
 				  ]
 		};
-		var actionLinks = [ { text: 'BOT or NOT', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' } ];
+		var actionLinks = [ { text: 'Svedka Vodka BOT or NOT?', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' } ];
 		Facebook.streamPublish('', attachment, actionLinks);
         }
 
@@ -70,7 +70,7 @@
 
             <div id="playGame">
 	<!-- Static HTML landing page -->
-				<p><b font="Arial">Everyone is a winner!</b> Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. <b font="Arial">Increase your chances to win</b> by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.  <span style="font-size:10px;"><a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
+				<p>Everyone is a winner! Sort of. Just pick a door to see if you win this week's amazing SVEDKA BOT prize or end up with a fun consolation NOT prize. Increase your chances to win by inviting friends. If one of them wins a Bot Grand Prize, you do too! Click below to play.  <a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffc821;">See Official Rules</a> for details.</p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 <fb:visible-to-connection>
 	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=<?= $app_url ?>/" class="playBtn">play</a>
@@ -112,7 +112,7 @@
         </div>
     </div>
     <div id="inviteFriendsPopup" style="position:absolute;top:400px;left:15px;display:none;">
-   	<fb:request-form action="<?= $fan_page_url ?>" method="get" type="Svedka - BOT or NOT Contest" invite="true"  content="You've been invited to play and win Svedka BOT or NOT? It's free. Win an amazing BOT prize or a bunch of fun NOT prizes each week. Invite your Facebook friends to play, because if they win the BOT prize, so do you! This week's BOT prize: <?= $grandPrize['name'] ?><fb:req-choice url='<?= $share_url ?>&fid=<?= $fbid ?>' label='Play Now' /> ">
+   	<fb:request-form action="<?= $fan_page_url ?>" method="get" type="Svedka Vodka BOT or NOT?" invite="true"  content="You've been invited to play and win Svedka BOT or NOT? It's free. Win an amazing BOT prize or a bunch of fun NOT prizes each week. Invite your Facebook friends to play, because if they win the BOT prize, so do you! This week's BOT prize: <?= $grandPrize['name'] ?><fb:req-choice url='<?= $share_url ?>&fid=<?= $fbid ?>' label='Play Now' /> ">
         	<fb:multi-friend-selector cols="3" actiontext="Tell your friends about us" rows="4" showborder="true" bypass="cancel" />
    	</fb:request-form>
     </div>

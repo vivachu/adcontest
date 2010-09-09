@@ -19,7 +19,7 @@
                ]
 			 },
 			 action_links: [
-			   { text: 'BOT or NOT', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
+			   { text: 'Svedka Vodka BOT or NOT?', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
 			 ]
 		   },
 		   function(response) {
@@ -46,7 +46,7 @@
                ]
 			 },
 			 action_links: [
-			   { text: 'BOT or NOT', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
+			   { text: 'Svedka Vodka BOT or NOT?', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
 			 ],
 			 user_message_prompt: 'Thanks! Your information was received.'
 		   },
