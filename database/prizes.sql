@@ -1,6 +1,6 @@
 ## contest_id, place, name, value, num_winners
 
-call schedule_prize(1, 1, 'Panasonic Lumix DMC-LX5K', 500, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Camera');
+call schedule_prize(1, 1, 'Panasonic Lumix DMC-LX5K', 500, 1, 'Take high quality photos and movies with this 10.1 megapixel digital bad boy. Just be sure to share them with us!', 'Camera');
 call schedule_prize(1, 2, 'Bot or Not Tee', 10, 5, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
 call schedule_prize(1, 3, 'S G Standee', 14, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
 call schedule_prize(1, 4, 'SVEDKA Shaker', 10, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
@@ -69,7 +69,7 @@ insert into prizes(name, place, num_winners, link, description, image) values('A
 
 insert into prizes(name, place, num_winners, link, description, image) values('How to use press-on nails video tutorial', 0, 0, 'http://www.youtube.com/watch?v=36OHBHmQHws', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Nails');
 
-insert into prizes(name, place, num_winners, link, description, image) values('Diane Horner Country Hip Hop', 0, 0, 'http://www.youtube.com/watch?v=2at0wiombrc', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'CountryHipHop');
+insert into prizes(name, place, num_winners, link, description, image) values('Diane Horner Country Hip Hop', 0, 0, 'http://www.youtube.com/watch?v=UOacUWjHgiE', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'CountryHipHop');
 
 insert into prizes(name, place, num_winners, link, description, image) values('Audio of a humpback whale', 0, 0, 'http://www.youtube.com/watch?v=xo2bVbDtiX8', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Whale');
 
@@ -77,6 +77,6 @@ insert into prizes(name, place, num_winners, link, description, image) values('M
 
 insert into prizes(name, place, num_winners, link, description, image) values('Scrapple', 0, 0, 'http://tinyurl.com/276tkfb', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Scrapple');
 
-insert into prizes(name, place, num_winners, link, description, image) values('Rick Astley video', 0, 0, 'http://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'RickRoll');
+insert into prizes(name, place, num_winners, link, description, image) values('Rick Astley video', 0, 0, 'http://www.youtube.com/watch?v=ZOU8GIRUd_g', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'RickRoll');
 
 insert into prizes(name, place, num_winners, link, description, image) values('"Me at the zoo" - the world\'s first YouTube video', 0, 0, 'http://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'YouTube');

@@ -8,7 +8,9 @@ Pupung
 Viva
 - Change hardcoded test date to now() for getting prize in index.php, redeem, redeem-friend, friend.
 - Change hardcoded has played so that players cannot play multiple times
+- ONLY give friend a prize if its the grand prize. redeem.php line
 - HTML emails
+- Invite Friends click through from link.
 - Change admin emails: gailu@sweepstakesconsulting.com, svedka@walrusnyc.com
 - Friend invite click through link
 - Checkout random prizes that are not

@@ -5,8 +5,6 @@
 
 	$grandPrize = getGrandPrize($test_date);
 
-	include 'include/facebook-authenticate-create-player.php';
-
 	$redemptionCode = $_REQUEST['c'];
 	$prizeSchedule = getPrizeScheduleFromCode($redemptionCode);
 	if (!isset($prizeSchedule) || $prizeSchedule['status'] != 0) {
@@ -118,10 +116,11 @@
 
 	function onSubmitForm(response) {
 		document.body.style.cursor = 'default';
-<? if (isset($friend) ):  ?>  //&&  $prizeSchedule['place'] == 1):
+<? if (isset($friend) && $prizeSchedule['place'] == 1): ?>
 		document.getElementById("popInvite").style.display = "block";
 <? elseif ($prizeSchedule['place'] != 1): ?>
 		publishFeedStory();
+		document.getElementById("thanksPopup").style.display = "block";
 <? endif; ?>
 	}
 
@@ -166,7 +165,7 @@
 ?>
         	<h2 class="congrats left">bot or not?</h2>
             <div class="clear"></div>
-            <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" /></div>
+            <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" width="190" height="190"/></div>
             <p class="text" style="font-size: 12px; margin:5px auto 0 35px;width:615px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of an <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands.  Fill out the info below and if you are eligible and satisfy the <a class="inline" href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');">Official Rules</a>, we'll make it happen.</p>
             <p class="text" style="font-size: 12px; margin:5px auto 0 35px;width:615px;">And, because a friend invited you to play, your friend will win an <?= $prizeSchedule['prize_name'] ?> too, because that's what friends do — they win prizes for each other (in our book anyway).</p>
 <?php
@@ -197,11 +196,20 @@
   <?
   	}
   ?>
-			<div id="popupCA" class="popup" style="display:none;margin:0;right:0px;left:150px;">
+			<div id="popupCA" class="popup" style="display:none;margin:0;right:0px;left:100px;">
+				<div class="popupWrap">
 				<h3>California Residents Ineligible</h3>
 				<p style="height:60px;">Sorry, California residents are ineligible to play.  Please see the <a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');">Official Rules</a> for details.</p>
 				<a id="closeButton" href="javascript:{};" class="right" onclick="closeCA();">close</a>
+				</div>
 			</div>
+			<div id="thanksPopup" class="popup" style="display:none;left:100px;">
+				<div class="popupWrap">
+				<h3>Thanks! Your information was received</h3>
+				<p>Thanks for playing.  We'll be in touch with you soon regarding your prize.</p>
+				</div>
+			</div>
+
 <?php include "include/redeem-form.php"; ?>
             <div class="clear"></div>
 <?php include "include/footer.php"; ?>

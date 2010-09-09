@@ -16,6 +16,8 @@
 		if (!isset($prize) || $prize['name'] == null) {
 			$prize = getRandomNotPrize();
 			$prizeSchedule['prize_name'] = $prize['name']; // for feed story
+			$prizeSchedule['username'] = $player['username'];
+			$prizeSchedule['prize_image'] = $prize['image'];
 		} else {
 			$prizeSchedule = winPrize($prize['prize_schedule_id'], $player['id']);
 		}
@@ -27,7 +29,9 @@
 		$thumb = "prizes/DoorPrizes/" . $prize['image'] . "_Door.png";
 		$bigImage = "prizes/BigPrizes/" . $prize['image'] . "_Big.png";
 		$prizeNameUrl = "prizes/TypeBoxes/" . $prize['image'] . "_TypeBox.png";
-
+		if ($prize['place'] == 1) {
+			$prizeNameUrl = "prizes/TypeBoxes/ItsBot_TypeBox.png";
+		}
 	}
 
 ?>
@@ -141,7 +145,7 @@
 				</div>
 				<div id="redeemContainer" style="display:none;">
 	<?php if (isset($prizeSchedule['id'])): ?>
-					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>"><img src="prizes/Buttons/Redeem_Btn.png"/></a></p>
+					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>&signed_request=$_REQUEST['signed_request']"><img src="prizes/Buttons/Redeem_Btn.png"/></a></p>
 	<?php elseif (isset($prize['link'])): ?>
 					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory();"><img src="prizes/Buttons/View_Btn.png"/></a></p>
 	<?php endif; ?>

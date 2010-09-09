@@ -63,7 +63,7 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 #mainContent p.title span { color:#fff; font:bold 16px Arial; text-transform:none; }
 #mainContent img { display:block; margin:0 auto; padding-right: 20px;}
 #mainContent .left img { margin:35px 20px 0 28px; }
-#mainContent .left img.small { margin:5px 20px 0 28px; }
+#mainContent .left img.small { margin:5px 20px 0 28px;}
 .bot { margin:0; position:absolute; top:302px; right:0; } /* Margin and top changed */
 #mainContent a.playBtn { background:url(images/play-btn.png) no-repeat; bottom:505px; height:100px; position:absolute; right:206px; text-indent:-9999px; width:230px; } /* bottom and right changed */
 #container2 #mainContent a.playBtn {background:url(images/play-btn2.png) no-repeat; bottom:550px; height:100px; position:absolute; right:100px; text-indent:-9999px; width:230px; top: 340px} /* Added */
@@ -187,14 +187,14 @@ h2.congrats_not { background:url(images/youstillwon-title.png) no-repeat; margin
 	text-align: center;
 }
 #clickToRedeem {
-	width: 160px;
-	height: 30px;
+	width: 250px;
+	height: 34px;
 	line-height: 30px;
 	padding: 1px;
-	margin: 0;
+	margin: 0 auto;
 	position: relative;
 	top: 450px;
-	left: 215px;
+	clear: both;
 }
 
 #clickToRedeem a {
