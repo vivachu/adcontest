@@ -107,7 +107,7 @@
 	<script>
 	  window.fbAsyncInit = function() {
 		FB.init({appId: '<?= $facebook_app_id ?>', status: true, cookie: true,
-				 xfbml: true});
+				 xfbml: true, dialog_type: 'modal'});
 	  };
 	  (function() {
 		var e = document.createElement('script'); e.async = true;
@@ -132,7 +132,7 @@
 				<p>To play, just click on one of the doors to open it and reveal what's inside.  It could be BOT, it could be NOT.  Good Luck! <span style="font-size:10px;"><a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" style="color:#ffc821;">See Official Rules</a> for details.</span></p>
 				<div id="gameSwf" style="margin-top:30px;">
 					<object width="670" height="437" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Game" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-						<param value="DoorAnim.swf" name="movie">
+						<param value="DoorAnim.swf?v=1.2" name="movie">
 						<param value="high" name="quality">
 						<param value="transparent" name="wmode">
 						<param value="all" name="allowNetworking">
@@ -140,7 +140,7 @@
 						<param value="prizeName=<?= $prizeNameUrl ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" name="flashvars">
 						<embed width="670" height="437" align="middle" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" allowscriptaccess="always" allownetworking="all"
 						flashvars="prizeName=<?= $prizeNameUrl ?>&prizeImageUrl=<?= $thumb ?>&prizeImageBigUrl=<?= $bigImage ?>&win=<?= $win ?>" quality="high" loop="false" play="true" name="Game" id="Game" wmode="transparent"
-						src="DoorAnim.swf">
+						src="DoorAnim.swf?v=1.2">
 					</object>
 				</div>
 <? else: ?>
