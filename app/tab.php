@@ -52,9 +52,8 @@
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.4" />
-
 <!--[if lt IE 8]>
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css?v=2.5" />
 <![endif]-->
 	<div id="fb-root"></div>
 	<div id="top">
@@ -98,8 +97,10 @@
 
 				<div class="left"><img width="200" height="200" src="<?= $web_url ?>/prizes/FormPrizes/<?= $grandPrize['image'] ?>_Form.png?v=1.0" alt="<?= $grandPrize['name'] ?>" /></div>
 				<div class="desc">
+
 				<p class="title"><?= $grandPrize['name'] ?></p>
 				<p><?= $grandPrize['description'] ?></p>
+
 				</div>
 				<div class="clear"></div>
 				<a id="inviteFriendsLink" href="#" onclick="inviteFriends(); return false;" class="invite" >invite friends to play</a>
