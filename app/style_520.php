@@ -100,13 +100,13 @@ Arial; padding:13px 30px; }
 .popupContent { margin:15px 30px; padding:0; }
 #container2 #mainContent .popupContent img { margin:0 10px 0 0; }
 .popupInvite h3 { color:#3f5a8f; font:bold 14px "Lucida Grande"; }
-.popup h3 { color:#3f5a8f; font:bold 14px "Lucida Grande"; margin:0px 0 0 40px; }
+.popup h3 { color:#3f5a8f; font:bold 14px "Lucida Grande"; margin:0px 0 0 25px; }
 #container2 #mainContent .popup p { color:#5f5f5f; font:11px/14px
-Arial; margin:0 0 0 40px; width:290px; font-family: "Lucida Grande"; }
+Arial; margin:0 0 0 25px; width:290px; font-family: "Lucida Grande"; }
 #container2 #mainContent .popupInvite p { color:#5f5f5f; display:block;
 font:normal 10px/18px "Lucida Grande"; margin:0; width:256px; }
 .popup a { background:url(<?= $web_url ?>/images/close.png)
-no-repeat; display:block; height:26px; margin:17px 0 0 0;
+no-repeat; display:block; height:26px; margin:17px 15px 10px 0;
 text-indent:-9999px; width:49px; }
 .popupInvite a {
 background:url(<?= $web_url ?>/images/send.jpg) no-repeat;

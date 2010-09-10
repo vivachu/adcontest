@@ -51,7 +51,7 @@
 	}
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.3" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.4" />
 
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
