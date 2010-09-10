@@ -5,10 +5,11 @@
 	}
 ?>
 
+
 	function share() {
 		 FB.ui(
 		   {
-		   	 display: 'dialog',
+		   	 display: 'popup',
 			 method: 'stream.publish',
 			 attachment: {
 			   name: '<?= $title ?>',
@@ -36,6 +37,7 @@
 		var prizeName = "<?= $prizeSchedule['prize_name'] ?>";
 		 FB.ui(
 		   {
+		   	 display: 'popup',
 			 method: 'stream.publish',
 			 attachment: {
 			   name: '<?= $prizeSchedule['username'] ?> just "won" a ' + prizeName + ' by playing SVEDKA Vodka "BOT or NOT?"',
