@@ -30,11 +30,18 @@
 			$subject = "BOT OR NOT";
 			$text = file_get_contents('./email/EmailFriendWinConfirm.txt');
 			$text = str_replace("PRIZE_NAME", $prizeSchedule['prize_name'], $text);
+			$html = file_get_contents($web_url . '/email/EmailFriendWinConfirm_2.php?prizeName=' . urlencode($prizeSchedule['prize_name']) . '&prizeImage=' . $prizeSchedule['prize_image']);
+		} else if ($prizeSchedule['place'] >= 2 && $prizeSchedule['place'] <= 5) {
+			$subject = "IT'S BOTTER THAN NOTHING";
+			$text = file_get_contents('./email/EmailFriendWin2Confirm.txt');
+			$text = str_replace("PRIZE_NAME", $prizeSchedule['prize_name'], $text);
+			$html = file_get_contents($web_url . '/email/EmailFriendWin2Confirm_2.php?prizeName=' . urlencode($prizeSchedule['prize_name']) . '&prizeImage=' . $prizeSchedule['prize_image']);
 		} else {
 			$subject = "IT'S BOTTER THAN NOTHING";
 			$text = file_get_contents('./email/EmailFriendNotConfirm.txt');
+			$html = file_get_contents($web_url . '/email/EmailFriendNotConfirm_2.php?prizeImage=' . urlencode($prizeSchedule['prize_name']));
 		}
-		$html = $text;
+//		$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to player
 
 		$to = $svedka_admin_email;
@@ -58,7 +65,9 @@
 		$subject = "BOT OR NOT";
 		$text = file_get_contents('./email/EmailFriendWinConfirm.txt');
 		$text = str_replace("PRIZE_NAME", $referral['prize_name'], $text);
-		$html = $text;
+
+		$html = file_get_contents($web_url . '/email/EmailFriendWinConfirm_2.php?prizeName=' . urlencode($prizeSchedule['prize_name']) . '&prizeImage=' . $prizeSchedule['prize_image']);
+//		$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to player
 
 		$to = $svedka_admin_email;
@@ -84,7 +93,10 @@
 		$text = str_replace("PRIZE_NAME", $prizeSchedule['prize_name'], $text);
 		$text = str_replace("FRIEND_NAME", $prizeSchedule['username'], $text);
 		$text = str_replace("REDEEM_URL", $app_url . "/redeem-friend.php?c=" . $referral['redemption_code'], $text);
-		$html = $text;
+
+		$html = file_get_contents($web_url . "/email/EmailFriendWin_2.php?prizeName=" . $prizeSchedule['prize_name'] . "&prizeImage=" . $prizeSchedule['prize_image'] . "&c=" . $referral['redemption_code']);
+
+		//$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to friend
 	}
 

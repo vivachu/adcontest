@@ -1,6 +1,6 @@
 .bot { margin:60px 0 0 0; position:absolute; left:350px; }
 
-.round { background:url(images/play-n-win.png) no-repeat; display:block; height:63px; margin:25px 10px 0 0; text-indent:-9999px; width:63px; }
+.round {background:url(http://www.adcontests.com/svedka/app/images/play-n-win.png) no-repeat; display:block; height:63px; margin:25px 10px 0 0; text-indent:-9999px; width:63px; }
 
 #mainContent .desc p { float:left; margin:0; padding:0; width:200px; }
 
