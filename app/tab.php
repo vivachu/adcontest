@@ -55,6 +55,7 @@
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css?v=2.5" />
 <![endif]-->
+	
 	<div id="fb-root"></div>
 	<div id="top">
 		<p class="left">Like us? Click the button above.</p>
