@@ -51,7 +51,7 @@
 	}
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.2" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.3" />
 
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css" />
@@ -62,7 +62,7 @@
 		<p class="right"><a href="#" onclick="share(); return false;">Share</a></p>
 	</div>
 	<div id="container2">
-        <h1><a href="#">svedka</a></h1>
+        <h1><a>svedka</a></h1>
         <div id="mainContent" style="height: 900px;">
         	<h2 class="left">bot or not?</h2>
             <div class="round right">play and win</div>

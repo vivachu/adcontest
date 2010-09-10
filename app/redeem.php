@@ -22,7 +22,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bot Prize Redemption Confirmation</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css?v=1.5" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.6" />
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="ie.css" />
 <script src="DD_belatedPNG_0.0.8a.js"></script>
@@ -158,7 +158,7 @@
 		<p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
     </div>
 	<div id="container" style="">
-        <h1><a href="#">svedka</a></h1>
+        <h1><a>svedka</a></h1>
         <div id="mainContent">
 <?php
 	if ($prizeSchedule['place'] == 1) {
@@ -184,6 +184,7 @@
 ?>
 			<div id="popInvite" class="popupContainer" style="display:none;">
                 <div class="popupInvite">
+                	<div class="popupWrap">
                     <h2 class="popupTitle"><span>Thanks! Your information was received.</span></h2>
                     <div class="popupContent">
                     	<img src="images/pic.jpg" alt="" class="left" />
@@ -191,22 +192,23 @@
                     	<p class="left">Since <?= $friend['username'] ?> invited you to play The SVEDKA Vodka “BOT or NOT?” Game, <?= $friend['username'] ?> wins an <?= $prizeSchedule['prize_name'] ?> too! Just hit “Send” and we’ll send <?= $friend['username'] ?> an email.</p>
 					</div>
                     <a href="javascript:{}" class="right" onclick="sendFriendEmail();">close</a>
+                    </div>
                 </div>
 			</div>
   <?
   	}
   ?>
-			<div id="popupCA" class="popup" style="display:none;margin:0;right:0px;left:100px;">
+			<div id="popupCA" class="popup" style="display:none;margin:0;right:0px;left:150px;">
 				<div class="popupWrap">
 				<h3>California Residents Ineligible</h3>
 				<p style="height:60px;">Sorry, California residents are ineligible to play.  Please see the <a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');">Official Rules</a> for details.</p>
 				<a id="closeButton" href="javascript:{};" class="right" onclick="closeCA();">close</a>
 				</div>
 			</div>
-			<div id="thanksPopup" class="popup" style="display:none;left:100px;">
+			<div id="thanksPopup" class="popup" style="display:none;margin:0;right:0px;left:150px;">
 				<div class="popupWrap">
 				<h3>Thanks! Your information was received</h3>
-				<p>Thanks for playing.  We'll be in touch with you soon regarding your prize.</p>
+				<p style="height:60px;">Thanks for playing.  We'll be in touch with you soon regarding your prize.</p>
 				</div>
 			</div>
 

@@ -131,7 +131,7 @@
 		<p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
     </div>
 	<div id="container">
-        <h1><a href="#">svedka</a></h1>
+        <h1><a>svedka</a></h1>
         <div id="mainContent">
         	<h2 class="congrats left">bot or not?</h2>
             <div class="clear"></div>

@@ -43,7 +43,7 @@
 
 <title>SVEDKA Vodka "BOT or NOT?"</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css?v=1.3" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.4" />
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 
@@ -120,7 +120,7 @@
 		<p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
     </div>
 	<div id="container">
-        <h1><a href="#">svedka</a></h1>
+        <h1><a>svedka</a></h1>
         <div id="mainContent">
         	<h2 class="left">bot or not?</h2>
             <div class="round right">play and win</div>

@@ -38,7 +38,7 @@
 		   {
 			 method: 'stream.publish',
 			 attachment: {
-			   name: '<?= $prizeSchedule['username'] ?> just "won" a ' + prizeName + ' by playing SVEDKA "BOT or NOT?"',
+			   name: '<?= $prizeSchedule['username'] ?> just "won" a ' + prizeName + ' by playing SVEDKA Vodka "BOT or NOT?"',
 			   caption: 'They didn\'t win the BOT prize but you could. Click to play.',
 			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>',
                media: [
