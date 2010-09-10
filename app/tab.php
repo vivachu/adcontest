@@ -101,7 +101,7 @@
 					</div>
 				</div>
 
-				<div class="left"><img width="200" height="200" src="<?= $web_url ?>/prizes/FormPrizes/<?= $grandPrize['image'] ?>_Form.png?v=1.0" alt="<?= $grandPrize['name'] ?>" /></div>
+				<div class="left"><img style="margin-left:15px;" width="175" height="175" src="<?= $web_url ?>/prizes/FormPrizes/<?= $grandPrize['image'] ?>_Form.png?v=1.0" alt="<?= $grandPrize['name'] ?>" /></div>
 				<div class="desc">
 
 				<p class="title"><?= $grandPrize['name'] ?></p>
