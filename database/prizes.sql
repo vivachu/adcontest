@@ -75,7 +75,7 @@ insert into prizes(name, place, num_winners, link, description, image) values('S
 
 insert into prizes(name, place, num_winners, link, description, image) values('Slideshow of My Favorite Things from the Sound of Music.', 0, 0, 'http://www.youtube.com/watch?v=dw2VX5wQYQg', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Slideshow');
 
-insert into prizes(name, place, num_winners, link, description, image) values('Scrapple', 0, 0, 'http://tinyurl.com/276tkfb', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Scrapple');
+insert into prizes(name, place, num_winners, link, description, image) values('whole bunch of Scrapple', 0, 0, 'http://tinyurl.com/276tkfb', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Scrapple');
 
 insert into prizes(name, place, num_winners, link, description, image) values('Rick Astley video', 0, 0, 'http://www.youtube.com/watch?v=ZOU8GIRUd_g', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'RickRoll');
 
