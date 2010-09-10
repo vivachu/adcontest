@@ -79,4 +79,4 @@ insert into prizes(name, place, num_winners, link, description, image) values('S
 
 insert into prizes(name, place, num_winners, link, description, image) values('Rick Astley video', 0, 0, 'http://www.youtube.com/watch?v=ZOU8GIRUd_g', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'RickRoll');
 
-insert into prizes(name, place, num_winners, link, description, image) values('Glimpse at the world\'s first YouTube video', 0, 0, 'http://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'YouTube');
+insert into prizes(name, place, num_winners, link, description, image) values('Glimpse at the world\'s first YouTube video', 0, 0, 'http://www.youtube.com/watch?v=jNQXAC9IVRw', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'YouTube');
