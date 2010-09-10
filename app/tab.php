@@ -2,6 +2,7 @@
 	require_once 'svedka-config.php';
 	require_once 'include/sql.php';
 	require_once 'include/facebook.php';
+	require_once 'include/Browser.php';
 
 	$grandPrize = getGrandPrize($test_date);
 
@@ -24,6 +25,7 @@
 	  }
 	}
 	$title = "Play SVEDKA \"BOT or NOT?\"";
+	$browser = new Browser();
 ?>
 
 <script><!--
@@ -51,11 +53,14 @@
 	}
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.4" />
-<!--[if lt IE 8]>
+<? if ( $browser->getBrowser() == Browser::BROWSER_IE && $browser->getVersion() < 8 ): ?>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css?v=2.5" />
-<![endif]-->
-	
+<? else: ?>
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.4" />
+<? endif; ?>
+
+
+
 	<div id="fb-root"></div>
 	<div id="top">
 		<p class="left">Like us? Click the button above.</p>
