@@ -54,7 +54,7 @@
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
 <? if ( $browser->getBrowser() == Browser::BROWSER_IE && $browser->getVersion() < 8 ): ?>
-<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie.css?v=2.5" />
+<link rel="stylesheet" type="text/css" href="<?= $web_url ?>/ie_520.css?v=2.5" />
 <? else: ?>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/style_520.php?v=2.4" />
 <? endif; ?>

@@ -6,12 +6,12 @@ body {
 	margin:0 auto;
 	padding:0;
 	position:relative;
-	overflow-x: none;
-	overflow-y: none;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 html {
-	overflow-x: none;
-	overflow-y: none;
+	overflow-x: hidden;
+	overflow-y: hidden;
 
 }
 /**************************************************** GLOBAL STYLES ****/
