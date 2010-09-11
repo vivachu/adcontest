@@ -11,6 +11,13 @@
 	} else if ($what == "unredeem") {
 		$redemptionCode = $_REQUEST['c'];
 		unredeemPrize($redemptionCode);
+	} else if ($what == "testEmail") {
+		$to = $_REQUEST['email'];
+		$subject = "IT'S BOTTER THAN NOTHING";
+		$text = file_get_contents('./email/EmailFriendNotConfirm.txt');
+		$html = file_get_contents($web_url . '/email/EmailFriendNotConfirm_2.php?prizeImage=' . urlencode('Gel Insoles'));
+		sendEmail($to, $subject, $text, $html); // send to player
+
 	}
 	else if ($what == "redeem") {
 		$redemptionCode = $_REQUEST['c'];
