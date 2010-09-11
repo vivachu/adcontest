@@ -14,8 +14,8 @@
 	} else if ($what == "testEmail") {
 		$to = $_REQUEST['email'];
 		$subject = "IT'S BOTTER THAN NOTHING";
-		$text = file_get_contents('./email/BOT/index.txt');
-		$html = file_get_contents($web_url . '/email/BOT/index.php?prizeName=' . urlencode('BOSE Headphones and a Snuggie') . '&prizeImage=Bose');
+		$text = file_get_contents('./email/NOT/index.txt');
+		$html = file_get_contents('http://dev.adcontests.com' . '/email/NOT/index.php?friend=Agatha&c=383273&prizeName=' . urlencode('Ant Farm') . '&prizeImage=AntFarm');
 		sendEmail($to, $subject, $text, $html); // send to player
 
 	}

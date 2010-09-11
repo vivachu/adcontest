@@ -5,7 +5,7 @@
 	<tr>
 		<td width="221" height="300" align="left" valign="top">
 
-        <p style="height:10.5em; margin:0;padding:0;"></p>
+        <p style="height:165px; margin:0;padding:0;">&nbsp;</p>
         <table width="700" border="0" cellpadding="0" cellspacing="0">
 		  <tr>
 		    <th width="8%" scope="col">&nbsp;</th>
