@@ -46,7 +46,7 @@
 		} else {
 			$subject = "IT'S BOTTER THAN NOTHING";
 			$text = file_get_contents('./email/NOT/index.txt');
-			$html = file_get_contents($web_url . '/email/NOT/index.php?prizeImage=' . urlencode($prizeSchedule['prize_name']));
+			$html = file_get_contents($web_url . '/email/NOT/index.php?prizeImage=' . urlencode($prizeSchedule['prize_image']));
 		}
 //		$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to player
