@@ -162,8 +162,12 @@
 				<div id="redeemContainer" style="display:none;">
 	<?php if (isset($prizeSchedule['id'])): ?>
 					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>&signed_request=$_REQUEST['signed_request']"><img src="prizes/Buttons/Redeem_Btn.png"/></a></p>
+	<?php elseif (isset($prize['link']) && ($prize['name'] == "a used Where's Waldo" || $prize['name'] == "a slideshow of My Favorite Things") ): ?>
+					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory('Thanks for playing and don\'t forget to play again tomorrow.');"><img src="prizes/Buttons/Download_Btn.png"/></a></p>
+	<?php elseif (isset($prize['link']) && ($prize['name'] == "an audio file of a humpback whale") ): ?>
+					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory('Thanks for playing and don\'t forget to play again tomorrow.');"><img src="prizes/Buttons/Listen_Btn.png"/></a></p>
 	<?php elseif (isset($prize['link'])): ?>
-					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory();"><img src="prizes/Buttons/View_Btn.png"/></a></p>
+					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory('Thanks for playing and don\'t forget to play again tomorrow.');"><img src="prizes/Buttons/View_Btn.png"/></a></p>
 	<?php endif; ?>
 				</div>
 			</div> <!-- end playGame -->

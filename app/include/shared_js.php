@@ -33,7 +33,7 @@
 		 );
 	}
 
-	function publishFeedStory() {
+	function publishFeedStory(userPrompt) {
 		var prizeName = "<?= $prizeSchedule['prize_name'] ?>";
 		 FB.ui(
 		   {
@@ -50,7 +50,7 @@
 			 action_links: [
 			   { text: 'Svedka Vodka BOT or NOT?', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"]?>' }
 			 ],
-			 user_message_prompt: 'Thanks! Your information was received.'
+			 user_message_prompt: userPrompt
 		   },
 		   function(response) {
 			 if (response && response.post_id) {

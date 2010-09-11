@@ -119,7 +119,7 @@
 <? if (isset($friend) && $prizeSchedule['place'] == 1): ?>
 		document.getElementById("popInvite").style.display = "block";
 <? elseif ($prizeSchedule['place'] != 1): ?>
-		publishFeedStory();
+		publishFeedStory("Thanks! Your information was received. Don't forget to play again tomorrow.");
 		document.getElementById("thanksPopup").style.display = "block";
 <? endif; ?>
 	}
@@ -132,7 +132,7 @@
 		  type: "POST",
 		  url: url,
 		  cache: false,
-		  success: function (response) { publishFeedStory(); },
+		  success: function (response) { publishFeedStory("Thanks! Your information was received. Don't forget to play again tomorrow."); },
 		  error: function () {}
 		});
 
