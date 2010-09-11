@@ -1,7 +1,7 @@
 ## contest_id, place, name, value, num_winners
 
 call schedule_prize(1, 1, 'A Panasonic Lumix DMC-LX5K digital camera', 500, 1, 'Take high quality photos and movies with this 10.1 megapixel digital bad boy. Just be sure to share them with us!', 'Camera');
-call schedule_prize(1, 2, 'Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
+call schedule_prize(1, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(1, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(1, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(1, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
