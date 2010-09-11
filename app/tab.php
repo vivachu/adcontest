@@ -74,7 +74,7 @@
 
             <div id="playGame">
 	<!-- Static HTML landing page -->
-				<p>Everyone is a winner! Sort of. Pick a door to see if you win a prize that's BOT or one that's NOT. Increase your chances to win by inviting friends. If one of them wins the BOT prize, you do too! Click below to play.  <a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffc821;">See Official Rules</a> for details.</p>
+				<p>Everyone is a winner! Sort of. Pick a door to see if you win a prize that's BOT or one that's NOT. Increase your chances to win by inviting friends. If one of them wins the BOT prize, you do too! Click below to play.  <a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffffff;text-decoration:underline;">See Official Rules</a> for details.</p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
 <fb:visible-to-connection>
 	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=<?= $app_url ?>/" class="playBtn">play</a>
