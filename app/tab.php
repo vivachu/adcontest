@@ -17,9 +17,8 @@
 	$me = null;
 	if ($session) {
 	  try {
-		$me = $facebook->api('/me');
 		// get the Facebook user
-		$fbid = $me['id'];
+		//$fbid = $facebook->require_login();
 	  } catch (FacebookApiException $e) {
 		error_log($e);
 	  }
