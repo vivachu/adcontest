@@ -118,6 +118,8 @@
 		document.body.style.cursor = 'default';
 <? if (isset($friend) && $prizeSchedule['place'] == 1): ?>
 		document.getElementById("popInvite").style.display = "block";
+<? elseif ($prizeSchedule['place'] == 1): ?>
+		document.getElementById("thanksPopup").style.display = "block";
 <? elseif ($prizeSchedule['place'] != 1): ?>
 		publishFeedStory("Thanks! Your information was received. Don't forget to play again tomorrow.");
 		document.getElementById("thanksPopup").style.display = "block";
