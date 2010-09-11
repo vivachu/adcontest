@@ -103,8 +103,8 @@
 				<div class="left"><img style="margin-left:15px;" width="175" height="175" src="<?= $web_url ?>/prizes/FormPrizes/<?= $grandPrize['image'] ?>_Form.png?v=1.0" alt="<?= $grandPrize['name'] ?>" /></div>
 				<div class="desc">
 
-				<p class="title"><?= $grandPrize['name'] ?></p>
-				<p><?= $grandPrize['description'] ?></p>
+				<p class="title" style="width:460px;"><?= $grandPrize['name'] ?></p>
+				<p style="width:460px;"><?= $grandPrize['description'] ?></p>
 
 				</div>
 				<div class="clear"></div>
