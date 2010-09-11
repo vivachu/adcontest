@@ -28,7 +28,6 @@ call schedule_prize(4, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder d
 call schedule_prize(4, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(4, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(4, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
-call schedule_prize(4, 6, 'a used Where\'s Waldo', 5, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Waldo');
 call schedule_prize(4, 7, 'a packet of decorative gourd seeds', 2.95, 50, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Seeds');
 
 call schedule_prize(5, 1, 'An Apple iPhone', 599, 1, 'A recent study showed that people with iPhones have more sex than people without iPhones. It\'s science.', 'iPhone');
@@ -73,10 +72,12 @@ insert into prizes(name, place, num_winners, link, description, image) values('a
 
 insert into prizes(name, place, num_winners, link, description, image) values('an audio file of a humpback whale', 0, 0, 'http://www.youtube.com/watch?v=xo2bVbDtiX8', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Whale');
 
-insert into prizes(name, place, num_winners, link, description, image) values('a slideshow of My Favorite Things', 0, 0, 'http://www.youtube.com/watch?v=dw2VX5wQYQg', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Slideshow');
+insert into prizes(name, place, num_winners, link, description, image) values('a slideshow of My Favorite Things', 0, 0, 'http://www.adcontests.com/svedka/app/prizes/MyFavoriteThings.pptx', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Slideshow');
 
 insert into prizes(name, place, num_winners, link, description, image) values('a Google Image Search for Scrapple', 0, 0, 'http://tinyurl.com/276tkfb', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Scrapple');
 
 insert into prizes(name, place, num_winners, link, description, image) values('an awesome website link', 0, 0, 'http://www.youtube.com/watch?v=ZOU8GIRUd_g', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'RickRoll');
 
 insert into prizes(name, place, num_winners, link, description, image) values('a link to Me at the Zoo, the world\'s first YouTube video', 0, 0, 'http://www.youtube.com/watch?v=jNQXAC9IVRw', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'YouTube');
+
+insert into prizes(name, place, num_winners, link, description, image) values('a used Where\'s Waldo', 0, 0, 'http://www.adcontests.com/svedka/app/prizes/Waldo.pdf',  'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Waldo');
