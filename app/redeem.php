@@ -13,6 +13,7 @@
 	if (isset($prizeSchedule['friend_id'])) {
 		$friend = getPlayerFromId($prizeSchedule['friend_id']);
 	}
+	$player['facebook_id'] = $prizeSchedule['facebook_id']; // for share and feed posts
 ?>
 
 
