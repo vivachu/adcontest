@@ -11,7 +11,7 @@
 		    <th width="8%" scope="col">&nbsp;</th>
 		    <th width="62%" scope="col" style="color:#fff; text-align:left; font-size: 14px; font-family: Tahoma, Geneva, sans-serif;font-weight: normal;">
             <p>Congratulations! You invited your friend <?= $_REQUEST['friend'] ?> to play SVEDKA <br />
-              &quot;BOT or NOT?&quot;. Your friend just won a pair of <?= $_REQUEST['prizeName'] ?> and now you have won the same thing! Now <br />
+              &quot;BOT or NOT?&quot;. Your friend just won <?= $_REQUEST['prizeName'] ?> and now you have won the same thing! Now <br />
               both of you can brag about it to all your friends, because isn't that <br />
               what Facebook is for?</p>
             <p style="font-size:9px">If you're eligible and satisfy the <a href="<?= $web_url ?>/rules.php" style="color: #fec622;">Official Rules</a>:<br />

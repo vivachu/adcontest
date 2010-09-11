@@ -170,7 +170,7 @@
         	<h2 class="congrats left">bot or not?</h2>
             <div class="clear"></div>
             <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" /></div>
-            <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">It may not be the BOT prize, but a <?= $prizeSchedule['prize_name'] ?> isn't a bad consolation. Just fill out the form below and if you are eligible and satisfy the <a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" class="inline">Official Rules</a>, you will receive your prize.  And be sure to come back tomorrow for another chance at the BOT prize!</p>
+            <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">It may not be the BOT prize, but <?= $prizeSchedule['prize_name'] ?> isn't a bad consolation. Just fill out the form below and if you are eligible and satisfy the <a href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" class="inline">Official Rules</a>, you will receive your prize.  And be sure to come back tomorrow for another chance at the BOT prize!</p>
 <? else: ?>
         	<h2 class="congrats_not left">bot or not?</h2>
             <div class="clear"></div>
