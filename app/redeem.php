@@ -14,6 +14,7 @@
 		$friend = getPlayerFromId($prizeSchedule['friend_id']);
 	}
 	$player['facebook_id'] = $prizeSchedule['facebook_id']; // for share and feed posts
+	$player['username'] = $prizeSchedule['username']; // for share and feed posts
 ?>
 
 
