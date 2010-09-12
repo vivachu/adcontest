@@ -56,8 +56,9 @@
 	var hasPlayed = 0;
 <? endif; ?>
 
-
+	var redeem = false;
 	function onDoorSelected() {
+		redeem = true;
 		document.getElementById("redeemContainer").style.display="block";
 	}
 
@@ -70,9 +71,32 @@
 	function hideInvite(){
 		document.getElementById('inviteContainer').style.display = 'none';
 		document.getElementById('inviteFrame').src = "about:blank";
+		if (redeem) {
+			onDoorSelected();
+		}
 	}
 
-<? include 'include/shared_js.php'; ?>
+	function share(){
+		document.getElementById("redeemContainer").style.display="none";
+		document.getElementById('shareContainer').style.display = 'block';
+		document.getElementById('shareFrame').src = "share.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>";
+	}
+
+	function publishFeedStory(){
+		document.getElementById("redeemContainer").style.display="none";
+		document.getElementById('shareContainer').style.display = 'block';
+		document.getElementById('shareFrame').src = "feedform.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>&prizeName=<?= $prize['name'] ?>&prizeImage=<?= $prize['image'] ?>&place=<?= $prize['place'] ?>";
+	}
+
+
+	function hideShare(){
+		document.getElementById('shareContainer').style.display = 'none';
+		document.getElementById('shareFrame').src = "about:blank";
+		if (redeem) {
+			onDoorSelected();
+		}
+	}
+
 
 	function like() {
 	  if (liked == 0) {
@@ -163,11 +187,11 @@
 	<?php if (isset($prizeSchedule['id'])): ?>
 					<div id="clickToRedeem"><a href="redeem.php?c=<?= $prizeSchedule['redemption_code'] ?>&signed_request=$_REQUEST['signed_request']"><img src="prizes/Buttons/Redeem_Btn.png"/></a></p>
 	<?php elseif (isset($prize['link']) && ($prize['name'] == "a used Where's Waldo" || $prize['name'] == "a slideshow of My Favorite Things") ): ?>
-					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory('Thanks for playing and don\'t forget to play again tomorrow.');"><img src="prizes/Buttons/Download_Btn.png"/></a></p>
+					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory();"><img src="prizes/Buttons/Download_Btn.png"/></a></p>
 	<?php elseif (isset($prize['link']) && ($prize['name'] == "an audio file of a humpback whale") ): ?>
-					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory('Thanks for playing and don\'t forget to play again tomorrow.');"><img src="prizes/Buttons/Listen_Btn.png"/></a></p>
+					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory();"><img src="prizes/Buttons/Listen_Btn.png"/></a></p>
 	<?php elseif (isset($prize['link'])): ?>
-					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory('Thanks for playing and don\'t forget to play again tomorrow.');"><img src="prizes/Buttons/View_Btn.png"/></a></p>
+					<div id="clickToRedeem"><a target="_blank" href="#" onclick="publishFeedStory();"><img src="prizes/Buttons/View_Btn.png"/></a></p>
 	<?php endif; ?>
 				</div>
 			</div> <!-- end playGame -->
@@ -185,5 +209,9 @@ window.fbAsyncInit = function() {
 }
 
 </script>
+<div id="shareContainer" style="display:none;">
+	<iframe id="shareFrame"></iframe>
+</div>
+
 </body>
 </html>

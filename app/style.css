@@ -237,3 +237,18 @@ h4.congrats_not { background:url(images/youstillwon-title.png) no-repeat; margin
 	position: relative;
 	top: 150px;
 }
+#shareContainer {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	text-align: center;
+}
+#shareFrame {
+	width: 621px;
+	height: 621px;
+	margin: 0;
+	position: relative;
+	top: 0px;
+}

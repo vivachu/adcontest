@@ -37,10 +37,10 @@
 	}
 
 
-	function share() {
+	function doShare() {
 		 FB.ui(
 		   {
-		   	 display: 'popup',
+		   	 display: 'iframe',
 			 method: 'stream.publish',
 			 attachment: {
 			   name: '<?= $title ?>',
@@ -87,12 +87,41 @@
    		});
  	}
 
+	function share() {
+    	doShare();
+    	// call the dialog again (give 1800ms for facebook to cache the image)
+    	setTimeout(
+    		function() {
+        		doShare();
+    		}
+    		, 1800);
+
+    	setTimeout(function() {
+        	// search for dialog close icon
+        	$('.fb_dialog_close_icon').each(function(i,e) {
+                            try {
+                                if (i==0) e.onclick(); // close the first dialog
+                            } catch(err) {
+                                //alert("failed to close dialog");
+                            }
+                   });
+
+        	// search for dialog "loading box" close icon
+        	$('#fb_dialog_loader_icon').each(function(i,e) {
+                            try {
+                                e.onclick(); // close dialog "loading box"
+                            } catch(err) {
+                                //alert("failed to close dialog (loading box)");
+                            }
+                        });
+		    }, 5000);
+	}
 
 	function publishFeedStory(userPrompt) {
 		var prizeName = "<?= $prizeSchedule['prize_name'] ?>";
 		 FB.ui(
 		   {
-		   	 display: 'popup',
+		   	 display: 'iframe',
 			 method: 'stream.publish',
 			 attachment: {
 			   name: '<?= $prizeSchedule['username'] ?> just "won" ' + prizeName + ' by playing SVEDKA Vodka "BOT or NOT?"',
