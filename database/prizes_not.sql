@@ -88,6 +88,14 @@ call schedule_prize(6, 7, 'an ant farm', 10, 1, 'Lorem ipsum placeholder descrip
 call schedule_prize(7, 7, 'an ant farm', 10, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
 call schedule_prize(8, 7, 'an ant farm', 10, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'AntFarm');
 
+call schedule_prize(1, 6, 'a stick of gum', 1, 12, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gum');
+call schedule_prize(2, 6, 'a stick of gum', 1, 12, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gum');
+call schedule_prize(3, 6, 'a stick of gum', 1, 14, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gum');
+call schedule_prize(4, 6, 'a stick of gum', 1, 12, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gum');
+call schedule_prize(5, 6, 'a stick of gum', 1, 12, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gum');
+call schedule_prize(6, 6, 'a stick of gum', 1, 12, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gum');
+call schedule_prize(7, 6, 'a stick of gum', 1, 12, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gum');
+call schedule_prize(8, 6, 'a stick of gum', 1, 14, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Gum');
 
 ### Random prizes
 insert into prizes(name, place, num_winners, link, description, image) values('a recipe for lemon bundt cake', 0, 0, 'http://allrecipes.com/Recipe/lemon-bundt-cake/Detail.aspx', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BundtCake');
