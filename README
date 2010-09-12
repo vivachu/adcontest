@@ -1,21 +1,18 @@
-Jason
-- Need descriptions for prizes.
-- Need thumbnails: big and small and congrats texts
-
-Pupung
-- formatting sizes
-
-Viva
-- Change hardcoded test date to now() for getting prize in index.php, redeem, redeem-friend, friend.
+TODO
+- Change hardcoded test date to now() for getting prize in config file.
+- Take out test_date from request param
 - Change hardcoded has played so that players cannot play multiple times
-- ONLY give friend a prize if its the grand prize. redeem.php line
-- HTML emails
-- Invite Friends click through from link.
 - Change admin emails: gailu@sweepstakesconsulting.com, svedka@walrusnyc.com
-- Friend invite click through link
-- Checkout random prizes that are not
-- TEST on different browsers
 
+SQL
+# win dates for grand prizes
+select name,image,win_date from prize_schedule ps, prizes p where ps.prize_id=p.id and p.place=1;
+
+# check prize counts
+select p.name, count(*) from prize_schedule ps,prizes p where p.id=ps.prize_id group by prize_id order by place;
+
+# contest 1
+select p.name, contest_id, win_date, winner_id from prize_schedule ps,prizes p where ps.contest_id=1 and p.id=ps.prize_id order by win_date;
 
 Amazon Server
 -------------
