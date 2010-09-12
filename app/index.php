@@ -191,7 +191,7 @@
 	<?php elseif (isset($prize['link']) && ($prize['name'] == "an audio file of a humpback whale") ): ?>
 					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory();"><img src="prizes/Buttons/Listen_Btn.png"/></a></p>
 	<?php elseif (isset($prize['link'])): ?>
-					<div id="clickToRedeem"><a target="_blank" href="#" onclick="publishFeedStory();"><img src="prizes/Buttons/View_Btn.png"/></a></p>
+					<div id="clickToRedeem"><a target="_blank" href="<?= $prize['link'] ?>" onclick="publishFeedStory();"><img src="prizes/Buttons/View_Btn.png"/></a></p>
 	<?php endif; ?>
 				</div>
 			</div> <!-- end playGame -->
