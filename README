@@ -14,6 +14,10 @@ select p.name, count(*) from prize_schedule ps,prizes p where p.id=ps.prize_id g
 # contest 1
 select p.name, contest_id, win_date, winner_id from prize_schedule ps,prizes p where ps.contest_id=1 and p.id=ps.prize_id order by win_date;
 
+# all contests
+select p.name, contest_id, win_date, winner_id INTO OUTFILE '/tmp/prize_schedule.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n'from prize_schedule ps,prizes p where p.id=ps.prize_id order by win_date;
+
+
 Amazon Server
 -------------
 Amazon IP

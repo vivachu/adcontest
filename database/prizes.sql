@@ -19,13 +19,13 @@ call schedule_prize(3, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeh
 call schedule_prize(3, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
 
-call schedule_prize(4, 1, 'Bose headphones and a Snuggie', 328, 1, 'Nothing says, "I had a late night last night and I\'m going to spend all day on the couch relaxing," like Bose QuietComfort 15 Acoustic Noise Cancelling headphones and a Snuggie.', 'Bose');
+call schedule_prize(4, 1, 'Bose headphones and a Snuggie', 328, 2, 'Nothing says, "I had a late night last night and I\'m going to spend all day on the couch relaxing," like Bose QuietComfort 15 Acoustic Noise Cancelling headphones and a Snuggie.', 'Bose');
 call schedule_prize(4, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(4, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(4, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(4, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(5, 1, 'An Apple iPhone', 599, 1, 'A recent study showed that people with iPhones have more sex than people without iPhones. It\'s science.', 'iPhone');
+call schedule_prize(5, 1, 'An Apple iPhone', 599, 2, 'A recent study showed that people with iPhones have more sex than people without iPhones. It\'s science.', 'iPhone');
 call schedule_prize(5, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(5, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(5, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
