@@ -19,6 +19,7 @@ create table prizes (
   num_winners int signed not null,
   link varchar(255) null,
   image varchar(255) null,
+  short_name varchar(255) null,
   index(name)
 ) ENGINE=MyISAM;
 

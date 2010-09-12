@@ -22,7 +22,7 @@
 		} else {
 			$prizeSchedule = winPrize($prize['prize_schedule_id'], $player['id']);
 		}
-		if ($prize['place'] == 1) {
+		if ($prize['place'] >= 1 && $prize['place'] <=5) {
 			$win = "true";
 		} else {
 			$win = "false";

@@ -68,7 +68,7 @@
 		var prizeName = "<?= $prizeSchedule['prize_name'] ?>";
 		var attachment = {
 			   name: '<?= $prizeSchedule['username'] ?> just "won" ' + prizeName + ' by playing SVEDKA Vodka "BOT or NOT?"',
-			   caption: 'They didn\'t win the BOT prize but you could. Click above to play.',
+			   caption: 'They didn\'t win the <?= $grandPrize['short_name'] ?> but you could. Click above to play.',
 			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>',
                media: [
                	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/FacebookPrizes/<?= $prizeSchedule['prize_image'] ?>_90x90.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>' }
@@ -96,7 +96,7 @@
 			 method: 'stream.publish',
 			 attachment: {
 			   name: '<?= $prizeSchedule['username'] ?> just "won" ' + prizeName + ' by playing SVEDKA Vodka "BOT or NOT?"',
-			   caption: 'They didn\'t win the BOT prize but you could. Click above to play.',
+			   caption: 'They didn\'t win the <?= $grandPrize['short_name'] ?> but you could. Click above to play.',
 			   href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>',
                media: [
                	{ type: 'image', src: 'http://www.adcontests.com/svedka/app/prizes/FacebookPrizes/<?= $prizeSchedule['prize_image'] ?>_90x90.png', href: '<?= $share_url ?>&fid=<?= $player["facebook_id"] ?>' }

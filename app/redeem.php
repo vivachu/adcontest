@@ -122,6 +122,7 @@
 		document.getElementById("thanksPopup").style.display = "block";
 <? elseif ($prizeSchedule['place'] != 1): ?>
 		publishFeedStoryInline("Thanks! Your information was received. Don't forget to play again tomorrow.");
+		document.getElementById("thanksPopup").style.display = "block";
 <? endif; ?>
 	}
 
@@ -133,7 +134,7 @@
 		  type: "POST",
 		  url: url,
 		  cache: false,
-		  success: function (response) { publishFeedStoryInline("Thanks! Your information was received. Don't forget to play again tomorrow."); },
+		  success: function (response) { document.getElementById("thanksPopup").style.display = "block";  },
 		  error: function () {}
 		});
 
@@ -198,7 +199,7 @@
 				<div class="popupWrap">
 				<h3>Thanks! Your information was received</h3>
 				<p style="height:60px;">Thanks for playing.  We'll be in touch with you soon regarding your prize.</p>
-				<a href="#" class="right" onclick="document.getElementById('thanksPopup').style.display='none'; return false;" style="margin-right:5px;width:49px;height:26px;background:url(images/close.png) no-repeat;"></a>
+				<a href="#" class="right" onclick="window.top.location='<?= $fan_page_url ?>'; return false;" style="margin-right:5px;width:49px;height:26px;background:url(images/close.png) no-repeat;"></a>
 				</div>
 			</div>
 

@@ -81,3 +81,8 @@ insert into prizes(name, place, num_winners, link, description, image) values('a
 insert into prizes(name, place, num_winners, link, description, image) values('a link to Me at the Zoo, the world\'s first YouTube video', 0, 0, 'http://www.youtube.com/watch?v=jNQXAC9IVRw', 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'YouTube');
 
 insert into prizes(name, place, num_winners, link, description, image) values('a used Where\'s Waldo', 0, 0, 'http://www.adcontests.com/svedka/app/prizes/Waldo.pdf',  'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Waldo');
+
+update prizes set short_name=image where place=1;
+update prizes set short_name='Water Ball' where image='WaterBall';
+update prizes set short_name='Hot Tub' where image='HotTub';
+update prizes set short_name='Bose Headphones' where image='Bose';
