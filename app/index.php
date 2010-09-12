@@ -180,8 +180,8 @@
 					</div>
 				</div>
 <? endif; ?>
-				<div id="inviteContainer" style="display:none;">
-					<iframe id="inviteFrame"></iframe>
+				<div id="inviteContainer" style="display:none;background-color:transparent;">
+					<iframe id="inviteFrame" allowtransparency="true" frameborder="0" border="0"></iframe>
 				</div>
 				<div id="redeemContainer" style="display:none;">
 	<?php if (isset($prizeSchedule['id'])): ?>
@@ -209,8 +209,8 @@ window.fbAsyncInit = function() {
 }
 
 </script>
-<div id="shareContainer" style="display:none;">
-	<iframe id="shareFrame"></iframe>
+<div id="shareContainer" style="display:none;background-color:transparent;">
+	<iframe id="shareFrame" allowtransparency="true" frameborder="0" border="0"></iframe>
 </div>
 
 </body>

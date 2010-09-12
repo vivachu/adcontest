@@ -6,7 +6,7 @@
 <head>
 	<style type='text/css'>
 	<!--
-		body {margin:0px;overflow:hidden;}
+		body {margin:0px;overflow:hidden;background-color:transparent;}
 		html, body {width:100%;height:100%;outline:none;}
 	-->
 	 </style>
