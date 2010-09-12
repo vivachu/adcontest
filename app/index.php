@@ -44,7 +44,7 @@
 
 <title>SVEDKA Vodka "BOT or NOT?"</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css?v=1.4" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.7" />
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 

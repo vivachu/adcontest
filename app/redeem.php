@@ -24,7 +24,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bot Prize Redemption Confirmation</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css?v=1.6" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.7" />
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="ie.css" />
 <script src="DD_belatedPNG_0.0.8a.js"></script>

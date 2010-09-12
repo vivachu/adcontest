@@ -194,7 +194,7 @@ z-index: 30;
 /* =================================
 Viva Additions
 ==================================== */
-h2.congrats_not { background:url(images/youstillwon-title.png) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
+h4.congrats_not { background:url(images/youstillwon-title.png) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
 
 #redeemContainer {
 	width: 100%;
