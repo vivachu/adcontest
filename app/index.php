@@ -123,7 +123,7 @@
 	<div id="container">
         <h1><a>svedka</a></h1>
         <div id="mainContent">
-        	<h2 class="left">bot or not?</h2>
+        	<h4 class="left">bot or not?</h4>
             <div class="round right">play and win</div>
             <div class="clear"></div>
 

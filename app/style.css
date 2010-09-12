@@ -48,11 +48,11 @@ h1 a { background:url(images/logo2.png) no-repeat; display:block; height:54px; m
 ==================================== */
 #mainContent { background:#000; margin:0 auto; position:relative; width:668px; } /* Width Changed */
 #container2 #mainContent { background:#000; margin:0 auto; position:relative; width:480px;} /* Added */
-h2 { background:url(images/bot-or-not.jpg) no-repeat; display:block; height:81px; margin:30px 0 0 0px; text-indent:-9999px; width:512px; } /* width and height changed */
+h4 { background:url(images/bot-or-not.jpg) no-repeat; display:block; height:81px; margin:30px 0 0 0px; text-indent:-9999px; width:512px; } /* width and height changed */
 #container2 h2 { background:url(images/bot-or-not-2.jpg) no-repeat; display:block; height:54px; margin:30px 0 0 5px; text-indent:-9999px; width:370px; } /* Added */
-h2.tagInner { background:url(images/facebook-friendship.jpg) no-repeat; display:block; height:51px; margin:30px 0 0 5px; width:457px; }
-h2.congrats { background:url(images/congrat.jpg) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
-h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:block; height:40px; width:457px; }
+h4.tagInner { background:url(images/facebook-friendship.jpg) no-repeat; display:block; height:51px; margin:30px 0 0 5px; width:457px; }
+h4.congrats { background:url(images/congrat.jpg) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
+h4.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:block; height:40px; width:457px; }
 .badges { background:url(images/badge.jpg) no-repeat; display:block; height:96px; margin:25px 32px 0 0; text-indent:-9999px; width:96px; }
 .round { background:url(images/play-n-win.png) no-repeat; display:block; height:89px; margin:25px 30px 0 0; text-indent:-9999px; width:89px; } /* width and height changed */
 #container2 .round { background:url(images/play-n-win2.png) no-repeat; display:block; height:63px; margin:25px 20px 0 0; text-indent:-9999px; width:63px;} /* Added */
