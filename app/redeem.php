@@ -104,7 +104,7 @@
 		  url: url,
 		  cache: false,
 		  success: function (response) { onSubmitForm(response); },
-		  error: function () {document.body.style.cursor = 'default';}
+		  error: function () {alert('error');document.body.style.cursor = 'default';}
 		});
 
 	}
@@ -176,7 +176,7 @@
                 	<div class="popupWrap">
                     <h2 class="popupTitle"><span>Thanks! Your information was received.</span></h2>
                     <div class="popupContent">
-                    	<img src="images/pic.jpg" alt="" class="left" />
+                    	<img src="http://graph.facebook.com/<?= $friend['facebook_id'] ?>/picture" alt="" class="left" />
                         <h3 class="left">Your Friend <?= $friend['username'] ?> is a Winner Too!</h3>
                     	<p class="left">Since <?= $friend['username'] ?> invited you to play The SVEDKA Vodka “BOT or NOT?” Game, <?= $friend['username'] ?> wins an <?= $prizeSchedule['prize_name'] ?> too! Just hit “Send” and we’ll send <?= $friend['username'] ?> an email.</p>
 					</div>
@@ -198,6 +198,7 @@
 				<div class="popupWrap">
 				<h3>Thanks! Your information was received</h3>
 				<p style="height:60px;">Thanks for playing.  We'll be in touch with you soon regarding your prize.</p>
+				<a href="#" class="right" onclick="document.getElementById('thanksPopup').style.display='none'; return false;" style="margin-right:5px;width:49px;height:26px;background:url(images/close.png) no-repeat;"></a>
 				</div>
 			</div>
 
