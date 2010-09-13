@@ -41,7 +41,6 @@
 <script>
 
 	function share(){
-	alert("here");
 		document.getElementById('shareContainer').style.display = 'block';
 		document.getElementById('shareFrame').src = "share.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>";
 	}
@@ -181,12 +180,17 @@
 	<div id="container">
         <h1><a>svedka</a></h1>
         <div id="mainContent">
-<? if ($prizeSchedule['place'] == 1): ?>
+<? if ($prizeSchedule['place'] == 1 && isset($friend)): ?>
         	<h4 class="congrats left">bot or not?</h4>
             <div class="clear"></div>
             <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" width="190" height="190"/></div>
             <p class="text" style="font-size: 12px; margin:5px auto 0 35px;width:615px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands.  Fill out the info below and if you are eligible and satisfy the <a class="inline" href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');">Official Rules</a>, we'll make it happen.</p>
             <p class="text" style="font-size: 12px; margin:5px auto 0 35px;width:615px;">And, because a friend invited you to play, your friend will win <?= $prizeSchedule['prize_name'] ?> too, because that's what friends do — they win prizes for each other (in our book anyway).</p>
+<? elseif ($prizeSchedule['place'] == 1): ?>
+        	<h4 class="congrats left">bot or not?</h4>
+            <div class="clear"></div>
+            <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" width="190" height="190"/></div>
+            <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">You won this week’s BOT Grand prize — <?= $prizeSchedule['prize_name'] ?>! And as exciting as this image of <?= $prizeSchedule['prize_name'] ?> is, it will be even more exciting once you actually have it in your hands.  Fill out the info below and if you are eligible and satisfy the <a class="inline" href="#" onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');">Official Rules</a>, we'll make it happen.</p>
 <? elseif ($prizeSchedule['place'] >= 2 && $prizeSchedule['place'] <= 5): ?>
         	<h4 class="congrats left">bot or not?</h4>
             <div class="clear"></div>
@@ -208,8 +212,7 @@
                 	<div class="popupWrap">
                     <h2 class="popupTitle"><span>Thanks! Your information was received.</span></h2>
                     <div class="popupContent">
-                    	<img src="http://graph.facebook.com/<?= $friend['facebook_id'] ?>/picture" alt="" class="left" />
-                        <h3 class="left">Your Friend <?= $friend['username'] ?> is a Winner Too!</h3>
+                        <h3 class="left"><img width="32" height="32" src="http://graph.facebook.com/<?= $friend['facebook_id'] ?>/picture" alt="" class="left" /> Your Friend <?= $friend['username'] ?> is a Winner Too!</h3>
                     	<p class="left">Since <?= $friend['username'] ?> invited you to play The SVEDKA Vodka “BOT or NOT?” Game, <?= $friend['username'] ?> wins an <?= $prizeSchedule['prize_name'] ?> too! Just hit “Send” and we’ll send <?= $friend['username'] ?> an email.</p>
 					</div>
                     <a href="javascript:{}" class="right" onclick="sendFriendEmail();">close</a>

@@ -135,7 +135,7 @@
         <div id="mainContent">
         	<h4 class="congrats left">bot or not?</h4>
             <div class="clear"></div>
-            <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $prizeSchedule['prize_image'] ?>_Form.png" class="small" alt="" width="190" height="190" /></div>
+            <div class="left img" style="height:202px;"><img src="prizes/FormPrizes/<?= $referral['prize_image'] ?>_Form.png" class="small" alt="" width="190" height="190"/></div>
             <p class="text" style="font-size: 14px; margin:5px auto 0 35px;width:615px;">Isn't it good to know that Facebook friends aren't just good for poking, watering your crops, or tagging terrible photos of you? Fill out the info below and if you are eligible and satisfy the <a onclick="window.open('rules.php', 'Rules', 'toolbar=no,location=no,menubar=no,width=785,height=800,scrollbars=yes');" href="#" class="inline">Official Rules</a>, we'll send your BOT prize out via snail-mail.</p>
 			<div id="popupCA" class="popup" style="display:none;margin:0;right:0px;left:150px;">
 				<h3>California Residents Ineligible</h3>

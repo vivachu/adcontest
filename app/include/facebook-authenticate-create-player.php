@@ -36,13 +36,16 @@
 		$age = floor($diff/60/60/24/365);
 
 		$player = getPlayer($fbid);
+
+		if ($fbid == $friendId) {
+			$friendId = null; // don't let your refer yourself
+		}
 		// check to see if player exists
 		if (!isset($player)) {
 			$player = insertPlayer($fbid, $me['name'], $me['email'], $friendId);
 		} else if(isset($friendId)) {
 			updateFriend($fbid, $friendId);
 		}
-
 
 		$likes = $facebook->api('/me/likes');
 		$likes = $likes['data'];

@@ -73,7 +73,7 @@
 		$text = file_get_contents('./email/BOT/index.txt');
 		$text = str_replace("PRIZE_NAME", $referral['prize_name'], $text);
 
-		$html = file_get_contents($web_url . '/email/BOT/index.php?prizeImage=' . $prizeSchedule['prize_image'] . 'prizeName=' . urlencode($prizeSchedule['prize_name']));
+		$html = file_get_contents($web_url . '/email/BOT/index.php?prizeImage=' . urlencode($prizeSchedule['prize_image']) . '&prizeName=' . urlencode($prizeSchedule['prize_name']));
 //		$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to player
 
@@ -101,7 +101,7 @@
 		$text = str_replace("FRIEND_NAME", $prizeSchedule['username'], $text);
 		$text = str_replace("REDEEM_URL", $app_url . "/redeem-friend.php?c=" . $referral['redemption_code'], $text);
 
-		$html = file_get_contents($web_url . "/email/BOT-Friend/index.php?friend=" . $prizeSchedule['username'] . "&prizeName=" . $prizeSchedule['prize_name'] . "&prizeImage=" . $prizeSchedule['prize_image'] . "&c=" . $referral['redemption_code']);
+		$html = file_get_contents($web_url . "/email/BOT-Friend/index.php?friend=" . urlencode($prizeSchedule['username']) . "&prizeName=" . urlencode($prizeSchedule['prize_name']) . "&prizeImage=" . urlencode($prizeSchedule['prize_image']) . "&c=" . urlencode($referral['redemption_code']));
 
 		//$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to friend
