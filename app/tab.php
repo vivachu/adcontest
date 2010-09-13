@@ -49,7 +49,7 @@
 
 	function showLike(username) {
 		if (username == 'Viva Chu'){
-		
+
 		}
 		else {
 			document.getElementById("likePopup").setStyle("display","block");
@@ -108,8 +108,13 @@
 				<div class="left"><img style="margin-left:15px;" width="175" height="175" src="<?= $web_url ?>/prizes/FormPrizes/<?= $grandPrize['image'] ?>_Form.png?v=1.0" alt="<?= $grandPrize['name'] ?>" /></div>
 				<div class="desc">
 
+<? if ( $browser->getBrowser() == Browser::BROWSER_IE && $browser->getVersion() < 8 ): ?>
+				<p class="title"><?= $grandPrize['name'] ?></p>
+				<p><?= $grandPrize['description'] ?></p>
+<? else: ?>
 				<p class="title" style="width:460px;"><?= $grandPrize['name'] ?></p>
 				<p style="width:460px;"><?= $grandPrize['description'] ?></p>
+<? endif; ?>
 
 				</div>
 				<div class="clear"></div>
