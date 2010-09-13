@@ -43,6 +43,7 @@
 		// check to see if player exists
 		if (!isset($player)) {
 			$player = insertPlayer($fbid, $me['name'], $me['email'], $friendId);
+			$player['has_played'] = 0;
 		} else if(isset($friendId)) {
 			updateFriend($fbid, $friendId);
 		}
