@@ -6,7 +6,7 @@ call schedule_prize(1, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeho
 call schedule_prize(1, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(1, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(2, 1, 'Water Walking Ball', 500, 1, 'For those of you who\'ve already wanted to walk on water or really, really liked that movie Bubble Boy (three words: young Jake Gyllenhaal).', 'WaterBall');
+call schedule_prize(2, 1, 'a Water Walking Ball', 500, 1, 'For those of you who\'ve already wanted to walk on water or really, really liked that movie Bubble Boy (three words: young Jake Gyllenhaal).', 'WaterBall');
 call schedule_prize(2, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(2, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(2, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
@@ -25,25 +25,25 @@ call schedule_prize(4, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeho
 call schedule_prize(4, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(4, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(5, 1, 'An Apple iPhone', 599, 2, 'A recent study showed that people with iPhones have more sex than people without iPhones. It\'s science.', 'iPhone');
+call schedule_prize(5, 1, 'an Apple iPhone', 599, 2, 'A recent study showed that people with iPhones have more sex than people without iPhones. It\'s science.', 'iPhone');
 call schedule_prize(5, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(5, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(5, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(5, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(6, 1, 'A Travelocity Last Minute Gift Certificate', 500, 1, 'Indulge your spur of the moment urges to sip SVEDKA cocktails on a sunny Caribbean beach. Good for any of Travelocity\'s Last Minute Packages.', 'Travel');
+call schedule_prize(6, 1, 'a Travelocity Last Minute Gift Certificate', 500, 1, 'Indulge your spur of the moment urges to sip SVEDKA cocktails on a sunny Caribbean beach. Good for any of Travelocity\'s Last Minute Packages.', 'Travel');
 call schedule_prize(6, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(6, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(6, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(6, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(7, 1, 'A portable hot tub and Hot Tub Time Machine DVD', 519, 1, 'Sitting in this hot tub while watching Hot Tub Time Machine is a lot like time traveling. Even if it isn\'t, it\'s still a hot tub! Who wants to party in the hot tub? Answer: Everyone.', 'HotTub');
+call schedule_prize(7, 1, 'a portable hot tub and Hot Tub Time Machine DVD', 519, 1, 'Sitting in this hot tub while watching Hot Tub Time Machine is a lot like time traveling. Even if it isn\'t, it\'s still a hot tub! Who wants to party in the hot tub? Answer: Everyone.', 'HotTub');
 call schedule_prize(7, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(7, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(7, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(7, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(8, 1, 'A SAMSUNG 55 inch OLED TV', 3300, 1, 'This is 55 inches of pure BOTNESS - The colors are more colorful, the blacks are blacker and the panel is only 1.6 inches deep. It\'s the only acceptable excuse for a night in.', 'TV');
+call schedule_prize(8, 1, 'a SAMSUNG 55 inch OLED TV', 3300, 1, 'This is 55 inches of pure BOTNESS - The colors are more colorful, the blacks are blacker and the panel is only 1.6 inches deep. It\'s the only acceptable excuse for a night in.', 'TV');
 call schedule_prize(8, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(8, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(8, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
