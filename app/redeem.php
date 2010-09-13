@@ -24,7 +24,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bot Prize Redemption Confirmation</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
-<link rel="stylesheet" type="text/css" href="style.css?v=1.7" />
+<link rel="stylesheet" type="text/css" href="style.css?v=1.8" />
 <!--[if lt IE 8]>
 <link rel="stylesheet" type="text/css" href="ie.css" />
 <script src="DD_belatedPNG_0.0.8a.js"></script>
@@ -38,7 +38,29 @@
 <script type="text/javascript" src="javascript/jquery.cycle.all.2.74.js"></script>
 
 <script>
-<? include 'include/shared_js.php'; ?>
+
+	function share(){
+		document.getElementById("redeemContainer").style.display="none";
+		document.getElementById('shareContainer').style.display = 'block';
+		document.getElementById('shareFrame').src = "share.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>";
+	}
+
+	function publishFeedStory(){
+		document.getElementById("redeemContainer").style.display="none";
+		document.getElementById('shareContainer').style.display = 'block';
+		document.getElementById('shareFrame').src = "feedform.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>&prizeName=<?= $prize['name'] ?>&prizeImage=<?= $prize['image'] ?>&place=<?= $prize['place'] ?>";
+	}
+
+
+	function hideShare(){
+		document.getElementById('shareContainer').style.display = 'none';
+		document.getElementById('shareFrame').src = "about:blank";
+		if (redeem) {
+			onDoorSelected();
+		}
+	}
+
+
 	function submitForm() {
 		if (document.getElementById('fname').value.length < 1) {
 			alert("Please enter your first name.");
@@ -142,7 +164,20 @@
 </script>
 </head>
 <body>
-<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+	<script src="http://connect.facebook.net/en_US/all.js"></script>
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({appId: '<?= $facebook_app_id ?>', status: true, cookie: true,
+				 xfbml: true, dialog_type: 'modal'});
+	  };
+	  (function() {
+		var e = document.createElement('script'); e.async = true;
+		e.src = document.location.protocol +
+		  '//connect.facebook.net/en_US/all.js';
+		document.getElementById('fb-root').appendChild(e);
+	  }());
+	</script>
     <div id="top">
 		<p class="left"></p>
 		<p class="right"><a href="javascript:{}" onclick="shareInline();">Share</a></p>

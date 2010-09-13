@@ -31,7 +31,7 @@ call schedule_prize(5, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeho
 call schedule_prize(5, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(5, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(6, 1, 'A Travelocity Last Minute Gift Certificate', 500, 1, 'Indulge your spur of the moment urges to be sipping SVEDKA cocktails on a sunny Caribbean beach. Good for any of Travelocity\'s Last Minute Packages.', 'Travel');
+call schedule_prize(6, 1, 'A Travelocity Last Minute Gift Certificate', 500, 1, 'Indulge your spur of the moment urges to sip SVEDKA cocktails on a sunny Caribbean beach. Good for any of Travelocity\'s Last Minute Packages.', 'Travel');
 call schedule_prize(6, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(6, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(6, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
@@ -54,7 +54,7 @@ update prizes set short_name=image where place=1;
 update prizes set short_name='Water Ball' where image='WaterBall';
 update prizes set short_name='Hot Tub' where image='HotTub';
 update prizes set short_name='Bose Headphones' where image='Bose';
-update prizes set short_name='Travel Certificate' where image='Travel';
+update prizes set short_name='Travelocity Gift Certificate' where image='Travel';
 
 update prize_schedule ps, prizes p set ps.win_date='2010-09-17 18:43:58' where ps.prize_id=p.id and p.image='Camera';
 

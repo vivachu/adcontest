@@ -204,9 +204,9 @@
     </div>
 
 <script type="text/javascript">
-window.fbAsyncInit = function() {
+//window.fbAsyncInit = function() {
   FB.Canvas.setSize({ height: 932 });
-}
+//}
 
 </script>
 <div id="shareContainer" style="display:none;">
