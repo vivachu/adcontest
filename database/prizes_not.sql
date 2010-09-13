@@ -36,14 +36,14 @@ call schedule_prize(6, 7, 'a pair of Gel Insoles', 15, 3, 'Lorem ipsum placehold
 call schedule_prize(7, 7, 'a pair of Gel Insoles', 15, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'GellInsoles');
 call schedule_prize(8, 7, 'a pair of Gel Insoles', 15, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'GellInsoles');
 
-call schedule_prize(1, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'StickUp');
-call schedule_prize(2, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'StickUp');
-call schedule_prize(3, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'StickUp');
-call schedule_prize(4, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'StickUp');
-call schedule_prize(5, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'StickUp');
-call schedule_prize(6, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'StickUp');
-call schedule_prize(7, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'StickUp');
-call schedule_prize(8, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'StickUp');
+call schedule_prize(1, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Stickup');
+call schedule_prize(2, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Stickup');
+call schedule_prize(3, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Stickup');
+call schedule_prize(4, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Stickup');
+call schedule_prize(5, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Stickup');
+call schedule_prize(6, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Stickup');
+call schedule_prize(7, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Stickup');
+call schedule_prize(8, 6, 'a Stick-up', 4, 1, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Stickup');
 
 call schedule_prize(1, 7, 'a Laird of the Myst novel', 7.99, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'LairdBook');
 call schedule_prize(2, 7, 'a Laird of the Myst novel', 7.99, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'LairdBook');
