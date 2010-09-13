@@ -51,6 +51,7 @@ call schedule_prize(8, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder de
 
 
 update prizes set short_name=image where place=1;
+update prizes set short_name='Lumix Camera' where image='Camera';
 update prizes set short_name='Water Ball' where image='WaterBall';
 update prizes set short_name='Hot Tub' where image='HotTub';
 update prizes set short_name='Bose Headphones' where image='Bose';
