@@ -39,26 +39,7 @@
 
 <script>
 
-	function share(){
-		document.getElementById("redeemContainer").style.display="none";
-		document.getElementById('shareContainer').style.display = 'block';
-		document.getElementById('shareFrame').src = "share.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>";
-	}
-
-	function publishFeedStory(){
-		document.getElementById("redeemContainer").style.display="none";
-		document.getElementById('shareContainer').style.display = 'block';
-		document.getElementById('shareFrame').src = "feedform.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>&prizeName=<?= $prize['name'] ?>&prizeImage=<?= $prize['image'] ?>&place=<?= $prize['place'] ?>";
-	}
-
-
-	function hideShare(){
-		document.getElementById('shareContainer').style.display = 'none';
-		document.getElementById('shareFrame').src = "about:blank";
-		if (redeem) {
-			onDoorSelected();
-		}
-	}
+<? include 'include/shared_js.php'; ?>
 
 
 	function submitForm() {
