@@ -8,7 +8,7 @@
 
 	include 'include/facebook-authenticate-create-player.php';
 
-	$player['has_played'] = 0; // temporarily set to false
+	//$player['has_played'] = 0; // temporarily set to false
 	if ($player && $player['has_played'] == 0) {
 		$player['liked'] = 1;
 		// play the game
