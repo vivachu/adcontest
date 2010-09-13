@@ -47,8 +47,13 @@
         }
 
 
-	function showLike() {
-		document.getElementById("likePopup").setStyle("display","block");
+	function showLike(username) {
+		if (username == 'Viva Chu'){
+		
+		}
+		else {
+			document.getElementById("likePopup").setStyle("display","block");
+		}
 	}
 //--></script>
 <link rel="stylesheet" type="text/css" href="<?= $web_url ?>/reset.css" />
