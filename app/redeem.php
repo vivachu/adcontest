@@ -21,6 +21,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bot Prize Redemption Confirmation</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
@@ -39,7 +40,22 @@
 
 <script>
 
-<? include 'include/shared_js.php'; ?>
+	function share(){
+	alert("here");
+		document.getElementById('shareContainer').style.display = 'block';
+		document.getElementById('shareFrame').src = "share.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>";
+	}
+
+	function publishFeedStory(){
+		document.getElementById('shareContainer').style.display = 'block';
+		document.getElementById('shareFrame').src = "feedform.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>&prizeName=<?= $prizeSchedule['prize_name'] ?>&prizeImage=<?= $prizeSchedule['prize_image'] ?>&place=<?= $prizeSchedule['place'] ?>";
+	}
+
+
+	function hideShare(){
+		document.getElementById('shareContainer').style.display = 'none';
+		document.getElementById('shareFrame').src = "about:blank";
+	}
 
 
 	function submitForm() {
@@ -124,7 +140,7 @@
 <? elseif ($prizeSchedule['place'] == 1): ?>
 		document.getElementById("thanksPopup").style.display = "block";
 <? elseif ($prizeSchedule['place'] != 1): ?>
-		publishFeedStoryInline("Thanks! Your information was received. Don't forget to play again tomorrow.");
+		publishFeedStory();
 		document.getElementById("thanksPopup").style.display = "block";
 <? endif; ?>
 	}
@@ -145,7 +161,6 @@
 </script>
 </head>
 <body>
-	<script src="http://connect.facebook.net/en_US/all.js"></script>
 	<div id="fb-root"></div>
 	<script>
 	  window.fbAsyncInit = function() {
@@ -161,7 +176,7 @@
 	</script>
     <div id="top">
 		<p class="left"></p>
-		<p class="right"><a href="javascript:{}" onclick="shareInline();">Share</a></p>
+		<p class="right"><a href="javascript:{}" onclick="share();">Share</a></p>
     </div>
 	<div id="container">
         <h1><a>svedka</a></h1>
@@ -225,5 +240,14 @@
             <div id="btm"></div>
         </div>
     </div>
+<script type="text/javascript">
+//window.fbAsyncInit = function() {
+  FB.Canvas.setSize({ height: 932 });
+//}
+
+</script>
+<div id="shareContainer" style="display:none;background-color:transparent;">
+	<iframe id="shareFrame" allowtransparency="true" frameborder="0" border="0"></iframe>
+</div>
 </body>
 </html>

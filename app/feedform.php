@@ -28,8 +28,10 @@
 
 	window.onload = function()
 	{
-<? if ($place == 1): ?>
-
+<? if ($place >= 2 && $place <= 5): ?>
+		var userMessage = "Thanks! Your information was received. Don't forget to play again tomorrow."
+<? elseif ($place == 1 || $place > 5): ?>
+		var userMessage = "Thanks! Your information was received. Don't forget to play again tomorrow."
 <? else: ?>
 		var userMessage = 'Thanks for playing and don\'t forget to play again tomorrow.'
 <? endif; ?>
