@@ -1,10 +1,18 @@
 body {
+
 	background:#000;
 	color:#fff;
 	font:13px/18px Tahoma;
 	margin:0 auto;
 	padding:0;
 	position:relative;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+html {
+	overflow-x: hidden;
+	overflow-y: hidden;
+
 }
 /**************************************************** GLOBAL STYLES ****/
 .clear{ display:block; clear:both; }
@@ -40,11 +48,11 @@ h1 a { background:url(images/logo2.png) no-repeat; display:block; height:54px; m
 ==================================== */
 #mainContent { background:#000; margin:0 auto; position:relative; width:668px; } /* Width Changed */
 #container2 #mainContent { background:#000; margin:0 auto; position:relative; width:480px;} /* Added */
-h2 { background:url(images/bot-or-not.jpg) no-repeat; display:block; height:81px; margin:30px 0 0 0px; text-indent:-9999px; width:512px; } /* width and height changed */
+h4 { background:url(images/bot-or-not.jpg) no-repeat; display:block; height:81px; margin:30px 0 0 0px; text-indent:-9999px; width:512px; } /* width and height changed */
 #container2 h2 { background:url(images/bot-or-not-2.jpg) no-repeat; display:block; height:54px; margin:30px 0 0 5px; text-indent:-9999px; width:370px; } /* Added */
-h2.tagInner { background:url(images/facebook-friendship.jpg) no-repeat; display:block; height:51px; margin:30px 0 0 5px; width:457px; }
-h2.congrats { background:url(images/congrat.jpg) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
-h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:block; height:40px; width:457px; }
+h4.tagInner { background:url(images/facebook-friendship.jpg) no-repeat; display:block; height:51px; margin:30px 0 0 5px; width:457px; }
+h4.congrats { background:url(images/congrat.jpg) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
+h4.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:block; height:40px; width:457px; }
 .badges { background:url(images/badge.jpg) no-repeat; display:block; height:96px; margin:25px 32px 0 0; text-indent:-9999px; width:96px; }
 .round { background:url(images/play-n-win.png) no-repeat; display:block; height:89px; margin:25px 30px 0 0; text-indent:-9999px; width:89px; } /* width and height changed */
 #container2 .round { background:url(images/play-n-win2.png) no-repeat; display:block; height:63px; margin:25px 20px 0 0; text-indent:-9999px; width:63px;} /* Added */
@@ -70,18 +78,28 @@ h2.notBot { background:url(images/itsNotBot-butYouAre.jpg) no-repeat; display:bl
 /* =================================
 				POPUP
 ==================================== */
-.popupContainer { background:#525252; bottom:300px; height:150px; padding:10px; position:absolute; right:30px; width:390px; z-index:1; -moz-border-radius:8px; }
-.popup { background:#fff; border:10px solid #525252; bottom:510px; height:160px; padding:10px; position:absolute; right:55px; width:340px; -moz-border-radius:8px; z-index:1; }
-.popupInvite { background:#fff; height:150px; position:absolute; width:390px; z-index:1; }
+.popupContainer { background: url(http://www.adcontests.com/svedka/app/images/trans-bg.png); bottom:300px; height:150px; padding:10px; position:absolute; right:125px; width:390px; z-index:1; -moz-border-radius:8px; }
+.popup { background: url(http://www.adcontests.com/svedka/app/images/trans-bg.png); bottom:510px; height:160px; padding:10px; position:absolute; right:55px; width:340px; -moz-border-radius:8px; -webkit-border-radius: 8px; z-index:1; }
+.popupInvite { background: url(http://www.adcontests.com/svedka/app/images/trans-bg.png); height:150px; position:absolute; width:390px; z-index:1;  -moz-border-radius:8px; -webkit-border-radius: 8px; padding: 10px; }
 .popupInvite h2 { background:#d4d4d4; height:39px; margin:0; text-indent:inherit; width:390px; }
 .popupInvite h2 span { color:#3f5a8f; display:block; font:bold 13px Arial; padding:13px 30px; }
-.popupContent { margin:15px 30px; padding:0; }
+.popupContent { padding:15px 30px; }
+.popupInvite .popupWrap {
+	padding: 0px;
+	height: 200px;
+}
 #mainContent .popupContent img { margin:0 10px 0 0; }
-.popupInvite h3 { color:#3f5a8f; font:bold 14px Arial; }
-.popup h3 { color:#3f5a8f; font:bold 15px Arial; margin:30px 0 0 40px; }
-#mainContent .popup p { color:#5f5f5f; font:bold 12px/18px Arial; margin:0 0 0 40px; width:290px; }
-#mainContent .popupInvite p { color:#5f5f5f; display:block; font:normal 10px/18px Helvetica; margin:0; width:256px; }
-#closeButton { background:url(images/close.png) no-repeat; display:block; height:26px; margin:17px 0 0 0; text-indent:-9999px; width:49px; }
+.popupInvite h3 { color:#3f5a8f; font:bold 14px "Lucida Grande"; }
+.popup h3 { color:#3f5a8f; font:bold 15px Arial; margin: 0 0 0 25px; }
+#mainContent .popup p { color:#5f5f5f; font:bold 12px/18px "Lucida Grande"; margin:0 0 0 25px; width:290px; }
+#mainContent .popupInvite p { color:#5f5f5f; display:block; font:normal 10px/18px "Lucida Grande"; margin:0; width:246px; }
+#closeButton { background:url(images/close.png) no-repeat; display:block; height:26px; margin:17px 10px 0 0; text-indent:-9999px; width:49px; }
+#popInvite {
+	height: 200px;
+}
+#popInvite .popupInvite {
+	height: 200px;
+}
 .popupInvite a { background:url(images/send.jpg) no-repeat; clear:both; display:block; height:21px; margin:0 7px 0 0; text-indent:-9999px; width:45px; }
 /* =================================
 				FORM
@@ -96,7 +114,7 @@ label { font:normal 12px Tahoma; }
 #form .zip { width:104px; }
 #form div { float:left; margin:0 0 15px 0; }
 #submit { clear:both; }
-#submit input { /* background:#e30065; */ border:none; font:bold 16px Futura; margin:10px 0 0 0; padding:0; text-transform:uppercase; cursor: pointer; }
+#submit input { background: url("images/SubmitBtn.png") no-repeat scroll 0 0 transparent; border:none; font:bold 16px Futura; margin:10px 0 0 0; padding:0; text-transform:uppercase; cursor: pointer; text-indent:-9999px;width:119px;height:37px;}
 /* =================================
 				FOOTER
 ==================================== */
@@ -167,10 +185,16 @@ z-index: 30;
 	margin-top: 5px;
 }
 
+.popupWrap { /* Added by pupung on 8-sept */
+	background: #fff;
+	height: 130px;
+	padding-top: 30px;
+}
+
 /* =================================
 Viva Additions
 ==================================== */
-h2.congrats_not { background:url(images/youstillwon-title.png) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
+h4.congrats_not { background:url(images/youstillwon-title.png) no-repeat; margin-bottom: 30px; display:block; height:68px; width:644px; } /* width height changed, margin added */
 
 #redeemContainer {
 	width: 100%;
@@ -212,4 +236,19 @@ h2.congrats_not { background:url(images/youstillwon-title.png) no-repeat; margin
 	margin: 0;
 	position: relative;
 	top: 150px;
+}
+#shareContainer {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	text-align: center;
+}
+#shareFrame {
+	width: 650px;
+	height: 621px;
+	margin: 0;
+	position: relative;
+	top: 0px;
 }

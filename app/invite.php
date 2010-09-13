@@ -6,7 +6,7 @@
 <head>
 	<style type='text/css'>
 	<!--
-		body {margin:0px;overflow:hidden;}
+		body {margin:0px;overflow:hidden;background-color:transparent;}
 		html, body {width:100%;height:100%;outline:none;}
 	-->
 	 </style>
@@ -26,8 +26,8 @@
 <fb:serverFbml>
 	<script type="text/fbml">
 		<fb:fbml>
-			<fb:request-form  action="<?= $web_url ?>/invite_callback.html" method="get" type="Svedka - BOT or NOT Contest" invite="true"
-				content="You've been invited to play and win Svedka BOT or NOT? It's free. Win an amazing BOT prize or a bunch of fun NOT prizes each week. Invite your Facebook friends to play, because if they win the BOT prize, so do you! This week's BOT prize: <?= $grandPrize['name'] ?><fb:req-choice url='<?= $share_url ?>&fid=<?= $_REQUEST["fbid"]?>' label='Play Now' /> ">
+			<fb:request-form  action="<?= $web_url ?>/invite_callback.html" method="get" type="Svedka Vodka BOT or NOT?" invite="true"
+				content="You've been invited to play and win Svedka Vodka BOT or NOT? It's free. Win an amazing BOT prize or a bunch of fun NOT prizes each week. Invite your Facebook friends to play, because if they win the BOT prize, so do you! This week's BOT prize: <?= $grandPrize['name'] ?><fb:req-choice url='<?= $share_url ?>&fid=<?= $_REQUEST["fbid"]?>' label='Play Now' /> ">
 				<fb:multi-friend-selector cols="4" actiontext="Tell your friends about us" rows="3" showborder="true" bypass="cancel" />
 			</fb:request-form>
 		</fb:fbml>

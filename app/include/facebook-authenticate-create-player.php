@@ -17,7 +17,7 @@
 
 	$me = null;
 	// Session based API call.
-	$friendFacebookId = $_REQUEST['fid'];
+	$friendFacebookId = $_COOKIE['svedka-friend-fbid'];
 	if ($friendFacebookId) {
 		$friend = getPlayer($friendFacebookId);
 		$friendId = $friend['id'];
@@ -36,11 +36,16 @@
 		$age = floor($diff/60/60/24/365);
 
 		$player = getPlayer($fbid);
+
+		if ($fbid == $friendId) {
+			$friendId = null; // don't let your refer yourself
+		}
 		// check to see if player exists
 		if (!isset($player)) {
 			$player = insertPlayer($fbid, $me['name'], $me['email'], $friendId);
+		} else if(isset($friendId)) {
+			updateFriend($fbid, $friendId);
 		}
-
 
 		$likes = $facebook->api('/me/likes');
 		$likes = $likes['data'];
@@ -59,7 +64,7 @@
 	if (!isset($me) || $player['liked'] != 1) {
 		echo ('<html><body><script>');
 		echo ( "window.top.location='" . $fan_page_url . '&fid=' . $friendFacebookId . "';") ;
-//		echo ( "alert('" . $fan_page_url . '&fid=' . $friendFacebookId . "');") ;
+		//echo ( "alert('" . $fan_page_url . '&fid=' . $friendFacebookId . "');") ;
 		echo ('</script></body></html>');
 		exit;
 	}

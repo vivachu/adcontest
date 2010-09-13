@@ -75,6 +75,11 @@
 		return $player;
 	}
 
+	function updateFriend($fbid, $friendId) {
+		$sql = "update players set friend_id=" . $friendId . " where facebook_id=" . $fbid;
+		executeUpdate($sql);
+	}
+
 	function getPlayerFromId($id) {
 		$sql = "select * from players where id=$id";
 		return executeQueryObject($sql);

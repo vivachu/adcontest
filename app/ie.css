@@ -1,11 +1,113 @@
-.bot { margin:60px 0 0 0; position:absolute; left:350px; }
-
-.round { background:url(images/play-n-win.png) no-repeat; display:block; height:63px; margin:25px 10px 0 0; text-indent:-9999px; width:63px; }
-
-#mainContent .desc p { float:left; margin:0; padding:0; width:200px; }
-
-#mainContent p.text { width:300px !important; }
-
-.popupContainer { background:#525252; bottom:280px; height:175px; padding:10px; position:absolute; right:30px; width:390px; z-index:1; -moz-border-radius:8px; }
-
-.popupInvite { background:#fff; height:170px; position:absolute; width:390px; z-index:1; }
+body {
+	text-align: center;
+}
+h1 a {
+	margin-left: -240px;
+	margin-top: 10px;
+}
+#container2 .bot {
+	margin:0px 0 0 0; position:absolute; left:310px;
+}
+.round {
+	background:url(http://www.adcontests.com/svedka/app/images/play-n-win.png) no-repeat;
+	display:block;
+	height:63px;
+	margin:25px 10px 0 0;
+	text-indent:-9999px;
+	width:63px;
+}
+#mainContent .desc p {
+	float:left;
+	margin:0;
+	padding:0;
+	width:200px;
+}
+#mainContent p.text {
+	width:300px !important;
+}
+#container2 #mainContent {
+	text-align: left;
+}
+.popupContainer {
+	background: url(http://www.adcontests.com/svedka/app/images/trans-bg.png);
+	bottom:280px;
+	height:175px;
+	padding:10px;
+	position:absolute;
+	right:30px;
+	width:390px;
+	z-index:1;
+	-moz-border-radius:8px;
+}
+.popupInvite {
+	background:#fff;
+	height:170px;
+	position:absolute;
+	width:390px;
+	z-index:1;
+}
+.desc {
+	width: 250px;
+	float: right;
+}
+#container2 #mainContent .desc p {
+	width: 200px;
+}
+#container2 #mainContent a.invite {
+	text-align: center;
+	margin-left: 110px;
+}
+#container2 #footer p {
+	text-align: center;
+	width: 480px;
+}
+#form {
+	margin-left: 0;
+	padding-left: 30px;
+}
+#form input {
+	color: #fff;
+}
+#container .bot {
+	width: 182px;
+	height: 525px;
+	padding-right: 20px;
+}
+#container #mainContent {
+	text-align: left;
+}
+#container h1 {
+	height: 53px;
+}
+#container h1 a {
+	margin-left: -332px;
+	margin-top: 5px;
+}
+#container #footer {
+	padding-bottom: 8px;
+}
+#container .popupInvite .popupWrap {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+#container .round {
+	height: 89px;
+	width: 89px;
+}
+#container #clickToRedeem {
+	left: 0;
+	margin-left: -60px;
+}
+.popupInvite {
+	padding: 0px !important;
+}
+#container .popupContainer {
+	left: 160px !important;
+	right: 0px !important;
+}
+.popupInvite h2 {
+	z-index: 99;
+}
+.popupInvite h2 span {
+	color: #000;
+}

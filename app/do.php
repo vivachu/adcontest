@@ -11,6 +11,13 @@
 	} else if ($what == "unredeem") {
 		$redemptionCode = $_REQUEST['c'];
 		unredeemPrize($redemptionCode);
+	} else if ($what == "testEmail") {
+		$to = $_REQUEST['email'];
+		$subject = "IT'S BOTTER THAN NOTHING";
+		$text = file_get_contents('./email/NOT/index.txt');
+		$html = file_get_contents('http://dev.adcontests.com' . '/email/NOT/index.php?friend=Agatha&c=383273&prizeName=' . urlencode('Ant Farm') . '&prizeImage=AntFarm');
+		sendEmail($to, $subject, $text, $html); // send to player
+
 	}
 	else if ($what == "redeem") {
 		$redemptionCode = $_REQUEST['c'];
@@ -28,13 +35,20 @@
 		$to = $_REQUEST['email'];
 		if ($prizeSchedule['place'] == 1) {
 			$subject = "BOT OR NOT";
-			$text = file_get_contents('./email/EmailFriendWinConfirm.txt');
+			$text = file_get_contents('./email/BOT/index.txt');
 			$text = str_replace("PRIZE_NAME", $prizeSchedule['prize_name'], $text);
+			$html = file_get_contents($web_url . '/email/BOT/index.php?prizeName=' . urlencode($prizeSchedule['prize_name']) . '&prizeImage=' . $prizeSchedule['prize_image']);
+		} else if ($prizeSchedule['place'] >= 2 && $prizeSchedule['place'] <= 5) {
+			$subject = "IT'S BOTTER THAN NOTHING";
+			$text = file_get_contents('./email/SECONDARY/index.txt');
+			$text = str_replace("PRIZE_NAME", $prizeSchedule['prize_name'], $text);
+			$html = file_get_contents($web_url . '/email/SECONDARY/index.php?prizeName=' . urlencode($prizeSchedule['prize_name']) . '&prizeImage=' . $prizeSchedule['prize_image']);
 		} else {
 			$subject = "IT'S BOTTER THAN NOTHING";
-			$text = file_get_contents('./email/EmailFriendNotConfirm.txt');
+			$text = file_get_contents('./email/NOT/index.txt');
+			$html = file_get_contents($web_url . '/email/NOT/index.php?prizeImage=' . urlencode($prizeSchedule['prize_image']));
 		}
-		$html = $text;
+//		$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to player
 
 		$to = $svedka_admin_email;
@@ -56,9 +70,11 @@
 
 		$to = $_REQUEST['email'];
 		$subject = "BOT OR NOT";
-		$text = file_get_contents('./email/EmailFriendWinConfirm.txt');
+		$text = file_get_contents('./email/BOT/index.txt');
 		$text = str_replace("PRIZE_NAME", $referral['prize_name'], $text);
-		$html = $text;
+
+		$html = file_get_contents($web_url . '/email/BOT/index.php?prizeImage=' . urlencode($prizeSchedule['prize_image']) . '&prizeName=' . urlencode($prizeSchedule['prize_name']));
+//		$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to player
 
 		$to = $svedka_admin_email;
@@ -80,11 +96,14 @@
 
 		$to = $friend['email'];
 		$subject = "A FACEBOOK FRIENDSHIP ACTUALLY PAID OFF";
-		$text = file_get_contents('./email/EmailFriendWin.txt');
+		$text = file_get_contents('./email/BOT-Friend/index.txt');
 		$text = str_replace("PRIZE_NAME", $prizeSchedule['prize_name'], $text);
 		$text = str_replace("FRIEND_NAME", $prizeSchedule['username'], $text);
 		$text = str_replace("REDEEM_URL", $app_url . "/redeem-friend.php?c=" . $referral['redemption_code'], $text);
-		$html = $text;
+
+		$html = file_get_contents($web_url . "/email/BOT-Friend/index.php?friend=" . urlencode($prizeSchedule['username']) . "&prizeName=" . urlencode($prizeSchedule['prize_name']) . "&prizeImage=" . urlencode($prizeSchedule['prize_image']) . "&c=" . urlencode($referral['redemption_code']));
+
+		//$html = $text;
 		sendEmail($to, $subject, $text, $html); // send to friend
 	}
 
