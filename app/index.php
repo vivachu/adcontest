@@ -40,12 +40,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <title>SVEDKA Vodka "BOT or NOT?"</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
 <link rel="stylesheet" type="text/css" href="style.css?v=1.8" />
-<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 
 <? if ($player): ?>
@@ -203,15 +203,14 @@
         </div>
     </div>
 
-<script type="text/javascript">
-//window.fbAsyncInit = function() {
-  FB.Canvas.setSize({ height: 932 });
-//}
-
-</script>
 <div id="shareContainer" style="display:none;background-color:transparent;">
 	<iframe id="shareFrame" allowtransparency="true" frameborder="0" border="0"></iframe>
 </div>
 
+<script type="text/javascript">
+//window.fbAsyncInit = function() {
+  FB.Canvas.setSize({ height: 932 });
+//}
+</script>
 </body>
 </html>
