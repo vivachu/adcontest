@@ -1,6 +1,6 @@
 ## contest_id, place, name, value, num_winners
 
-call schedule_prize(1, 1, 'A Panasonic Lumix DMC-LX5K digital camera', 500, 1, 'Take high quality photos and movies with this 10.1 megapixel digital bad boy. Just be sure to share them with us!', 'Camera');
+call schedule_prize(1, 1, 'a Panasonic Lumix DMC-LX5K digital camera', 500, 1, 'Take high quality photos and movies with this 10.1 megapixel digital bad boy. Just be sure to share them with us!', 'Camera');
 call schedule_prize(1, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(1, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(1, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
@@ -12,7 +12,7 @@ call schedule_prize(2, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeho
 call schedule_prize(2, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(2, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(3, 1, 'An Apple iPad and a one year subscription to Netflix', 707, 1, 'The iPad is the BOTTEST way to experience the web, email, books, photos, videos, apps, music and more! Plus, with a year\'s subscription to Netflix, you won\'t be running out of things to watch any time soon.', 'iPad');
+call schedule_prize(3, 1, 'an Apple iPad and a one year subscription to Netflix', 707, 1, 'The iPad is the BOTTEST way to experience the web, email, books, photos, videos, apps, music and more! Plus, with a year\'s subscription to Netflix, you won\'t be running out of things to watch any time soon.', 'iPad');
 call schedule_prize(3, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(3, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(3, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
