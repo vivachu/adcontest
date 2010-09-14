@@ -43,9 +43,12 @@
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>SVEDKA Vodka "BOT or NOT?"</title>
+<title>SVEDKA Vodka "BOT or NOT?" - Game</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
 <link rel="stylesheet" type="text/css" href="style.css?v=1.9" />
+
+<? include 'include/log-events-js.php'; ?>
+
 <script>
 
 <? if ($player): ?>
@@ -57,35 +60,60 @@
 <? endif; ?>
 
 	var redeem = false;
+
+<?php if ($prize['place'] == 1): ?>
+	var trackPath = "/BOT";
+<?php elseif ($prize['place'] >= 2 || $prize['place'] <= 5): ?>
+	var trackPath = "/SECONDARY";
+<?php else: ?>
+	var trackPath = "/NOT";
+<?php endif; ?>
+
+	var prizeImage = "<?= $prize['image'] ?>";
+
+
+	function doOnLoad() {
+		var s = "/load-game/" + trackPath + "/" + prizeImage;
+		logEvent(s);
+	}
+
 	function onDoorSelected() {
 		redeem = true;
 		document.getElementById("redeemContainer").style.display="block";
+		var s = "/door-selected/" + trackPath + "/" + prizeImage;
+		logEvent(s);
 	}
 
 	function inviteFriends(){
 		document.getElementById("redeemContainer").style.display="none";
 		document.getElementById('inviteContainer').style.display = 'block';
 		document.getElementById('inviteFrame').src = "invite.php?fbid=<?= $player['facebook_id'] ?>";
+		var s = "/invite-friends/" + trackPath + "/" + prizeImage;
+		logEvent(s);
 	}
 
 	function hideInvite(){
 		document.getElementById('inviteContainer').style.display = 'none';
 		document.getElementById('inviteFrame').src = "about:blank";
 		if (redeem) {
-			onDoorSelected();
+			document.getElementById("redeemContainer").style.display="block";
 		}
+		logEvent("/hide-invite");
 	}
 
 	function share(){
 		document.getElementById("redeemContainer").style.display="none";
 		document.getElementById('shareContainer').style.display = 'block';
 		document.getElementById('shareFrame').src = "share.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>";
+		logEvent("/share/game");
 	}
 
 	function publishFeedStory(){
 		document.getElementById("redeemContainer").style.display="none";
 		document.getElementById('shareContainer').style.display = 'block';
 		document.getElementById('shareFrame').src = "feedform.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>&prizeName=<?= $prize['name'] ?>&prizeImage=<?= $prize['image'] ?>&place=<?= $prize['place'] ?>";
+		var s = "/publish-feed-story/" + trackPath + "/" + prizeImage;
+		logEvent(s);
 	}
 
 
@@ -95,6 +123,7 @@
 		if (redeem) {
 			onDoorSelected();
 		}
+		logEvent("/hide-viral/game");
 	}
 
 
@@ -126,7 +155,7 @@
 </script>
 <![endif]-->
 </head>
-<body>
+<body onLoad="doOnload();">
 	<div id="fb-root"></div>
 	<script>
 	  window.fbAsyncInit = function() {

@@ -23,7 +23,7 @@
 <head>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Bot Prize Redemption Confirmation</title>
+<title>Bot Prize Redeem Form</title>
 <link rel="stylesheet" type="text/css" href="reset.css" />
 <link rel="stylesheet" type="text/css" href="style.css?v=1.8" />
 <!--[if lt IE 8]>
@@ -38,26 +38,43 @@
 <!-- include Cycle plugin -->
 <script type="text/javascript" src="javascript/jquery.cycle.all.2.74.js"></script>
 
+<? include 'include/log-events-js.php'; ?>
+
 <script>
+<?php if ($prizeSchedule['place'] == 1): ?>
+	var trackPath = "/BOT";
+<?php elseif ($prizeSchedule['place'] >= 2 || $prizeSchedule['place'] <= 5): ?>
+	var trackPath = "/SECONDARY";
+<?php else: ?>
+	var trackPath = "/NOT";
+<?php endif; ?>
+
+	var prizeImage = "<?= $prizeSchedule['prize_image'] ?>";
+
 
 	function share(){
 		document.getElementById('shareContainer').style.display = 'block';
 		document.getElementById('shareFrame').src = "share.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>";
+		logEvent("/share/redeem");
 	}
 
 	function publishFeedStory(){
 		document.getElementById('shareContainer').style.display = 'block';
 		document.getElementById('shareFrame').src = "feedform.php?facebookId=<?= $player['facebook_id'] ?>&username=<?= $player['username'] ?>&grandPrize=<?= $grandPrize['short_name'] ?>&prizeName=<?= $prizeSchedule['prize_name'] ?>&prizeImage=<?= $prizeSchedule['prize_image'] ?>&place=<?= $prizeSchedule['place'] ?>";
+		var s = "/publish-feed-story/" + trackPath + "/" + prizeImage;
+		logEvent(s);
 	}
 
 
 	function hideShare(){
 		document.getElementById('shareContainer').style.display = 'none';
 		document.getElementById('shareFrame').src = "about:blank";
+		logEvent("/hide-viral/redeem");
 	}
 
 
 	function submitForm() {
+		logEvent("/redeem/submit");
 		if (document.getElementById('fname').value.length < 1) {
 			alert("Please enter your first name.");
 			document.getElementById('fname').focus();
@@ -106,6 +123,7 @@
 
 			return;
 		}
+		logEvent("/redeem/validated");
 		document.body.style.cursor = 'wait';
 		var url = "do.php?what=redeem&c=<?= $redemptionCode ?>";
 		url += "&first=" + document.getElementById('fname').value;
@@ -134,6 +152,7 @@
 
 	function onSubmitForm(response) {
 		document.body.style.cursor = 'default';
+		logEvent("/redeem/redeemed");
 <? if (isset($friend) && $prizeSchedule['place'] == 1): ?>
 		document.getElementById("popInvite").style.display = "block";
 <? elseif ($prizeSchedule['place'] == 1): ?>
