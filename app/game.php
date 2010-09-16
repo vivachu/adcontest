@@ -72,7 +72,7 @@
 	var prizeImage = "<?= $prize['image'] ?>";
 
 
-	function doOnLoad() {
+	function doOnload() {
 		var s = "/load-game/" + trackPath + "/" + prizeImage;
 		logEvent(s);
 	}
