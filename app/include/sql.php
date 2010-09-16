@@ -49,7 +49,7 @@
 
 
 	function insertPlayer($fbid, $name, $email, $friendId) {
-		$sql = "insert into players(facebook_id, username, email, friend_id) values(" . $fbid . ", '" . $name . "', ";
+		$sql = "insert into players(facebook_id, username, email, friend_id) values(" . $fbid . ", '" . str_replace("'", "\'", $name) . "', ";
 		if (isset($email)) {
 			$sql .= "'" . $email . "', ";
 		} else {

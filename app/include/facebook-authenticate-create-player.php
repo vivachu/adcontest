@@ -62,7 +62,7 @@
 		error_log($e);
 	  }
 	}
-	if (!isset($me) || $player['liked'] != 1) {
+	if (!isset($me)) { //|| $player['liked'] != 1) {
 		echo ('<html><body><script>');
 		echo ( "window.top.location='" . $fan_page_url . '&fid=' . $friendFacebookId . "';") ;
 		//echo ( "alert('" . $fan_page_url . '&fid=' . $friendFacebookId . "');") ;

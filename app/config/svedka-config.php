@@ -13,9 +13,9 @@ $app_url = "http://apps.facebook.com/bot-or-not-dev";
 //$app_url = "http://apps.facebook.com/bot-or-not";
 
 // dev
-$facebook_app_id = '149641118398720';
-$facebook_api_key = '3e0979345f249c435372efa9d8f514ca';
-$facebook_secret_key = 'c86e917f3ac6ebc29e17560ed4bc01da';
+$facebook_app_id = '152817858073681';
+$facebook_api_key = '1bcb20b1617d7ddbb1b20790ba70c5fa';
+$facebook_secret_key = 'db54a2e99126c08f27e40d6b142937f4';
 $like_app_id = '153004184716221';  // App Contest Page
 
 // production
