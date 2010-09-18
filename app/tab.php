@@ -81,16 +81,15 @@
 	<!-- Static HTML landing page -->
 				<p>Everyone is a winner! Sort of. Pick a door to see if you win a prize that's BOT or one that's NOT. Increase your chances to win by inviting friends. If one of them wins the BOT prize, you do too! Click below to play.  <a target="_blank" href="<?=$web_url?>/rules.php" style="color:#ffffff;text-decoration:underline;">See Official Rules</a> for details.</p>
 				<p class="title">This week's bot prize: <span><?= $grandPrize['name'] ?></span></p>
-<fb:visible-to-connection>
-	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=<?= $app_url ?>/" class="playBtn">play</a>
-<fb:else>
-	<fb:visible-to-owner>
+<a id="playLink" href="#" onclick="showLike(); return false" class="playBtn">play</a>
+<fb:visible-to-owner>
                 <a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=<?= $app_url ?>/" class="playBtn">play</a>
-	</fb:else>
-                <a id="playLink" href="#" onclick="showLike(); return false" class="playBtn">play</a>
-	</fb:visible-to-owner>
-</fb:else>
+</fb:visible-to-owner>
+<fb:visible-to-connection>                
+	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=<?= $app_url ?>/" class="playBtn">play</a>
 </fb:visible-to-connection>
+
+
 				<div class="bot" style="top:285px;margin-right:36px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
 				<img src="<?= $web_url ?>/images/door2.png?v=1.0" alt="" />
 				<div id="likePopup" class="popup" style="display:none;">
