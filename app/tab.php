@@ -84,7 +84,11 @@
 <fb:visible-to-connection>
 	<a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=<?= $app_url ?>/" class="playBtn">play</a>
 <fb:else>
-	<a id="playLink" href="#" onclick="showLike(); return false" class="playBtn">play</a>
+	<fb:visible-to-owner>
+                <a id="playLink" href="https://graph.facebook.com/oauth/authorize?client_id=<?= $facebook_app_id ?>&scope=email,publish_stream,user_birthday,user_likes&redirect_uri=<?= $app_url ?>/" class="playBtn">play</a>
+	</fb:else>
+                <a id="playLink" href="#" onclick="showLike(); return false" class="playBtn">play</a>
+	</fb:visible-to-owner>
 </fb:else>
 </fb:visible-to-connection>
 				<div class="bot" style="top:285px;margin-right:36px;"><img src="<?= $web_url ?>/images/bot2.png" alt="" /></div>
