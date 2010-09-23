@@ -6,7 +6,7 @@ call schedule_prize(1, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeho
 call schedule_prize(1, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
 call schedule_prize(1, 5, 'a SVEDKA Bar Set', 26, 2, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'BarSet');
 
-call schedule_prize(2, 1, 'a Water Walking Ball', 500, 1, 'For those of you who\'ve already wanted to walk on water or really, really liked that movie Bubble Boy (three words: young Jake Gyllenhaal).', 'WaterBall');
+call schedule_prize(2, 1, 'a Water Walking Ball', 500, 1, 'For those of you who\'ve always wanted to walk on water or really, really liked that movie Bubble Boy (three words: young Jake Gyllenhaal).', 'WaterBall');
 call schedule_prize(2, 2, 'a Bot or Not Tee', 10, 10, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Tshirt');
 call schedule_prize(2, 3, 'a Cardboard SVEDKA Girl', 14, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Standee');
 call schedule_prize(2, 4, 'a SVEDKA Cocktail Shaker', 10, 4, 'Lorem ipsum placeholder descriptorium.  This prize is really really really really awesome...', 'Shaker');
